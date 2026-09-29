@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Khaireddine Sakkal · Webs para estudios de pilates</title>
+<meta name="description" content="Webs con reserva online y panel para estudios de pilates en Barcelona. Mira las demos.">
+<meta property="og:title" content="Webs con reserva online para estudios de pilates">
+<meta property="og:description" content="Mira las demos: web, reservas, lista de espera y panel para la dueña.">
+<meta property="og:image" content="img/ona.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..560&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3EADB;--paper:#FFFBF4;--sand:#E8D8C0;--clay:#B5532F;--clay-d:#963F20;--olive:#56603F;--ink:#2A2019;--ink-2:#6B5B4C;--line:#E2D4BE;--wa:#2F8038}
+@media (prefers-color-scheme:dark){:root{--bg:#1B1510;--paper:#241C15;--sand:#2E2419;--clay:#E17B50;--clay-d:#F0966E;--olive:#9AAB78;--ink:#F3EADB;--ink-2:#C9BAA6;--line:#3D3226;--wa:#3FA24A}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Onest,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+.serif{font-family:Fraunces,Georgia,serif;font-weight:460;letter-spacing:-.01em}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+header .me{font-weight:700}
+#lang{border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font:600 13px Onest,sans-serif;color:var(--ink);cursor:pointer}
+.hero{padding:40px 0 28px}
+.hero h1{font-size:clamp(30px,6vw,52px);line-height:1.08;margin:0 0 14px}
+.hero p{color:var(--ink-2);font-size:18px;max-width:34em;margin:0 0 22px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:13px 20px;font-weight:700;text-decoration:none}
+.btn.wa{background:var(--wa);color:#fff}
+.btn.ghost{border:1.5px solid var(--line);background:var(--paper)}
+section{padding:28px 0}
+h2{font-size:26px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--paper);border-radius:18px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column}
+.shot{aspect-ratio:9/12;background:var(--sand) center top/cover no-repeat;border-bottom:1px solid var(--line)}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{margin:0;font-size:20px}
+.meta{font-size:13px;color:var(--ink-2)}
+.tag{display:inline-block;font-size:12px;font-weight:700;background:var(--sand);color:var(--olive);border-radius:999px;padding:2px 10px;margin-right:6px}
+.card .actions{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
+.card .actions a{flex:1;text-align:center;justify-content:center;padding:10px 12px;font-size:14px}
+.card .actions .site{background:var(--clay);color:#fff}
+#demos-error{color:var(--ink-2)}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;padding:0;margin:0;list-style:none}
+.list li{background:var(--paper);border-radius:14px;padding:14px 16px;box-shadow:inset 0 0 0 1px var(--line)}
+.list b{display:block;margin-bottom:4px}
+.steps{counter-reset:s}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--clay);color:#fff;font-weight:700;margin-bottom:8px}
+.about{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.about img{width:96px;height:96px;border-radius:50%;object-fit:cover}
+.about p{margin:0;max-width:36em}
+footer{padding:36px 0 48px;color:var(--ink-2);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="me">Khaireddine Sakkal</span>
+    <button id="lang" type="button" aria-label="Change language">English</button>
+  </header>
+
+  <div class="hero">
+    <h1 class="serif" data-i18n="hero.title">Webs con reserva online para estudios de pilates</h1>
+    <p data-i18n="hero.sub">¿Tus clientas reservan por WhatsApp o por teléfono? Te hago una web donde reservan solas, y un panel donde ves quién viene hoy.</p>
+    <a class="btn wa" href="https://wa.me/34610691874?text=Hola%20Khaireddine%2C%20vi%20tus%20demos%20de%20webs%20para%20pilates" data-i18n="cta.wa">Escríbeme por WhatsApp</a>
+  </div>
+
+  <section>
+    <h2 class="serif" data-i18n="demos.title">Demos</h2>
+    <p class="meta" data-i18n="demos.sub">Ábrelas en tu móvil. Son estudios ficticios: tu web llevaría tus clases, tus fotos y tus precios.</p>
+    <div id="demos" class="grid"></div>
+    <p id="demos-error" hidden data-i18n="demos.error">No se pudieron cargar las demos. Escríbeme por WhatsApp y te mando el enlace.</p>
+  </section>
+
+  <section>
+    <h2 class="serif" data-i18n="inc.title">Qué incluye</h2>
+    <ul class="list">
+      <li><b data-i18n="inc.site">Tu web</b><span data-i18n="inc.site.d">Rápida en el móvil, en español, catalán e inglés.</span></li>
+      <li><b data-i18n="inc.book">Reservas online</b><span data-i18n="inc.book.d">Tus clientas reservan clase en segundos, con lista de espera.</span></li>
+      <li><b data-i18n="inc.panel">Panel para ti</b><span data-i18n="inc.panel.d">Quién viene hoy, quién ha pagado, cuánto has ganado este mes.</span></li>
+      <li><b data-i18n="inc.mail">Emails automáticos</b><span data-i18n="inc.mail.d">Confirmación y recordatorio de cada clase.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="serif" data-i18n="how.title">Cómo funciona</h2>
+    <ol class="list steps">
+      <li><b data-i18n="how.1">Te hago una demo</b><span data-i18n="how.1.d">Con tu nombre, tus clases y tus fotos. Gratis.</span></li>
+      <li><b data-i18n="how.2">La pruebas</b><span data-i18n="how.2.d">En tu móvil, sin compromiso.</span></li>
+      <li><b data-i18n="how.3">La ponemos en marcha</b><span data-i18n="how.3.d">Si te gusta, la dejo lista y te ayudo por WhatsApp.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2 class="serif" data-i18n="about.title">Sobre mí</h2>
+    <div class="about">
+      <img src="img/khaireddine.webp" alt="Khaireddine Sakkal" width="96" height="96">
+      <p data-i18n="about.text">Soy Khaireddine, vivo en Barcelona. Hago webs con reservas para estudios pequeños de pilates, para que dediques tu tiempo a las clases y no a los mensajes.</p>
+    </div>
+    <p style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn wa" href="https://wa.me/34610691874?text=Hola%20Khaireddine%2C%20%C2%BFme%20dices%20el%20precio%3F" data-i18n="cta.price">Pide precio por WhatsApp</a>
+      <a class="btn ghost" href="mailto:autoaix0@gmail.com">autoaix0@gmail.com</a>
+    </p>
+  </section>
+
+  <footer>© Khaireddine Sakkal · +34 610 691 874</footer>
+</div>
+
+<script>
+var I18N = {
+  es: {
+    "hero.title": "Webs con reserva online para estudios de pilates",
+    "hero.sub": "¿Tus clientas reservan por WhatsApp o por teléfono? Te hago una web donde reservan solas, y un panel donde ves quién viene hoy.",
+    "cta.wa": "Escríbeme por WhatsApp",
+    "cta.price": "Pide precio por WhatsApp",
+    "demos.title": "Demos",
+    "demos.sub": "Ábrelas en tu móvil. Son estudios ficticios: tu web llevaría tus clases, tus fotos y tus precios.",
+    "demos.error": "No se pudieron cargar las demos. Escríbeme por WhatsApp y te mando el enlace.",
+    "inc.title": "Qué incluye",
+    "inc.site": "Tu web", "inc.site.d": "Rápida en el móvil, en español, catalán e inglés.",
+    "inc.book": "Reservas online", "inc.book.d": "Tus clientas reservan clase en segundos, con lista de espera.",
+    "inc.panel": "Panel para ti", "inc.panel.d": "Quién viene hoy, quién ha pagado, cuánto has ganado este mes.",
+    "inc.mail": "Emails automáticos", "inc.mail.d": "Confirmación y recordatorio de cada clase.",
+    "how.title": "Cómo funciona",
+    "how.1": "Te hago una demo", "how.1.d": "Con tu nombre, tus clases y tus fotos. Gratis.",
+    "how.2": "La pruebas", "how.2.d": "En tu móvil, sin compromiso.",
+    "how.3": "La ponemos en marcha", "how.3.d": "Si te gusta, la dejo lista y te ayudo por WhatsApp.",
+    "about.title": "Sobre mí",
+    "about.text": "Soy Khaireddine, vivo en Barcelona. Hago webs con reservas para estudios pequeños de pilates, para que dediques tu tiempo a las clases y no a los mensajes.",
+    "card.fict": "Demo — estudio ficticio", "card.site": "Ver la web", "card.panel": "Ver el panel",
+    "lang.btn": "English"
+  },
+  en: {
+    "hero.title": "Websites with online booking for pilates studios",
+    "hero.sub": "Do your clients book by WhatsApp or phone? I build you a website where they book by themselves, and a panel where you see who is coming today.",
+    "cta.wa": "Message me on WhatsApp",
+    "cta.price": "Ask for the price on WhatsApp",
+    "demos.title": "Demos",
+    "demos.sub": "Open them on your phone. These are fictional studios: your site would have your classes, your photos and your prices.",
+    "demos.error": "The demos could not load. Message me on WhatsApp and I will send you the link.",
+    "inc.title": "What's included",
+    "inc.site": "Your website", "inc.site.d": "Fast on mobile, in Spanish, Catalan and English.",
+    "inc.book": "Online booking", "inc.book.d": "Clients book a class in seconds, with a waitlist.",
+    "inc.panel": "A panel for you", "inc.panel.d": "Who is coming today, who has paid, how much you made this month.",
+    "inc.mail": "Automatic emails", "inc.mail.d": "Confirmation and a reminder for every class.",
+    "how.title": "How it works",
+    "how.1": "I make you a demo", "how.1.d": "With your name, your classes and your photos. Free.",
+    "how.2": "You try it", "how.2.d": "On your phone, no commitment.",
+    "how.3": "We go live", "how.3.d": "If you like it, I set it up and help you on WhatsApp.",
+    "about.title": "About me",
+    "about.text": "I'm Khaireddine and I live in Barcelona. I build booking websites for small pilates studios, so you spend your time on classes, not on messages.",
+    "card.fict": "Demo — fictional studio", "card.site": "See the website", "card.panel": "See the panel",
+    "lang.btn": "Español"
+  }
+};
+var lang = "es", cards = null;
+try { if (localStorage.getItem("lang") === "en") lang = "en"; } catch (e) {}
+
+function t(k) { return I18N[lang][k] || I18N.es[k] || k; }
+function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+
+function renderCards() {
+  var box = document.getElementById("demos");
+  box.textContent = "";
+  if (!cards) return;
+  cards.forEach(function (c) {
+    var card = el("article", "card");
+    var shot = el("div", "shot");
+    shot.style.backgroundImage = "url('" + c.shot + "')";
+    shot.setAttribute("role", "img");
+    shot.setAttribute("aria-label", c.name);
+    var body = el("div", "body");
+    body.appendChild(el("h3", "serif", c.name));
+    body.appendChild(el("div", "meta", c.city));
+    var tags = el("div");
+    tags.appendChild(el("span", "tag", t("card.fict")));
+    if (c.note) tags.appendChild(el("span", "tag", c.note[lang] || c.note.es));
+    body.appendChild(tags);
+    body.appendChild(el("p", "meta", (c.summary && (c.summary[lang] || c.summary.es)) || ""));
+    var actions = el("div", "actions");
+    var a1 = el("a", "btn site", t("card.site")); a1.href = c.site; actions.appendChild(a1);
+    if (c.panel) { var a2 = el("a", "btn ghost", t("card.panel")); a2.href = c.panel; actions.appendChild(a2); }
+    body.appendChild(actions);
+    card.appendChild(shot); card.appendChild(body);
+    box.appendChild(card);
+  });
+}
+
+function applyLang() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(function (n) { n.textContent = t(n.getAttribute("data-i18n")); });
+  document.getElementById("lang").textContent = t("lang.btn");
+  renderCards();
+}
+
+document.getElementById("lang").addEventListener("click", function () {
+  lang = lang === "es" ? "en" : "es";
+  try { localStorage.setItem("lang", lang); } catch (e) {}
+  applyLang();
+});
+
+applyLang();
+fetch("demos.json", { cache: "no-cache" })
+  .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(function (data) { cards = data; renderCards(); })
+  .catch(function () { document.getElementById("demos-error").hidden = false; });
+</script>
+</body>
+</html>
