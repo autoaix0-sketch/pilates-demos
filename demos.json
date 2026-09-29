@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ona",
+    "name": "ONA Pilates Barcelona",
+    "city": "Barcelona",
+    "summary": {
+      "es": "Web completa: reservas de clases, lista de espera y panel para la dueña.",
+      "en": "Full website: class booking, waitlist and an owner panel."
+    },
+    "site": "demos/ona/",
+    "panel": "demos/ona/panel/",
+    "shot": "img/ona.webp",
+    "note": null
+  },
+  {
+    "id": "volt",
+    "name": "Volt Pilates",
+    "city": "London",
+    "summary": {
+      "es": "Estilo moderno y con energía, para estudios de reformer.",
+      "en": "Bold, modern style for reformer studios."
+    },
+    "site": "demos/volt/",
+    "panel": null,
+    "shot": "img/volt.webp",
+    "note": null
+  },
+  {
+    "id": "mara-voss",
+    "name": "Mara Voss Pilates",
+    "city": "Amsterdam",
+    "summary": {
+      "es": "Estilo tranquilo y elegante, para un estudio boutique.",
+      "en": "Calm, elegant style for a boutique studio."
+    },
+    "site": "demos/mara-voss/",
+    "panel": null,
+    "shot": "img/mara-voss.webp",
+    "note": {
+      "es": "Demo de diseño",
+      "en": "Design demo"
+    }
+  }
+]

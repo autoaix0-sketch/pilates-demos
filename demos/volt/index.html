@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VOLT Pilates — Reformer Lab, London</title>
+<meta name="description" content="Reformer pilates in East London. Eight people per class, forty-five minutes, no mirrors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VOLT Pilates — Exaggerated Minimalism, dark athletic
+   Single self-contained file. No build step, no dependencies.
+   ============================================================ */
+
+:root{
+  /* colour */
+  --bg:#1F2937;
+  --surface:#26313F;
+  --surface-2:#2E3A49;
+  --fg:#F8FAFC;
+  --fg-muted:#A3B0C2;
+  --primary:#F97316;
+  --on-primary:#0F172A;
+  --accent:#22C55E;
+  --border:#3A4657;
+  --ring:#F97316;
+
+  /* type */
+  --font-display:'Barlow Condensed',Impact,'Haettenschweiler','Arial Narrow',sans-serif;
+  --font-body:'Barlow',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+
+  /* 8pt spacing rhythm */
+  --space-1:8px;  --space-2:16px; --space-3:24px; --space-4:32px;
+  --space-5:48px; --space-6:64px; --space-7:96px; --space-8:128px;
+
+  --radius:4px;
+  --tap:44px;                 /* minimum touch target */
+  --shell:1240px;
+  --gutter:clamp(20px,5vw,56px);
+
+  /* one easing + duration rhythm for the whole page */
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --t-fast:150ms;
+  --t:220ms;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+/* overflow-x lives on html, never on body: on body it forces overflow-y to compute
+   to `auto`, which makes body a scroll container and silently breaks
+   IntersectionObserver for every element below the fold. */
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font-family:var(--font-body);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+
+/* every interactive element gets a visible focus ring */
+:focus-visible{outline:3px solid var(--ring);outline-offset:3px;border-radius:2px}
+
+.shell{max-width:var(--shell);margin:0 auto;padding-inline:var(--gutter)}
+
+.skip{
+  position:absolute;left:var(--space-2);top:-100px;z-index:200;
+  background:var(--primary);color:var(--on-primary);
+  padding:12px 20px;font-weight:700;border-radius:var(--radius);
+  transition:top var(--t) var(--ease);
+}
+.skip:focus{top:var(--space-2)}
+
+/* ---------- display type ---------- */
+.display{
+  font-family:var(--font-display);
+  font-weight:900;
+  line-height:.88;
+  letter-spacing:-.03em;
+  text-transform:uppercase;
+  margin:0;
+  /* 11vw keeps the longest Spanish word inside a 320px screen */
+  font-size:clamp(2.75rem,11vw,10.5rem);
+}
+.section-title{
+  font-family:var(--font-display);font-weight:800;text-transform:uppercase;
+  letter-spacing:-.02em;line-height:.95;margin:0;
+  font-size:clamp(2rem,6vw,4.5rem);
+}
+.eyebrow{
+  font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+  letter-spacing:.22em;font-size:13px;color:var(--primary);margin:0 0 var(--space-2);
+}
+.lede{font-size:clamp(17px,2vw,21px);color:var(--fg-muted);max-width:56ch;margin:0}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:var(--tap);padding:12px 28px;
+  font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+  letter-spacing:.12em;font-size:15px;
+  border:2px solid transparent;border-radius:var(--radius);cursor:pointer;
+  transition:background var(--t) var(--ease),color var(--t) var(--ease),
+             border-color var(--t) var(--ease),transform var(--t-fast) var(--ease);
+}
+.btn--primary{background:var(--primary);color:var(--on-primary);border-color:var(--primary)}
+.btn--primary:hover{background:#FB8C3C;border-color:#FB8C3C}
+.btn--ghost{border-color:var(--border);color:var(--fg)}
+.btn--ghost:hover{border-color:var(--fg);background:rgba(248,250,252,.06)}
+.btn:active{transform:scale(.98)}          /* scale only — never shifts layout */
+.btn .icon{width:18px;height:18px;flex:none}
+
+/* ---------- top bar ---------- */
+.topbar{
+  background:var(--accent);color:#06230F;text-align:center;
+  padding:10px var(--gutter);font-size:14px;font-weight:500;
+}
+.topbar a{
+  font-weight:700;text-decoration:underline;text-underline-offset:3px;
+  position:relative;                        /* 44px hit area, zero layout shift */
+}
+.topbar a::after{content:"";position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:var(--tap)}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(31,41,55,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav__inner{
+  max-width:var(--shell);margin:0 auto;padding:10px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);
+  flex-wrap:wrap;
+}
+.brand{display:flex;align-items:baseline;gap:10px;min-height:var(--tap)}
+.brand__mark{font-family:var(--font-display);font-weight:900;font-size:30px;letter-spacing:.02em}
+.brand__sub{
+  font-family:var(--font-display);font-weight:600;font-size:12px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--fg-muted);
+}
+.nav__menu{display:flex;align-items:center;gap:clamp(16px,3vw,36px)}
+.nav__links{
+  display:flex;align-items:center;gap:clamp(16px,2.6vw,32px);
+  list-style:none;margin:0;padding:0;
+}
+.nav__links a{
+  display:inline-flex;align-items:center;min-height:var(--tap);
+  font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+  letter-spacing:.16em;font-size:14px;color:var(--fg-muted);
+  transition:color var(--t) var(--ease);
+}
+.nav__links a:hover{color:var(--fg)}
+.nav__actions{display:flex;align-items:center;gap:12px}
+
+.lang{
+  display:flex;gap:2px;min-height:var(--tap);align-items:center;
+  background:none;border:1px solid var(--border);border-radius:var(--radius);
+  padding:4px;cursor:pointer;transition:border-color var(--t) var(--ease);
+}
+.lang:hover{border-color:var(--fg-muted)}
+.lang span{
+  padding:4px 10px;border-radius:2px;font-family:var(--font-display);
+  font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--fg-muted);
+  transition:background var(--t) var(--ease),color var(--t) var(--ease);
+}
+.lang span[data-on="true"]{background:var(--primary);color:var(--on-primary)}
+
+.burger{
+  display:none;width:var(--tap);height:var(--tap);
+  flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  background:none;border:0;cursor:pointer;margin-left:auto;
+}
+.burger span{
+  display:block;width:24px;height:2px;background:var(--fg);
+  transition:transform var(--t) var(--ease),opacity var(--t-fast) var(--ease);
+}
+.nav[data-open="true"] .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav[data-open="true"] .burger span:nth-child(2){opacity:0}
+.nav[data-open="true"] .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media (max-width:900px){
+  .burger{display:flex}
+  .nav__menu{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:0;padding-bottom:var(--space-1)}
+  .nav[data-open="true"] .nav__menu{display:flex}
+  .nav__links{flex-direction:column;align-items:flex-start;gap:0;width:100%}
+  .nav__actions{width:100%;justify-content:flex-start;padding-top:var(--space-1)}
+}
+@media (max-width:420px){
+  .brand__sub{display:none}        /* keep logo + burger on one row */
+}
+
+/* ---------- hero ---------- */
+/* padding-block only — a `padding` shorthand here would wipe .shell's padding-inline */
+.hero{padding-block:clamp(56px,10vw,120px) clamp(40px,7vw,80px)}
+.hero__title span{display:block}
+.hero__title .accentline{color:var(--primary)}
+.hero__body{
+  margin-top:var(--space-4);display:grid;gap:var(--space-4);
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));
+  align-items:end;
+}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px}
+
+.stats{
+  display:grid;gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));
+  margin-top:clamp(40px,7vw,72px);
+}
+.stat{background:var(--bg);padding:var(--space-3)}
+.stat__n{
+  font-family:var(--font-display);font-weight:900;font-size:clamp(2.5rem,6vw,3.75rem);
+  line-height:1;letter-spacing:-.03em;color:var(--primary);
+  font-variant-numeric:tabular-nums;
+}
+.stat__l{
+  display:block;margin-top:6px;font-family:var(--font-display);font-weight:600;
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-muted);
+}
+
+/* ---------- marquee ---------- */
+.marquee{
+  border-block:1px solid var(--border);overflow:hidden;padding:var(--space-2) 0;
+  background:var(--surface);
+}
+.marquee__track{display:flex;width:max-content;gap:var(--space-4);animation:slide 32s linear infinite}
+.marquee__track span{
+  font-family:var(--font-display);font-weight:800;font-size:clamp(1.25rem,3vw,2rem);
+  text-transform:uppercase;letter-spacing:.06em;color:var(--fg-muted);white-space:nowrap;
+}
+.marquee__track span.dot{color:var(--primary)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- generic section ---------- */
+.section{padding:clamp(56px,9vw,var(--space-8)) 0}
+.section--surface{background:var(--surface)}
+.section__head{margin-bottom:clamp(32px,5vw,var(--space-5));max-width:62ch}
+.section__head .lede{margin-top:var(--space-2)}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:var(--space-2)}
+.grid--classes{grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))}
+.grid--coaches{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.grid--quotes{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+
+.card{
+  background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
+  padding:var(--space-3);display:flex;flex-direction:column;gap:12px;
+  transition:border-color var(--t) var(--ease),background var(--t) var(--ease);
+}
+.section--surface .card{background:var(--surface-2)}
+.card:hover{border-color:var(--primary)}
+.card__icon{
+  width:48px;height:48px;border-radius:var(--radius);flex:none;
+  display:grid;place-items:center;background:rgba(249,115,22,.14);color:var(--primary);
+}
+.card__icon .icon{width:26px;height:26px}
+.card h3{
+  font-family:var(--font-display);font-weight:800;text-transform:uppercase;
+  letter-spacing:.02em;font-size:clamp(1.375rem,2.4vw,1.75rem);line-height:1.05;margin:0;
+}
+.card p{margin:0;color:var(--fg-muted);font-size:15.5px}
+.card__meta{
+  margin-top:auto;padding-top:12px;border-top:1px solid var(--border);
+  display:flex;flex-wrap:wrap;gap:8px 18px;
+  font-family:var(--font-display);font-weight:600;font-size:13px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--fg-muted);
+  font-variant-numeric:tabular-nums;
+}
+.card__meta .icon{width:15px;height:15px;margin-right:6px;vertical-align:-2px;color:var(--primary)}
+
+/* ---------- timetable ---------- */
+.table-wrap{
+  overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);
+  -webkit-overflow-scrolling:touch;
+}
+table{border-collapse:collapse;width:100%;min-width:560px;font-variant-numeric:tabular-nums}
+caption{text-align:left;padding:var(--space-2);color:var(--fg-muted);font-size:14.5px}
+th,td{padding:14px var(--space-2);text-align:left;border-bottom:1px solid var(--border)}
+thead th{
+  background:var(--surface-2);font-family:var(--font-display);font-weight:700;
+  text-transform:uppercase;letter-spacing:.14em;font-size:13px;color:var(--fg);
+  position:sticky;top:0;
+}
+tbody tr:last-child td{border-bottom:0}
+td .slot{font-weight:600}
+td .coach{color:var(--fg-muted);font-size:14.5px}
+.tag{
+  display:inline-block;padding:3px 10px;border-radius:999px;
+  font-family:var(--font-display);font-weight:700;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.tag--open{background:rgba(34,197,94,.16);color:#4ADE80}
+.tag--few{background:rgba(249,115,22,.16);color:#FB923C}
+.tag--full{background:rgba(148,163,184,.16);color:#CBD5E1}
+.table-note{margin-top:12px;color:var(--fg-muted);font-size:14.5px}
+
+/* ---------- pricing ---------- */
+.grid--price{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.price{
+  background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
+  padding:var(--space-3);display:flex;flex-direction:column;gap:var(--space-2);
+}
+.price--featured{border-color:var(--primary);border-width:2px;position:relative}
+.price__flag{
+  position:absolute;top:-13px;left:var(--space-3);background:var(--primary);color:var(--on-primary);
+  font-family:var(--font-display);font-weight:800;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;padding:4px 12px;border-radius:2px;
+}
+.price h3{
+  font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+  letter-spacing:.16em;font-size:15px;color:var(--fg-muted);margin:0;
+}
+.price__amt{
+  font-family:var(--font-display);font-weight:900;line-height:1;letter-spacing:-.03em;
+  font-size:clamp(3rem,7vw,4.25rem);font-variant-numeric:tabular-nums;
+}
+.price__amt small{font-size:.35em;font-weight:600;color:var(--fg-muted);letter-spacing:.1em}
+.price ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.price li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;color:var(--fg-muted)}
+.price li .icon{width:19px;height:19px;flex:none;color:var(--accent);margin-top:3px}
+.price .btn{margin-top:auto}
+
+/* ---------- quotes ---------- */
+.quote{
+  background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--primary);
+  border-radius:var(--radius);padding:var(--space-3);display:flex;flex-direction:column;gap:var(--space-2);
+}
+.quote blockquote{margin:0;font-size:17px;line-height:1.6}
+.quote figcaption{
+  display:flex;align-items:center;gap:12px;margin-top:auto;
+  font-family:var(--font-display);font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;font-size:13px;color:var(--fg-muted);
+}
+.avatar{
+  width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:var(--surface-2);color:var(--primary);
+  font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:.04em;
+}
+
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--border);max-width:78ch}
+.faq details{border-bottom:1px solid var(--border)}
+.faq summary{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);
+  min-height:var(--tap);padding:var(--space-2) 0;cursor:pointer;list-style:none;
+  font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+  letter-spacing:.04em;font-size:clamp(1.0625rem,2vw,1.3125rem);
+  transition:color var(--t) var(--ease);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--primary)}
+.faq summary .chev{
+  width:22px;height:22px;flex:none;color:var(--primary);
+  transition:transform var(--t) var(--ease);
+}
+.faq details[open] summary .chev{transform:rotate(45deg)}
+.faq p{margin:0 0 var(--space-2);color:var(--fg-muted);max-width:66ch}
+
+/* ---------- final cta ---------- */
+.cta{background:var(--primary);color:var(--on-primary);text-align:center}
+.cta .section-title{color:var(--on-primary)}
+.cta p{color:rgba(15,23,42,.78);margin:var(--space-2) auto 0;max-width:52ch;font-size:17px}
+.cta__row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:var(--space-4)}
+.cta .btn--dark{background:var(--on-primary);color:#fff;border-color:var(--on-primary)}
+.cta .btn--dark:hover{background:#1E293B;border-color:#1E293B}
+.cta .btn--outline{border-color:rgba(15,23,42,.4);color:var(--on-primary)}
+.cta .btn--outline:hover{background:rgba(15,23,42,.1);border-color:var(--on-primary)}
+
+/* ---------- footer ---------- */
+.footer{background:var(--bg);padding-top:clamp(48px,7vw,80px)}
+.footer__top{
+  display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:space-between;
+  padding-bottom:var(--space-4);
+}
+.footer__links{display:flex;flex-wrap:wrap;gap:8px clamp(20px,3.5vw,44px);list-style:none;margin:0;padding:0}
+.footer__links a{
+  display:inline-flex;align-items:center;min-height:var(--tap);
+  font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+  letter-spacing:.16em;font-size:14px;color:var(--fg-muted);
+  transition:color var(--t) var(--ease);
+}
+.footer__links a:hover{color:var(--primary)}
+.footer__links .icon{width:17px;height:17px;margin-right:8px}
+.footer__bar{
+  border-top:1px solid var(--border);padding:var(--space-2) 0 var(--space-4);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-size:14.5px;color:var(--fg-muted);
+}
+
+/* ---------- scroll reveal ----------
+   JS adds .r to elements so a no-JS visitor never gets hidden content. */
+.r{opacity:0;transform:translateY(14px);transition:opacity 360ms var(--ease),transform 360ms var(--ease)}
+.r.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
+  }
+  .marquee__track{animation:none;transform:none}
+  .r{opacity:1;transform:none}
+}
+</style>
+</head>
+<body id="top">
+
+<a class="skip" href="#main" data-i18n="skip">Skip to main content</a>
+
+<!-- icon sprite: stroke-based, single family, uniform 1.75 stroke -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <g id="i-bolt" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>
+    </g>
+    <g id="i-target" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/>
+    </g>
+    <g id="i-pulse" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 12h4l2.5-7 4 14L15.5 12H22"/>
+    </g>
+    <g id="i-user" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>
+    </g>
+    <g id="i-clock" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/>
+    </g>
+    <g id="i-users" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 19.5a6.5 6.5 0 0 1 13 0"/><path d="M16 5.2a3.5 3.5 0 0 1 0 6.6M17.5 14.4a6.5 6.5 0 0 1 4 5.1"/>
+    </g>
+    <g id="i-check" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m4 12.5 5 5L20 6.5"/>
+    </g>
+    <g id="i-arrow" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 12h16m-6-6 6 6-6 6"/>
+    </g>
+    <g id="i-plus" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12h14"/>
+    </g>
+    <g id="i-phone" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3Z"/>
+    </g>
+    <g id="i-chat" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8 8 0 0 1-11.6 7.1L3 20.5l1.9-6.2A8 8 0 1 1 21 11.5Z"/>
+    </g>
+    <g id="i-ig" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none"/>
+    </g>
+    <g id="i-pin" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>
+    </g>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <span data-i18n="bar">New here? Your first class is £10.</span>
+  &nbsp;·&nbsp;
+  <a href="#pricing" data-i18n="barLink">See intro offer</a>
+</div>
+
+<nav class="nav" id="nav" data-open="false">
+  <div class="nav__inner">
+    <a class="brand" href="#top">
+      <span class="brand__mark">VOLT</span>
+      <span class="brand__sub" data-i18n="brandSub">Reformer Lab</span>
+    </a>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navmenu" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav__menu" id="navmenu">
+      <ul class="nav__links">
+        <li><a href="#classes"   data-i18n="navClasses">Classes</a></li>
+        <li><a href="#timetable" data-i18n="navTimetable">Timetable</a></li>
+        <li><a href="#coaches"   data-i18n="navCoaches">Coaches</a></li>
+        <li><a href="#pricing"   data-i18n="navPricing">Pricing</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="lang" id="lang" title="Language / Idioma">
+          <span data-lang-chip="en" data-on="true">EN</span>
+          <span data-lang-chip="es" data-on="false">ES</span>
+        </button>
+        <a class="btn btn--primary" href="#pricing" data-i18n="navBook">Book a class</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ══ hero ══ -->
+  <header class="hero shell">
+    <p class="eyebrow" data-i18n="heroEyebrow">Reformer Pilates · Hackney, London</p>
+    <h1 class="display hero__title">
+      <span data-i18n="heroL1">Reformer.</span>
+      <span class="accentline" data-i18n="heroL2">Redefined.</span>
+    </h1>
+    <div class="hero__body">
+      <p class="lede" data-i18n="heroLede">Eight people. Forty-five minutes. No mirrors, no queue for the machine, no guesswork — just a coach who knows your name and what you did last week.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#pricing">
+          <span data-i18n="ctaBook">Book your first class</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#timetable" data-i18n="ctaTimetable">See the timetable</a>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span class="stat__n">8</span><span class="stat__l" data-i18n="stat1">Max per class</span></div>
+      <div class="stat"><span class="stat__n">45</span><span class="stat__l" data-i18n="stat2">Minute sessions</span></div>
+      <div class="stat"><span class="stat__n">62</span><span class="stat__l" data-i18n="stat3">Classes weekly</span></div>
+      <div class="stat"><span class="stat__n">6</span><span class="stat__l" data-i18n="stat4">Coaches on staff</span></div>
+    </div>
+  </header>
+
+  <!-- ══ marquee ══ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Power</span><span class="dot">/</span><span>Control</span><span class="dot">/</span><span>Precision</span><span class="dot">/</span><span>Breath</span><span class="dot">/</span>
+      <span>Power</span><span class="dot">/</span><span>Control</span><span class="dot">/</span><span>Precision</span><span class="dot">/</span><span>Breath</span><span class="dot">/</span>
+    </div>
+  </div>
+
+  <!-- ══ classes ══ -->
+  <section class="section" id="classes">
+    <div class="shell">
+      <div class="section__head">
+        <p class="eyebrow" data-i18n="classesEyebrow">The classes</p>
+        <h2 class="section-title" data-i18n="classesTitle">Four ways to work</h2>
+        <p class="lede" data-i18n="classesLede">Every class runs on a reformer. What changes is the tempo, the load, and how much of it you spend upside down.</p>
+      </div>
+
+      <div class="grid grid--classes">
+        <article class="card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-pulse"/></svg></div>
+          <h3 data-i18n="c1t">Reformer 45</h3>
+          <p data-i18n="c1d">The core session. Full-body, spring-loaded, steady tempo. Start here whatever your background.</p>
+          <div class="card__meta">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>45 min</span>
+            <span><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="lvlAll">All levels</span></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></div>
+          <h3 data-i18n="c2t">Jumpboard HIIT</h3>
+          <p data-i18n="c2d">Cardio on the carriage. Intervals against the springs — the knees stay happy, the lungs do not.</p>
+          <div class="card__meta">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>45 min</span>
+            <span><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="lvlInt">Intermediate</span></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></div>
+          <h3 data-i18n="c3t">Precision</h3>
+          <p data-i18n="c3d">Slow, heavy, unforgiving. Fewer reps, longer holds, and a coach correcting millimetres.</p>
+          <div class="card__meta">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>50 min</span>
+            <span><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="lvlAdv">Advanced</span></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></div>
+          <h3 data-i18n="c4t">One to one</h3>
+          <p data-i18n="c4d">Private session built around an injury, a goal, or a competition date. Assessment included.</p>
+          <div class="card__meta">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>60 min</span>
+            <span><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="lvlPriv">Private</span></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ timetable ══ -->
+  <section class="section section--surface" id="timetable">
+    <div class="shell">
+      <div class="section__head">
+        <p class="eyebrow" data-i18n="ttEyebrow">This week</p>
+        <h2 class="section-title" data-i18n="ttTitle">Timetable</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption data-i18n="ttCaption">Monday to Thursday. Weekend timetable released each Friday.</caption>
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="thTime">Time</th>
+              <th scope="col" data-i18n="thClass">Class</th>
+              <th scope="col" data-i18n="thCoach">Coach</th>
+              <th scope="col" data-i18n="thSpaces">Spaces</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="slot">06:30</td><td data-i18n="c1t">Reformer 45</td><td class="coach">Nadia R.</td>
+              <td><span class="tag tag--few" data-i18n="tagFew">2 left</span></td>
+            </tr>
+            <tr>
+              <td class="slot">07:30</td><td data-i18n="c2t">Jumpboard HIIT</td><td class="coach">Marcus O.</td>
+              <td><span class="tag tag--full" data-i18n="tagFull">Waitlist</span></td>
+            </tr>
+            <tr>
+              <td class="slot">09:15</td><td data-i18n="c1t">Reformer 45</td><td class="coach">Priya S.</td>
+              <td><span class="tag tag--open" data-i18n="tagOpen">Open</span></td>
+            </tr>
+            <tr>
+              <td class="slot">12:15</td><td data-i18n="c3t">Precision</td><td class="coach">Nadia R.</td>
+              <td><span class="tag tag--few" data-i18n="tagFew">2 left</span></td>
+            </tr>
+            <tr>
+              <td class="slot">17:45</td><td data-i18n="c2t">Jumpboard HIIT</td><td class="coach">Marcus O.</td>
+              <td><span class="tag tag--open" data-i18n="tagOpen">Open</span></td>
+            </tr>
+            <tr>
+              <td class="slot">19:00</td><td data-i18n="c1t">Reformer 45</td><td class="coach">Priya S.</td>
+              <td><span class="tag tag--open" data-i18n="tagOpen">Open</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note" data-i18n="ttNote">Cancel free up to 12 hours before. Late cancellations use the class credit.</p>
+    </div>
+  </section>
+
+  <!-- ══ coaches ══ -->
+  <section class="section" id="coaches">
+    <div class="shell">
+      <div class="section__head">
+        <p class="eyebrow" data-i18n="coachEyebrow">Who you'll train with</p>
+        <h2 class="section-title" data-i18n="coachTitle">The coaches</h2>
+      </div>
+
+      <div class="grid grid--coaches">
+        <article class="card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></div>
+          <h3>Nadia Roussos</h3>
+          <p data-i18n="coach1">Founder. Twelve years on the reformer, six of them rehabilitating dancers at Sadler's Wells.</p>
+          <div class="card__meta"><span data-i18n="coach1r">Founder · Precision</span></div>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></div>
+          <h3>Marcus Owusu</h3>
+          <p data-i18n="coach2">Ex-sprint coach. Runs the jumpboard sessions and every 06:30 you'll regret booking.</p>
+          <div class="card__meta"><span data-i18n="coach2r">Jumpboard · Athletic</span></div>
+        </article>
+        <article class="card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-pulse"/></svg></div>
+          <h3>Priya Sandhu</h3>
+          <p data-i18n="coach3">Pre and postnatal specialist. Calmest voice in the building, hardest classes to finish.</p>
+          <div class="card__meta"><span data-i18n="coach3r">Reformer · Prenatal</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ pricing ══ -->
+  <section class="section section--surface" id="pricing">
+    <div class="shell">
+      <div class="section__head">
+        <p class="eyebrow" data-i18n="priceEyebrow">No contracts</p>
+        <h2 class="section-title" data-i18n="priceTitle">Pricing</h2>
+        <p class="lede" data-i18n="priceLede">Credits never expire while your membership is active. Cancel any month, keep what you paid for.</p>
+      </div>
+
+      <div class="grid grid--price">
+        <div class="price">
+          <h3 data-i18n="p1t">Drop-in</h3>
+          <p class="price__amt">£26</p>
+          <ul>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p1f1">Any class on the timetable</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p1f2">Grip socks included</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p1f3">No commitment</span></li>
+          </ul>
+          <a class="btn btn--ghost" href="#contact" data-i18n="p1c">Book a single class</a>
+        </div>
+
+        <div class="price price--featured">
+          <span class="price__flag" data-i18n="pFlag">Most popular</span>
+          <h3 data-i18n="p2t">Ten pack</h3>
+          <p class="price__amt">£220</p>
+          <ul>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p2f1">£22 per class</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p2f2">Valid twelve months</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p2f3">Shareable with one guest</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p2f4">Priority waitlist</span></li>
+          </ul>
+          <a class="btn btn--primary" href="#contact" data-i18n="p2c">Buy the pack</a>
+        </div>
+
+        <div class="price">
+          <h3 data-i18n="p3t">Unlimited</h3>
+          <p class="price__amt">£180<small> /mo</small></p>
+          <ul>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p3f1">Every class, every day</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p3f2">Two guest passes monthly</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p3f3">15% off one-to-ones</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="p3f4">Cancel any month</span></li>
+          </ul>
+          <a class="btn btn--ghost" href="#contact" data-i18n="p3c">Start the month</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ testimonials ══ -->
+  <section class="section">
+    <div class="shell">
+      <div class="section__head">
+        <p class="eyebrow" data-i18n="quoteEyebrow">Members</p>
+        <h2 class="section-title" data-i18n="quoteTitle">What they say</h2>
+      </div>
+      <div class="grid grid--quotes">
+        <figure class="quote">
+          <blockquote data-i18n="q1">"I came in with a disc injury and a physio's note. Eight months later I'm doing the jumpboard class. Nobody rushed me."</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">HL</span><span>Hannah L. · <span data-i18n="q1m">Member since 2024</span></span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote data-i18n="q2">"Eight people means the coach actually watches you. I've been to studios with thirty reformers and never been corrected once."</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">DA</span><span>Dami A. · <span data-i18n="q2m">Ten-pack member</span></span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote data-i18n="q3">"The 06:30 is the only reason I'm awake before my inbox. Marcus is relentless and I've stopped resenting him for it."</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">SK</span><span>Sofia K. · <span data-i18n="q3m">Unlimited member</span></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ faq ══ -->
+  <section class="section section--surface">
+    <div class="shell">
+      <div class="section__head">
+        <p class="eyebrow" data-i18n="faqEyebrow">Before you book</p>
+        <h2 class="section-title" data-i18n="faqTitle">Questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary><span data-i18n="f1q">I've never used a reformer. Is that a problem?</span><svg class="chev" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p data-i18n="f1a">No. Book Reformer 45 and tell us at the desk. The coach sets your springs, walks you through the carriage before class, and keeps an eye on you throughout. Roughly a third of any given class is in their first month.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="f2q">What should I bring?</span><svg class="chev" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p data-i18n="f2a">Yourself and a water bottle. Grip socks are required and included free on your first visit; after that they're £12 or bring your own. Showers, towels and lockers are in the studio.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="f3q">Can I train while pregnant?</span><svg class="chev" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p data-i18n="f3a">Yes, with clearance from your midwife or GP. Priya runs the prenatal-adapted Reformer 45 slots and will adjust springs and positions each trimester. Please tell us before you book so we can allocate the right machine.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="f4q">How late can I cancel?</span><svg class="chev" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p data-i18n="f4a">Twelve hours before the class starts, free of charge, from the app or by message. Inside twelve hours the credit is used — with eight spaces per class we can rarely refill a late drop.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="f5q">Is there parking?</span><svg class="chev" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p data-i18n="f5a">Two bays behind the building on a first-come basis, plus free street parking after 18:30. London Fields station is a seven-minute walk and there's covered bike storage at the front.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ final cta ══ -->
+  <section class="section cta" id="contact">
+    <div class="shell">
+      <h2 class="section-title" data-i18n="ctaTitle">First class is £10</h2>
+      <p data-i18n="ctaLede">Come and try it. If it isn't for you, that's the end of it — no membership call, no follow-up sequence.</p>
+      <div class="cta__row">
+        <a class="btn btn--dark" href="https://wa.me/447700900123">
+          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+          <span data-i18n="ctaWa">Book on WhatsApp</span>
+        </a>
+        <a class="btn btn--outline" href="tel:+442079460123">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+          <span data-i18n="ctaCall">Call the studio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__top">
+      <div>
+        <div class="brand" style="margin-bottom:6px">
+          <span class="brand__mark">VOLT</span>
+          <span class="brand__sub" data-i18n="brandSub">Reformer Lab</span>
+        </div>
+        <p style="margin:0;color:var(--fg-muted);max-width:34ch" data-i18n="footTag">Reformer pilates in Hackney. Eight people, forty-five minutes, no mirrors.</p>
+      </div>
+      <ul class="footer__links">
+        <li><a href="#classes"   data-i18n="navClasses">Classes</a></li>
+        <li><a href="#pricing"   data-i18n="navPricing">Pricing</a></li>
+        <li><a href="#timetable" data-i18n="navTimetable">Timetable</a></li>
+        <li><a href="https://wa.me/447700900123"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</a></li>
+        <li><a href="https://instagram.com/volt.pilates" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg>Instagram</a></li>
+      </ul>
+    </div>
+    <div class="footer__bar">
+      <span data-i18n="copy">© 2026 VOLT Pilates. Demo site.</span>
+      <span><svg class="icon" aria-hidden="true" style="width:15px;height:15px;vertical-align:-2px;margin-right:6px"><use href="#i-pin"/></svg>41 Mare Street, Hackney · London E8</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- i18n ---------- */
+  var DICT = {
+    es: {
+      skip:'Saltar al contenido principal',
+      bar:'¿Primera vez? Tu primera clase cuesta 10 £.', barLink:'Ver oferta de bienvenida',
+      brandSub:'Laboratorio Reformer',
+      navClasses:'Clases', navTimetable:'Horario', navCoaches:'Entrenadores', navPricing:'Precios', navBook:'Reservar clase',
+
+      heroEyebrow:'Pilates reformer · Hackney, Londres',
+      heroL1:'Reformer.', heroL2:'Redefinido.',
+      heroLede:'Ocho personas. Cuarenta y cinco minutos. Sin espejos, sin colas para la máquina y sin adivinar — solo un entrenador que sabe tu nombre y lo que hiciste la semana pasada.',
+      ctaBook:'Reserva tu primera clase', ctaTimetable:'Ver el horario',
+      stat1:'Máximo por clase', stat2:'Minutos por sesión', stat3:'Clases semanales', stat4:'Entrenadores',
+
+      classesEyebrow:'Las clases', classesTitle:'Cuatro formas de entrenar',
+      classesLede:'Todas las clases se hacen en reformer. Lo que cambia es el ritmo, la carga y cuánto tiempo pasas boca abajo.',
+      c1t:'Reformer 45', c1d:'La sesión base. Cuerpo completo, con muelles, ritmo constante. Empieza aquí sea cual sea tu nivel.',
+      c2t:'Jumpboard HIIT', c2d:'Cardio sobre el carro. Intervalos contra los muelles — las rodillas lo agradecen, los pulmones no.',
+      c3t:'Precisión', c3d:'Lento, pesado, implacable. Menos repeticiones, más tiempo en tensión y un entrenador corrigiendo milímetros.',
+      c4t:'Individual', c4d:'Sesión privada centrada en una lesión, un objetivo o una fecha de competición. Valoración incluida.',
+      lvlAll:'Todos los niveles', lvlInt:'Intermedio', lvlAdv:'Avanzado', lvlPriv:'Privada',
+
+      ttEyebrow:'Esta semana', ttTitle:'Horario',
+      ttCaption:'De lunes a jueves. El horario del fin de semana se publica cada viernes.',
+      thTime:'Hora', thClass:'Clase', thCoach:'Entrenador', thSpaces:'Plazas',
+      tagOpen:'Libre', tagFew:'Quedan 2', tagFull:'Lista de espera',
+      ttNote:'Cancela gratis hasta 12 horas antes. Las cancelaciones tardías consumen el crédito.',
+
+      coachEyebrow:'Con quién entrenas', coachTitle:'Los entrenadores',
+      coach1:'Fundadora. Doce años sobre el reformer, seis de ellos rehabilitando bailarines en Sadler’s Wells.',
+      coach1r:'Fundadora · Precisión',
+      coach2:'Ex entrenador de velocidad. Lleva las sesiones de jumpboard y cada 06:30 que lamentarás haber reservado.',
+      coach2r:'Jumpboard · Atlético',
+      coach3:'Especialista pre y posparto. La voz más tranquila del edificio y las clases más duras de terminar.',
+      coach3r:'Reformer · Prenatal',
+
+      priceEyebrow:'Sin contratos', priceTitle:'Precios',
+      priceLede:'Los créditos no caducan mientras tu suscripción esté activa. Cancela cualquier mes y conserva lo que pagaste.',
+      p1t:'Clase suelta', p1f1:'Cualquier clase del horario', p1f2:'Calcetines antideslizantes incluidos', p1f3:'Sin compromiso', p1c:'Reservar una clase',
+      pFlag:'Más popular',
+      p2t:'Bono de diez', p2f1:'22 £ por clase', p2f2:'Válido doce meses', p2f3:'Compartible con un invitado', p2f4:'Lista de espera prioritaria', p2c:'Comprar el bono',
+      p3t:'Ilimitado', p3f1:'Todas las clases, todos los días', p3f2:'Dos pases de invitado al mes', p3f3:'15 % en sesiones individuales', p3f4:'Cancela cualquier mes', p3c:'Empezar el mes',
+
+      quoteEyebrow:'Socios', quoteTitle:'Lo que dicen',
+      q1:'«Llegué con una hernia discal y un informe del fisio. Ocho meses después hago la clase de jumpboard. Nadie me metió prisa.»',
+      q1m:'Socia desde 2024',
+      q2:'«Ocho personas significa que el entrenador te mira de verdad. He ido a estudios con treinta reformers y no me corrigieron ni una vez.»',
+      q2m:'Bono de diez',
+      q3:'«La de 06:30 es la única razón por la que me levanto antes que mi bandeja de entrada. Marcus es implacable y ya he dejado de guardarle rencor.»',
+      q3m:'Socia ilimitada',
+
+      faqEyebrow:'Antes de reservar', faqTitle:'Preguntas',
+      f1q:'Nunca he usado un reformer. ¿Es un problema?',
+      f1a:'No. Reserva Reformer 45 y avísanos en recepción. El entrenador ajusta tus muelles, te explica el carro antes de empezar y te sigue durante toda la clase. Aproximadamente un tercio de cada clase está en su primer mes.',
+      f2q:'¿Qué tengo que llevar?',
+      f2a:'A ti y una botella de agua. Los calcetines antideslizantes son obligatorios y van incluidos gratis en tu primera visita; después cuestan 12 £ o traes los tuyos. Hay duchas, toallas y taquillas en el estudio.',
+      f3q:'¿Puedo entrenar durante el embarazo?',
+      f3a:'Sí, con el visto bueno de tu matrona o médico. Priya lleva las franjas de Reformer 45 adaptadas al prenatal y ajusta muelles y posiciones en cada trimestre. Avísanos antes de reservar para asignarte la máquina adecuada.',
+      f4q:'¿Hasta cuándo puedo cancelar?',
+      f4a:'Hasta doce horas antes del inicio, sin coste, desde la app o por mensaje. Dentro de esas doce horas se consume el crédito — con ocho plazas por clase casi nunca podemos cubrir una baja tardía.',
+      f5q:'¿Hay aparcamiento?',
+      f5a:'Dos plazas detrás del edificio por orden de llegada, más aparcamiento libre en la calle a partir de las 18:30. La estación de London Fields está a siete minutos a pie y hay aparcamiento cubierto para bicis en la entrada.',
+
+      ctaTitle:'La primera clase cuesta 10 £',
+      ctaLede:'Ven a probarla. Si no es lo tuyo, ahí queda — sin llamada de ventas ni secuencia de seguimiento.',
+      ctaWa:'Reservar por WhatsApp', ctaCall:'Llamar al estudio',
+
+      footTag:'Pilates reformer en Hackney. Ocho personas, cuarenta y cinco minutos, sin espejos.',
+      copy:'© 2026 VOLT Pilates. Sitio de demostración.'
+    }
+  };
+
+  var nodes = [].slice.call(document.querySelectorAll('[data-i18n]'));
+  var EN = {};
+  nodes.forEach(function (n) { EN[n.getAttribute('data-i18n')] = n.textContent; });
+
+  function apply(lang) {
+    var d = lang === 'es' ? DICT.es : EN;
+    nodes.forEach(function (n) {
+      var k = n.getAttribute('data-i18n');
+      var v = (lang === 'es') ? (d[k] != null ? d[k] : EN[k]) : EN[k];
+      if (v != null) n.textContent = v;
+    });
+    document.documentElement.lang = lang;
+    [].forEach.call(document.querySelectorAll('[data-lang-chip]'), function (c) {
+      c.setAttribute('data-on', String(c.getAttribute('data-lang-chip') === lang));
+    });
+    try { localStorage.setItem('volt-lang', lang); } catch (e) {}
+  }
+
+  var saved = 'en';
+  try { saved = localStorage.getItem('volt-lang') || 'en'; } catch (e) {}
+  if (saved === 'es') apply('es');
+
+  document.getElementById('lang').addEventListener('click', function () {
+    apply(document.documentElement.lang === 'es' ? 'en' : 'es');
+  });
+
+  /* ---------- mobile nav ---------- */
+  var nav = document.getElementById('nav');
+  var burger = document.getElementById('burger');
+
+  function setOpen(open) {
+    nav.setAttribute('data-open', String(open));
+    burger.setAttribute('aria-expanded', String(open));
+  }
+  burger.addEventListener('click', function () {
+    setOpen(nav.getAttribute('data-open') !== 'true');
+  });
+  // a tap on any menu link closes the panel
+  [].forEach.call(document.querySelectorAll('#navmenu a'), function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+  // Escape closes and returns focus to the toggle
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.getAttribute('data-open') === 'true') {
+      setOpen(false); burger.focus();
+    }
+  });
+  // leaving the mobile breakpoint must not strand the panel in a hidden-open state
+  var mq = window.matchMedia('(min-width:901px)');
+  (mq.addEventListener ? mq.addEventListener.bind(mq, 'change') : mq.addListener.bind(mq))(function () {
+    if (mq.matches) setOpen(false);
+  });
+
+  /* ---------- scroll reveal ----------
+     Classes are added by JS, so without JS nothing is ever hidden. */
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced && 'IntersectionObserver' in window) {
+    var targets = [].slice.call(document.querySelectorAll(
+      '.section__head, .card, .price, .quote, .stats, .table-wrap, .faq details'));
+    targets.forEach(function (el) { el.classList.add('r'); });
+
+    var delivered = false;
+    var io = new IntersectionObserver(function (entries) {
+      delivered = true;
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        io.unobserve(en.target);          // play once, never re-trigger
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    targets.forEach(function (el) { io.observe(el); });
+
+    // Failsafe: an observer that never delivers would leave the whole page
+    // invisible. If nothing has arrived shortly after load, drop the effect
+    // entirely rather than risk hiding content.
+    setTimeout(function () {
+      if (delivered) return;
+      io.disconnect();
+      targets.forEach(function (el) { el.classList.remove('r'); });
+    }, 1500);
+  }
+})();
+</script>
+</body>
+</html>
