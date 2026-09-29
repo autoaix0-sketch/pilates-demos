@@ -1,0 +1,12 @@
+# Allowlist: only these files are ever committed to the public repo
+*
+!.gitignore
+!.nojekyll
+!index.html
+!demos.json
+!README.md
+!demos/
+!demos/**/
+!demos/**/index.html
+!img/
+!img/*.webp

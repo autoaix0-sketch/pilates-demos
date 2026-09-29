@@ -19,3 +19,5 @@ Live: https://autoaix0-sketch.github.io/pilates-demos/
 3. At the domain seller, add a `CNAME` record: `www` → `autoaix0-sketch.github.io`.
    For the bare domain, add `A` records to 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153.
 4. GitHub → repo → Settings → Pages: enter the domain, wait for the check, tick "Enforce HTTPS".
+
+`.gitignore` is an allowlist: only `index.html`, `demos.json`, `README.md`, `demos/**/index.html` and `img/*.webp` can be committed. Add new file types there on purpose.
