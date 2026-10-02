@@ -81,7 +81,7 @@ section{position:relative}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
 .logo svg{width:34px;height:34px;overflow:visible}
 .fx .logo .mk{opacity:0;transition:opacity .5s}.fx .logo.on .mk{opacity:1}
-.logo-word{max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:400 26px/1 var(--serif);letter-spacing:.14em;text-transform:uppercase}
+.logo-word{max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:400 calc(26px*var(--logo-scale,1))/1 var(--serif);letter-spacing:.14em;text-transform:uppercase}
 .nav-r{display:flex;align-items:center;gap:14px}
 .lang{display:flex;gap:2px;padding:3px;border-radius:99px;background:color-mix(in srgb,var(--white) 70%,transparent);box-shadow:inset 0 0 0 1px var(--line)}
 .lang button{border:0;background:transparent;padding:6px 10px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.06em;transition:background .3s,color .3s}
@@ -276,7 +276,7 @@ footer{background:var(--ink);color:color-mix(in srgb,var(--pearl) 82%,transparen
 }
 @media (max-width:760px){
   .pb-ph{width:96px}.pebble h3{margin-top:60px}.fd-card h3{max-width:none}.fd-ph{width:72px;right:14px;top:14px}
-  .nav-in{height:64px}.logo-word{font-size:21px}.nav .btn-sm{display:none}
+  .nav-in{height:64px}.logo-word{font-size:calc(21px*var(--logo-scale,1))}.nav .btn-sm{display:none}
   .hero-stage{min-height:620px}.hero-copy{padding-top:56px;gap:18px}
   .hero-title{font-size:clamp(58px,19vw,92px)}
   .hero-copy .lead{font-size:15.5px;max-width:30ch}
@@ -919,6 +919,7 @@ var PERSONA = null, DESIGN_NAME = STUDIO.name;
   if(!saved||(!saved.name&&!saved.mood)) return;
   PERSONA={ name:cleanName(saved.name), mood:((saved.mood|0)>=0&&(saved.mood|0)<n)?(saved.mood|0):0 };
   if(PERSONA.name){ STUDIO.name=PERSONA.name; STUDIO.personal=true; }
+  if(PERSONA.name){ var L=PERSONA.name.length; document.documentElement.style.setProperty("--logo-scale", L>22?.6:L>16?.72:L>11?.85:1); }   /* long names shrink the wordmark instead of being cut */
   var m=CONFIG.moods[PERSONA.mood];
   if(m){ for(var k in m.colors) document.documentElement.style.setProperty("--"+k,m.colors[k]);
     var tc=document.querySelector('meta[name="theme-color"]'); if(tc&&m.colors.pearl) tc.setAttribute("content",m.colors.pearl); }
