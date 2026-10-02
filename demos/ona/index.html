@@ -416,7 +416,7 @@ form.bk{margin-top:20px;display:grid;gap:14px}
       <a class="btn btn-clay" href="#horario"><span data-i18n="hero.cta">Ver horario y reservar</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-ghost js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
     </div>
-    <div class="proof"><span class="stars" id="proofStars" aria-hidden="true">★★★★★</span><span data-i18n="hero.proof">4,9 · 180 reseñas en Google</span></div>
+    <div class="proof"><span class="stars" id="proofStars" aria-hidden="true">★★★★★</span><span data-i18n="hero.proof">4,9 · 180 reseñas en Google</span><span class="tag" id="proofExample" data-i18n="hero.proofExample" hidden>Ejemplo</span></div>
   </div>
   <div class="hero-art">
     <div class="sun" aria-hidden="true"></div>
@@ -512,6 +512,7 @@ form.bk{margin-top:20px;display:grid;gap:14px}
 
 <section class="quotes"><div class="wrap" data-reveal>
   <p class="eyebrow" data-i18n="q.eyebrow">Lo que dicen</p>
+  <span class="tag" id="quotesExample" data-i18n="q.exampleBadge" hidden style="background:var(--white)">Reseñas de ejemplo</span>
   <p class="quote" id="quote"></p>
   <p class="q-who" id="quoteWho"></p>
   <div class="q-nav"><button type="button" id="qPrev" aria-label="←">←</button><span id="qIdx">1 / 3</span><button type="button" id="qNext" aria-label="→">→</button></div>
@@ -585,7 +586,9 @@ var CONFIG = {
   /* true while the weekly timetable is a placeholder, not the studio's real one */
   exampleSchedule: false,
   /* false hides the star icons next to hero.proof — set true only once you have a real rating to show */
-  showReviewStars: true
+  showReviewStars: true,
+  /* true labels the reviews and the rating as examples — for fictional demo studios only */
+  exampleReviews: true
 };
 
 /* ============ I18N ============ */
@@ -603,7 +606,7 @@ es:{
  "space.note":"desde 2019 en Gràcia","space.eyebrow":"El estudio","space.title":"Un antiguo taller, ahora <em>lleno de luz</em>.","space.text":"Techos altos, arcos de obra vista y ventanales al patio. Un espacio pensado para bajar el ritmo en mitad de la ciudad.","space.f1":"m² de sala","space.f2":"reformers","space.f3":"personas máx. por clase",
  "gal.eyebrow":"En imágenes","gal.title":"Luz de <em>mediodía</em>.","gal.swipe":"Desliza →",
  "team.eyebrow":"El equipo","team.title":"Manos que <em>saben</em>.","team.lead":"Instructoras certificadas, con años de sala y formación en rehabilitación y pre/postparto.","team.r1":"Fundadora · Reformer","team.b1":"Doce años enseñando pilates. Abrió ONA para tener el estudio en el que a ella le gustaría entrenar.","team.r2":"Mat · Prenatal","team.b2":"Especialista en embarazo y postparto. Sus clases de mat son las primeras en llenarse.","team.pe":"Clase privada","team.pt":"Una hora solo para ti.","team.pd":"Ideal para empezar, volver de una lesión o preparar un objetivo concreto.","team.pb":"Pedir por WhatsApp",
- "q.eyebrow":"Lo que dicen",
+ "q.eyebrow":"Lo que dicen","q.exampleBadge":"Reseñas de ejemplo","hero.proofExample":"Ejemplo",
  "p.eyebrow":"Tarifas","p.title":"Claras, <em>sin matrícula</em>.","p.lead":"Sin cuota de alta ni permanencia. Los bonos valen para reformer y mat.","p.pay":"Reserva online, paga en el estudio: tarjeta, Bizum o efectivo.","p.popular":"La más elegida","p.choose":"Reservar clase",
  "faq.eyebrow":"Preguntas","faq.title":"Antes de <em>venir</em>.",
  "final.eyebrow":"Tu primera clase","final.title":"Empieza <em>esta semana</em>.","final.text":"Clase de prueba por 12 €. Te explicamos el reformer desde cero.","final.cta":"Reservar mi clase","final.where":"Dónde","final.map":"Cómo llegar →","final.when":"Horario","final.hours":"Lun–Vie 7:30–21:00<br>Sáb 9:00–14:00","final.metro":"Metro","final.metroTxt":"L3 Fontana · 4 min a pie<br>L4 Joanic · 7 min a pie",
@@ -624,7 +627,7 @@ ca:{
  "space.note":"des del 2019 a Gràcia","space.eyebrow":"L'estudi","space.title":"Un antic taller, ara <em>ple de llum</em>.","space.text":"Sostres alts, arcs d'obra vista i finestrals al pati. Un espai pensat per baixar el ritme enmig de la ciutat.","space.f1":"m² de sala","space.f2":"reformers","space.f3":"persones màx. per classe",
  "gal.eyebrow":"En imatges","gal.title":"Llum de <em>migdia</em>.","gal.swipe":"Llisca →",
  "team.eyebrow":"L'equip","team.title":"Mans que <em>en saben</em>.","team.lead":"Instructores certificades, amb anys de sala i formació en rehabilitació i pre/postpart.","team.r1":"Fundadora · Reformer","team.b1":"Dotze anys ensenyant pilates. Va obrir ONA per tenir l'estudi on a ella li agradaria entrenar.","team.r2":"Mat · Prenatal","team.b2":"Especialista en embaràs i postpart. Les seves classes de mat són les primeres a omplir-se.","team.pe":"Classe privada","team.pt":"Una hora només per a tu.","team.pd":"Ideal per començar, tornar d'una lesió o preparar un objectiu concret.","team.pb":"Demanar per WhatsApp",
- "q.eyebrow":"El que diuen",
+ "q.eyebrow":"El que diuen","q.exampleBadge":"Ressenyes d’exemple","hero.proofExample":"Exemple",
  "p.eyebrow":"Tarifes","p.title":"Clares, <em>sense matrícula</em>.","p.lead":"Sense quota d'alta ni permanència. Els bons valen per a reformer i mat.","p.pay":"Reserva en línia, paga a l'estudi: targeta, Bizum o efectiu.","p.popular":"La més triada","p.choose":"Reservar classe",
  "faq.eyebrow":"Preguntes","faq.title":"Abans de <em>venir</em>.",
  "final.eyebrow":"La teva primera classe","final.title":"Comença <em>aquesta setmana</em>.","final.text":"Classe de prova per 12 €. T'expliquem el reformer des de zero.","final.cta":"Reservar la meva classe","final.where":"On","final.map":"Com arribar-hi →","final.when":"Horari","final.hours":"Dl–Dv 7:30–21:00<br>Ds 9:00–14:00","final.metro":"Metro","final.metroTxt":"L3 Fontana · 4 min a peu<br>L4 Joanic · 7 min a peu",
@@ -645,7 +648,7 @@ en:{
  "space.note":"in Gràcia since 2019","space.eyebrow":"The studio","space.title":"An old workshop, now <em>full of light</em>.","space.text":"High ceilings, brick arches and tall windows onto the courtyard. A space made for slowing down in the middle of the city.","space.f1":"m² studio","space.f2":"reformers","space.f3":"people max. per class",
  "gal.eyebrow":"In pictures","gal.title":"Midday <em>light</em>.","gal.swipe":"Swipe →",
  "team.eyebrow":"The team","team.title":"Hands that <em>know</em>.","team.lead":"Certified instructors with years on the floor and training in rehab and pre/postnatal.","team.r1":"Founder · Reformer","team.b1":"Twelve years teaching pilates. She opened ONA to be the studio she'd want to train in.","team.r2":"Mat · Prenatal","team.b2":"Pregnancy and postnatal specialist. Her mat classes are always the first to fill.","team.pe":"Private session","team.pt":"An hour just for you.","team.pd":"Ideal for starting out, coming back from an injury or working toward a specific goal.","team.pb":"Ask on WhatsApp",
- "q.eyebrow":"What people say",
+ "q.eyebrow":"What people say","q.exampleBadge":"Example reviews","hero.proofExample":"Example",
  "p.eyebrow":"Prices","p.title":"Simple, <em>no sign-up fee</em>.","p.lead":"No joining fee, no lock-in. Packs work for reformer and mat.","p.pay":"Book online, pay at the studio: card, Bizum or cash.","p.popular":"Most popular","p.choose":"Book a class",
  "faq.eyebrow":"Questions","faq.title":"Before you <em>come</em>.",
  "final.eyebrow":"Your first class","final.title":"Start <em>this week</em>.","final.text":"Trial class for €12. We'll explain the reformer from scratch.","final.cta":"Book my class","final.where":"Where","final.map":"Get directions →","final.when":"Hours","final.hours":"Mon–Fri 7:30–21:00<br>Sat 9:00–14:00","final.metro":"Metro","final.metroTxt":"L3 Fontana · 4 min walk<br>L4 Joanic · 7 min walk",
@@ -1087,6 +1090,7 @@ window.addEventListener("hashchange",checkHash);
 })();
 if(CONFIG.exampleSchedule){ var eb=document.getElementById("exampleBadge"); if(eb) eb.hidden=false; }
 if(!CONFIG.showReviewStars){ var ps=document.getElementById("proofStars"); if(ps) ps.hidden=true; }
+if(CONFIG.exampleReviews){ ["proofExample","quotesExample"].forEach(function(id){ var e=document.getElementById(id); if(e) e.hidden=false; }); }
 
 applyI18n(); observe();
 loadTimetable().then(checkHash);
