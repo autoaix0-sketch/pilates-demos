@@ -10,3 +10,7 @@
 !demos/**/index.html
 !img/
 !img/*.webp
+!demos/**/media/
+!demos/**/media/*.mp4
+!demos/**/media/*.webm
+!demos/**/media/*.webp

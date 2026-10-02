@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MALVA · Estudio de Pilates · Gràcia, Barcelona</title>
+<meta name="description" content="Pilates mat, reformer y prenatal en Gràcia, Barcelona. Clases pequeñas, luz suave. Reserva online en 20 segundos.">
+<meta name="theme-color" content="#F6F2FD">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23F9C9AE'/%3E%3Cg fill='%23A68BE0' opacity='.85'%3E%3Cellipse cx='16' cy='7' rx='4' ry='6'/%3E%3Cellipse cx='16' cy='25' rx='4' ry='6'/%3E%3Cellipse cx='7' cy='16' rx='6' ry='4'/%3E%3Cellipse cx='25' cy='16' rx='6' ry='4'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pearl:#F6F2FD;
+  --pearl-2:#ECE5FA;
+  --blush:#DCD0F5;
+  --blush-2:#C6B5EE;
+  --rose:#A68BE0;
+  --rose-d:#7F63C4;
+  --champ:#F9C9AE;
+  --champ-2:#FFE8B8;
+  --ink:#35294D;
+  --ink-2:#6F6489;
+  --line:#E4DCF3;
+  --white:#FFFDFF;
+  --peach:#F9C9AE;
+  --butter:#FFE8B8;
+  --pink:#F2A9BE;
+  --serif:"DM Serif Display",Georgia,serif; --sans:Nunito,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --sh-bg:var(--white);--sh-ink:var(--ink);--sh-muted:var(--ink-2);--sh-line:var(--line);--sh-soft:var(--pearl-2);
+  --sh-accent:var(--rose-d);--sh-accent-d:color-mix(in srgb,var(--rose-d) 82%,#000);--sh-ring:color-mix(in srgb,var(--rose) 30%,transparent);
+  --sh-glow:color-mix(in srgb,var(--peach) 60%,transparent);--sh-display:var(--serif);--sh-font:var(--sans);--sh-bad:#B5455A;--sh-errbg:#FBE3E8;--sh-field:#fff;--sh-r:22px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}
+body{margin:0;background:var(--pearl);color:var(--ink);font:400 16.5px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg,video,canvas{display:block;max-width:100%}
+button,input{font:inherit;color:inherit}button{cursor:pointer}a{color:inherit}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.02;margin:0}
+em{font-style:italic;color:var(--rose-d)}
+p{margin:0}
+:focus-visible{outline:2px solid var(--rose-d);outline-offset:3px;border-radius:10px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-d)}
+.eyebrow::before{content:"";width:26px;height:10px;border-radius:99px;background:linear-gradient(90deg,var(--peach),var(--blush-2))}
+.sec-title{font-size:clamp(40px,5.4vw,78px);margin-top:14px}
+.lead{font-size:clamp(16.5px,1.4vw,20px);color:var(--ink-2);max-width:46ch}
+section{position:relative}
+.space{padding:clamp(80px,11vw,150px) 0}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:16px 28px;font:700 15.5px/1 var(--sans);text-decoration:none;white-space:nowrap;transition:transform .4s var(--ease),box-shadow .4s,background .4s,color .4s;will-change:transform}
+.btn-main{background:var(--rose-d);color:#fff;box-shadow:0 14px 34px color-mix(in srgb,var(--rose) 45%,transparent)}
+.btn-main:hover{background:color-mix(in srgb,var(--rose-d) 84%,#000);box-shadow:0 20px 46px color-mix(in srgb,var(--rose) 55%,transparent)}
+.btn-line{background:color-mix(in srgb,var(--white) 60%,transparent);color:var(--ink);box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--rose) 45%,transparent);backdrop-filter:blur(8px)}
+.btn-line:hover{background:var(--white);box-shadow:inset 0 0 0 2px var(--rose-d)}
+.btn-sm{padding:11px 20px;font-size:14px}
+.btn:active{transform:scale(.96)}
+
+/* ---------- intro ---------- */
+.intro{position:fixed;inset:0;z-index:200;background:var(--pearl);display:grid;place-items:center;align-content:center;gap:18px;animation:introOut .8s 3.4s forwards}
+.intro svg{width:130px;height:130px;overflow:visible}
+.intro .ip{transform-box:fill-box;transform-origin:50% 100%;transform:scale(0) rotate(-40deg);opacity:0}
+.intro.play .ip{animation:bud 1.1s var(--ease) forwards}
+.intro.play .ip:nth-child(2){animation-delay:.1s}.intro.play .ip:nth-child(3){animation-delay:.2s}.intro.play .ip:nth-child(4){animation-delay:.3s}.intro.play .ip:nth-child(5){animation-delay:.4s}
+.intro .ic{fill:var(--peach);transform-box:fill-box;transform-origin:center;animation:corePulse 2.4s ease-in-out infinite}
+.intro-name{font:400 clamp(30px,6vw,46px)/1 var(--serif);letter-spacing:.18em;padding-left:.18em;color:var(--ink);opacity:0;transform:translateY(10px)}
+.intro.play .intro-name{animation:fadeUp 1s .7s var(--ease) forwards}
+.intro.out{animation:none;opacity:0;transform:scale(1.05);transition:opacity .8s var(--ease),transform .8s var(--ease);pointer-events:none}
+@keyframes bud{to{transform:none;opacity:1}}@keyframes fadeUp{to{opacity:1;transform:none}}@keyframes introOut{to{opacity:0;visibility:hidden}}
+@keyframes corePulse{50%{transform:scale(1.12)}}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .5s,box-shadow .5s}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.nav.scrolled{background:color-mix(in srgb,var(--pearl) 82%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:34px;height:34px;overflow:visible}
+.fx .logo .mk{opacity:0;transition:opacity .5s}.fx .logo.on .mk{opacity:1}
+.logo-word{max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:400 26px/1 var(--serif);letter-spacing:.14em;text-transform:uppercase}
+.nav-r{display:flex;align-items:center;gap:14px}
+.lang{display:flex;gap:2px;padding:3px;border-radius:99px;background:color-mix(in srgb,var(--white) 70%,transparent);box-shadow:inset 0 0 0 1px var(--line)}
+.lang button{border:0;background:transparent;padding:6px 10px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.06em;transition:background .3s,color .3s}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--pearl)}
+
+/* ---------- hero: breathing circle that blooms ---------- */
+.hero-pin{position:relative}
+.fx .hero-pin{height:260svh}
+.hero-stage{position:relative;height:100svh;min-height:640px;overflow:clip;isolation:isolate;display:grid;place-items:center;text-align:center;
+  background:radial-gradient(70% 60% at 20% 15%,color-mix(in srgb,var(--blush) 80%,transparent),transparent 70%),radial-gradient(60% 55% at 85% 85%,color-mix(in srgb,var(--champ-2) 80%,transparent),transparent 70%),var(--pearl)}
+.fx .hero-stage{position:sticky;top:0}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none;animation:floaty 16s ease-in-out infinite}
+.b1{width:40vw;height:40vw;left:-12vw;bottom:-10vw;background:var(--peach)}.b2{width:34vw;height:34vw;right:-8vw;top:-12vw;background:var(--blush-2);animation-delay:-8s}
+@keyframes floaty{50%{transform:translate3d(3vw,-3vw,0) scale(1.1)}}
+#petalsHero,#petalsFinal{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.flower-wrap{position:absolute;left:50%;top:50%;width:min(124vw,1020px);aspect-ratio:1;margin:calc(min(124vw,1020px)/-2) 0 0 calc(min(124vw,1020px)/-2);z-index:2;will-change:transform}
+.flower{width:100%;height:100%;overflow:visible}
+.pt{opacity:.94}
+.core{transform-box:fill-box;transform-origin:center;animation:breathe 8s ease-in-out infinite}
+.core-glow{transform-box:fill-box;transform-origin:center;animation:breathe 8s ease-in-out infinite;filter:blur(18px)}
+@keyframes breathe{0%,100%{transform:scale(.9)}50%{transform:scale(1.1)}}
+.fx .flower{opacity:0;transform:scale(.8)}.fx.go .flower{opacity:1;transform:none;transition:opacity 1.6s .1s var(--ease),transform 2s .1s var(--ease)}
+.hero-copy{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:20px;padding:70px 20px 56px;max-width:820px}
+.hero-title{font-size:clamp(60px,min(11vw,15.5svh),160px);line-height:.92;color:var(--ink)}
+.hero-title em{color:var(--rose-d)}
+.ln{display:block;overflow:hidden;padding:.06em .1em .14em;margin-bottom:-.14em}.ln>span{display:block}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.next-chip{display:inline-flex;align-items:center;gap:12px;border:0;background:color-mix(in srgb,var(--white) 72%,transparent);backdrop-filter:blur(10px);padding:11px 18px 11px 14px;border-radius:99px;font-size:14.5px;box-shadow:inset 0 0 0 1px var(--line);transition:transform .4s var(--ease),box-shadow .4s}
+.next-chip:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1.5px var(--rose),0 10px 30px color-mix(in srgb,var(--rose) 22%,transparent)}
+.next-chip[hidden]{display:none}.next-chip b{font-weight:800}
+.next-chip i{width:9px;height:9px;border-radius:50%;background:#58A56E;box-shadow:0 0 0 0 rgba(88,165,110,.5);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(88,165,110,0)}100%{box-shadow:0 0 0 0 rgba(88,165,110,0)}}
+.breath{position:absolute;z-index:4;left:50%;bottom:26px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;font-size:12.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2)}
+.breath .dot{width:12px;height:12px;border-radius:50%;background:var(--peach);animation:breathe 8s ease-in-out infinite;box-shadow:0 0 0 6px color-mix(in srgb,var(--peach) 40%,transparent)}
+.breath .lbl{position:relative;display:inline-grid;min-width:7ch;text-align:left}
+.breath .lbl span{grid-area:1/1;animation:inout 8s ease-in-out infinite;opacity:0}.breath .lbl span+span{animation-delay:-4s}
+@keyframes inout{0%,2%{opacity:0;transform:translateY(5px)}12%,42%{opacity:1;transform:none}52%,100%{opacity:0;transform:translateY(-5px)}}
+.fx .hero-title .ln>span{transform:translateY(112%) rotate(4deg)}
+.fx.go .hero-title .ln>span{transform:none;transition:transform 1.5s var(--ease)}
+.fx.go .hero-title .ln:nth-child(2)>span{transition-delay:.15s}.fx.go .hero-title .ln:nth-child(3)>span{transition-delay:.3s}
+.fx .hero-copy>:not(.hero-title){opacity:0;transform:translateY(20px)}
+.fx.go .hero-copy>:not(.hero-title){opacity:1;transform:none;transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.fx.go .hero-copy>:nth-child(1){transition-delay:.1s}.fx.go .hero-copy>:nth-child(3){transition-delay:.6s}.fx.go .hero-copy>:nth-child(4){transition-delay:.75s}.fx.go .hero-copy>:nth-child(5){transition-delay:.9s}
+.fx .breath{opacity:0}.fx.go .breath{opacity:1;transition:opacity 1s 1.4s}
+
+/* ---------- marquee ---------- */
+.marq{overflow:hidden;background:var(--rose-d);color:var(--pearl);padding:20px 0;transform:rotate(-1.2deg);margin:-14px -2vw 0;position:relative;z-index:5}
+.marq-track{display:flex;gap:44px;width:max-content;animation:marq 38s linear infinite;font:400 clamp(28px,4vw,48px)/1 var(--serif);white-space:nowrap}
+.marq-track span{display:inline-flex;align-items:center;gap:44px}.marq-track span::after{content:"✿";font-size:.6em;color:var(--champ)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ---------- finder ---------- */
+.finder{padding:clamp(100px,12vw,170px) 0 clamp(70px,9vw,120px)}
+.fd-box{margin-top:clamp(30px,4vw,54px);position:relative;border-radius:44px;padding:clamp(26px,4vw,52px);background:color-mix(in srgb,var(--white) 74%,transparent);box-shadow:inset 0 0 0 1.5px var(--line),0 40px 90px color-mix(in srgb,var(--rose) 14%,transparent);overflow:hidden;min-height:340px}
+.fd-box::before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--peach) 70%,transparent),transparent);pointer-events:none}
+.fd-prog{display:flex;gap:8px;margin-bottom:22px;position:relative}.fd-prog i{height:6px;flex:1;max-width:60px;border-radius:99px;background:var(--line);overflow:hidden;position:relative}
+.fd-prog i::after{content:"";position:absolute;inset:0;background:var(--rose-d);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}.fd-prog i.on::after{transform:none}
+.fd-q{font:400 clamp(28px,3.6vw,48px)/1.08 var(--serif);position:relative}
+.fd-a{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;position:relative}
+.fd-a button{border:0;border-radius:99px;padding:15px 26px;font:700 16px var(--sans);background:var(--pearl-2);box-shadow:inset 0 0 0 1.5px var(--line);transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .3s}
+.fd-a button:hover{transform:translateY(-3px);background:var(--rose-d);color:#fff;box-shadow:0 14px 30px color-mix(in srgb,var(--rose) 40%,transparent)}
+.fd-step{animation:rowIn .7s var(--ease)}
+@keyframes rowIn{from{opacity:0;transform:translateY(18px)}}
+.fd-res{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,4vw,50px);align-items:center;position:relative;animation:rowIn .8s var(--ease)}
+.fd-card{border-radius:36px;padding:30px;background:linear-gradient(150deg,var(--blush),var(--champ-2));box-shadow:0 30px 70px color-mix(in srgb,var(--rose) 28%,transparent);position:relative;overflow:hidden;animation:pop .9s var(--ease)}
+.fd-card::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;border-radius:50% 0 50% 0;background:color-mix(in srgb,var(--peach) 80%,transparent);filter:blur(2px)}
+@keyframes pop{from{opacity:0;transform:scale(.85) rotate(-4deg)}}
+.fd-card .lbl{font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-d)}
+.fd-card h3{font-size:clamp(38px,4.6vw,64px);margin:8px 0 10px;position:relative}.fd-card p{color:var(--ink-2);position:relative;max-width:34ch}
+.fd-next{font-size:15px}.fd-next b{display:block;font:400 30px/1.1 var(--serif);margin:6px 0 14px}.fd-res .cta-row{justify-content:flex-start;margin-top:8px}
+.fd-restart{border:0;background:none;text-decoration:underline;text-underline-offset:4px;color:var(--ink-2);font-weight:700;margin-top:14px;padding:0}
+
+/* ---------- classes (pebbles) ---------- */
+.pebbles{list-style:none;margin:clamp(30px,4vw,56px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pebble{position:relative;display:block;width:100%;text-align:left;border:0;padding:26px 24px 24px;border-radius:38px 38px 38px 8px;min-height:300px;overflow:hidden;color:var(--ink);background:var(--c1);
+  box-shadow:0 22px 50px color-mix(in srgb,var(--c2) 40%,transparent);transition:transform .7s var(--ease),border-radius .7s var(--ease),box-shadow .7s;transform-style:preserve-3d}
+.pebble:hover,.pebble:focus-visible{transform:translateY(-10px) rotate(-1.2deg);border-radius:8px 38px 38px 38px}
+.pebble::before{content:"";position:absolute;right:-50px;top:-50px;width:190px;height:190px;border-radius:50%;background:var(--c2);opacity:.5;filter:blur(8px);transition:transform .9s var(--ease)}.pebble:hover::before{transform:scale(1.35)}
+.pebble .ico{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.7);display:grid;place-items:center;position:relative;z-index:1}
+.pebble .ico svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pebble h3{font-size:34px;margin:50px 0 8px;position:relative;z-index:1}.pebble p{font-size:15px;color:color-mix(in srgb,var(--ink) 78%,transparent);position:relative;z-index:1;line-height:1.5}
+.pebble .meta{margin-top:14px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;position:relative;z-index:1;opacity:.75}
+.pebbles li:nth-child(1){--c1:var(--blush);--c2:var(--blush-2)}.pebbles li:nth-child(2){--c1:var(--champ-2);--c2:var(--peach)}.pebbles li:nth-child(3){--c1:color-mix(in srgb,var(--pink) 45%,var(--white));--c2:var(--pink)}.pebbles li:nth-child(4){--c1:var(--pearl-2);--c2:var(--rose)}
+
+/* ---------- timetable ---------- */
+.tt{background:linear-gradient(var(--pearl),var(--pearl-2) 18%,var(--pearl-2));overflow:clip}
+.tt-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:34px}
+.tag{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--blush);color:var(--rose-d)}
+.days{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.days::-webkit-scrollbar{display:none}
+.day{flex:0 0 auto;min-width:78px;padding:12px 10px 13px;border-radius:26px;border:0;background:color-mix(in srgb,var(--white) 76%,transparent);box-shadow:inset 0 0 0 1px var(--line);text-align:center;transition:transform .5s var(--ease),background .4s,color .4s,box-shadow .4s,border-radius .5s var(--ease)}
+.day small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.day b{display:block;font:400 30px/1.1 var(--serif)}
+.day:hover{transform:translateY(-3px)}
+.day[aria-pressed=true]{background:var(--rose-d);color:#fff;border-radius:999px;box-shadow:0 14px 30px color-mix(in srgb,var(--rose) 45%,transparent)}.day[aria-pressed=true] small{color:#fff;opacity:.85}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 24px}
+.chip{border:0;border-radius:99px;padding:9px 16px;font-size:14px;font-weight:700;background:transparent;box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--ink) 18%,transparent);transition:.3s}
+.chip:hover{box-shadow:inset 0 0 0 1.5px var(--rose)}.chip[aria-pressed=true]{background:var(--ink);color:var(--pearl);box-shadow:none}
+.sessions{display:grid;gap:12px}
+.sess{display:grid;grid-template-columns:104px 1fr auto auto;align-items:center;gap:18px;padding:18px 24px 18px 28px;border-radius:30px;background:color-mix(in srgb,var(--white) 82%,transparent);box-shadow:inset 0 0 0 1px var(--line);position:relative;overflow:hidden;animation:rowIn .8s var(--ease) both;transition:transform .5s var(--ease),box-shadow .5s}
+.sess::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:6px;border-radius:0 6px 6px 0;background:var(--blush-2)}
+.sess[data-k="mat"]::before{background:var(--blush-2)}.sess[data-k="reformer"]::before{background:var(--peach)}.sess[data-k="prenatal"]::before{background:var(--pink)}.sess[data-k="restore"]::before{background:var(--rose)}
+.sess:hover{transform:translateX(6px);box-shadow:inset 0 0 0 1.5px var(--blush-2),0 16px 40px color-mix(in srgb,var(--rose) 14%,transparent)}
+.sess .time{font:400 40px/1 var(--serif)}.sess .time small{display:block;font:700 12px var(--sans);color:var(--ink-2);margin-top:6px}
+.sess .cls{font:400 26px/1.1 var(--serif)}.sess .meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:5px;font-size:14px;color:var(--ink-2)}
+.dots{display:flex;gap:5px;flex-wrap:wrap;max-width:130px}.dots i{width:9px;height:9px;border-radius:50% 50% 50% 0;background:var(--rose-d);transform:rotate(-45deg)}.dots i.free{background:transparent;box-shadow:inset 0 0 0 1.5px var(--rose)}
+.sp-txt{font-size:13px;color:var(--rose-d);font-weight:700;margin-top:6px}.sp-txt.low{color:#B5455A}
+.sess .btn{padding:13px 22px;font-size:14.5px}
+.btn-mine{background:#58A56E;color:#fff}.btn-wait{background:var(--ink);color:var(--pearl)}.sess .btn-ghost{background:transparent;box-shadow:inset 0 0 0 1px var(--line);color:var(--ink-2)}
+.sess.past{opacity:.5}
+.empty,.skel{padding:34px 10px;text-align:center;color:var(--ink-2)}
+.skel i{display:block;height:84px;border-radius:30px;background:linear-gradient(90deg,var(--white),var(--blush),var(--white));background-size:200% 100%;animation:sk 1.4s linear infinite;margin-bottom:12px;opacity:.6}@keyframes sk{to{background-position:-200% 0}}
+.tt-note{margin-top:22px;font-size:14px;color:var(--ink-2);display:flex;gap:10px;align-items:center}.tt-note::before{content:"✿";color:var(--rose)}
+
+/* ---------- studio ---------- */
+.studio .grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.scene{position:relative;aspect-ratio:1;max-width:560px;width:100%}
+.scene .s{position:absolute;border-radius:50%}
+.scene .sun{inset:6% 8% 28% 30%;background:radial-gradient(circle at 40% 40%,var(--champ-2),var(--peach));box-shadow:0 0 90px color-mix(in srgb,var(--peach) 80%,transparent)}
+.scene .arch1{left:6%;bottom:0;width:46%;height:70%;border-radius:999px 999px 0 0;background:linear-gradient(180deg,var(--blush),var(--blush-2))}
+.scene .arch2{right:4%;bottom:0;width:38%;height:52%;border-radius:999px 999px 0 0;background:linear-gradient(180deg,var(--pink),var(--rose))}
+.scene .floor{left:0;right:0;bottom:0;height:12%;border-radius:20px;background:var(--pearl-2);box-shadow:inset 0 0 0 1px var(--line)}
+.scene .leaf{width:14%;aspect-ratio:1;border-radius:0 100% 0 100%;background:var(--rose-d);opacity:.8}
+.scene .l1{left:48%;bottom:14%}.scene .l2{left:55%;bottom:20%;transform:scale(.7) rotate(40deg);background:var(--rose)}.scene .l3{left:42%;bottom:20%;transform:scale(.6) rotate(-40deg);background:var(--blush-2)}
+.facts{list-style:none;margin:38px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.facts li{border-top:2px solid var(--peach);padding-top:14px}
+.facts b{display:block;font:400 clamp(46px,5vw,72px)/1 var(--serif);color:var(--rose-d)}.facts span{font-size:14px;color:var(--ink-2);line-height:1.35;display:block;margin-top:6px}
+
+/* ---------- team + values ---------- */
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:clamp(34px,5vw,60px)}
+.person{display:grid;grid-template-columns:132px 1fr;gap:26px;align-items:center;padding:26px;border-radius:44px 44px 44px 10px;background:color-mix(in srgb,var(--white) 76%,transparent);box-shadow:inset 0 0 0 1px var(--line);transition:transform .6s var(--ease),border-radius .6s var(--ease),box-shadow .6s}
+.person:hover{transform:translateY(-6px);border-radius:10px 44px 44px 44px;box-shadow:inset 0 0 0 1px var(--blush-2),0 24px 60px color-mix(in srgb,var(--rose) 16%,transparent)}
+.avatar{width:132px;aspect-ratio:1;border-radius:50% 50% 50% 8px;display:grid;place-items:center;font:400 54px/1 var(--serif);color:#fff;background:linear-gradient(150deg,var(--rose),var(--rose-d));box-shadow:0 14px 30px color-mix(in srgb,var(--rose) 40%,transparent)}
+.person:nth-child(2) .avatar{background:linear-gradient(150deg,var(--peach),var(--pink));color:var(--ink)}
+.person h3{font-size:34px}.person .role{font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-d);margin:6px 0 10px}.person p.b{color:var(--ink-2);font-size:15.5px}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,34px);margin-top:clamp(34px,5vw,60px)}
+.value{padding:30px;border-radius:34px;background:var(--pearl-2)}.value:nth-child(2){background:color-mix(in srgb,var(--champ-2) 70%,var(--white))}.value:nth-child(3){background:color-mix(in srgb,var(--pink) 28%,var(--white))}
+.value h3{font-size:30px;margin-bottom:10px}.value p{color:var(--ink-2)}
+
+/* ---------- prices ---------- */
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:clamp(34px,5vw,60px);align-items:stretch}
+.price{position:relative;display:flex;flex-direction:column;padding:30px 26px 28px;border-radius:34px;background:color-mix(in srgb,var(--white) 84%,transparent);box-shadow:inset 0 0 0 1px var(--line);transition:transform .6s var(--ease),box-shadow .6s}
+.price:hover{transform:translateY(-8px);box-shadow:inset 0 0 0 1.5px var(--blush-2),0 26px 60px color-mix(in srgb,var(--rose) 18%,transparent)}
+.price.hot{background:linear-gradient(165deg,var(--white),var(--champ-2));box-shadow:inset 0 0 0 2px var(--peach),0 0 60px color-mix(in srgb,var(--peach) 60%,transparent)}
+.price .badge{position:absolute;top:-12px;left:26px;background:var(--rose-d);color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:99px}
+.price h3{font-size:28px}.price .amt{font:400 58px/1 var(--serif);margin:14px 0 4px;color:var(--rose-d)}.price .amt small{font:700 15px var(--sans);color:var(--ink-2);margin-left:3px}
+.price .sub{font-size:14px;color:var(--ink-2)}.price ul{list-style:none;margin:18px 0 24px;padding:0;display:grid;gap:9px;font-size:15px;flex:1}
+.price li{display:flex;gap:10px}.price li::before{content:"✿";color:var(--rose);font-size:13px;margin-top:3px}.price .btn{align-self:flex-start}
+
+/* ---------- faq ---------- */
+.faq{background:var(--pearl-2)}
+details{border-bottom:1.5px solid var(--line);padding:6px 0}
+summary{list-style:none;cursor:pointer;padding:20px 44px 20px 0;font:400 clamp(24px,2.4vw,32px)/1.2 var(--serif);position:relative}summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:22px;height:22px;margin-top:-11px;background:radial-gradient(circle,var(--rose-d) 0 28%,transparent 30%),conic-gradient(var(--blush-2),var(--peach),var(--pink),var(--blush-2));border-radius:50%;transition:transform .6s var(--ease)}
+details[open] summary::after{transform:rotate(180deg) scale(1.2)}
+details p{padding:0 0 22px;color:var(--ink-2);max-width:62ch;animation:rowIn .6s var(--ease)}
+
+/* ---------- final ---------- */
+.final{padding:clamp(110px,14vw,200px) 0;text-align:center;overflow:clip;background:radial-gradient(70% 70% at 50% 50%,color-mix(in srgb,var(--blush) 75%,transparent),var(--pearl))}
+.final-flower{position:absolute;left:50%;top:50%;width:min(130vw,980px);aspect-ratio:1;margin:calc(min(130vw,980px)/-2) 0 0 calc(min(130vw,980px)/-2);opacity:.5;pointer-events:none}.final-flower svg{width:100%;height:100%;overflow:visible}
+.final-in{position:relative;z-index:2;display:grid;justify-items:center;gap:26px}
+.final h2{font-size:clamp(48px,7.4vw,110px)}.final .lead{margin-inline:auto}
+
+/* ---------- footer, mbar, misc ---------- */
+footer{background:var(--ink);color:color-mix(in srgb,var(--pearl) 82%,transparent);padding:60px 0 calc(40px + 70px)}
+.f-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}.f-grid .logo-word{color:var(--pearl)}
+.f-grid p{margin-top:10px;font-size:15px;max-width:34ch}.f-small{margin-top:40px;font-size:13px;opacity:.6}
+.mbar{position:fixed;z-index:55;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));display:none;gap:10px;transform:translateY(140%);transition:transform .7s var(--ease)}.mbar.show{transform:none}
+.mbar .btn{flex:1;box-shadow:0 14px 34px rgba(50,30,70,.24)}.mbar .btn-line{flex:0 0 auto;background:var(--white)}
+.glow{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--peach) 40%,transparent),transparent);pointer-events:none;z-index:1;opacity:0;transition:opacity .6s}
+[data-reveal]{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}[data-reveal].in{opacity:1;transform:none}
+.pebbles [data-reveal].in{transition-duration:1.4s}.pebbles li:nth-child(2)[data-reveal]{transition-delay:.1s}.pebbles li:nth-child(3)[data-reveal]{transition-delay:.2s}.pebbles li:nth-child(4)[data-reveal]{transition-delay:.3s}
+.spark{position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-6px;background:var(--peach);border-radius:0 100% 0 100%;pointer-events:none}
+.sheet.shimmer .sum::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,color-mix(in srgb,var(--peach) 70%,transparent) 50%,transparent 70%);animation:shim 1.8s var(--ease);pointer-events:none}@keyframes shim{from{transform:translateX(-120%)}to{transform:translateX(120%)}}
+.ribbon{position:fixed;z-index:58;left:24px;bottom:24px;max-width:min(560px,calc(100vw - 48px));display:flex;gap:12px;align-items:center;justify-content:space-between;padding:9px 10px 9px 18px;border-radius:99px;background:var(--ink);color:var(--pearl);font-size:13.5px;box-shadow:0 14px 40px rgba(40,25,50,.3)}
+.ribbon span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ribbon[hidden]{display:none}.ribbon a{background:var(--peach);color:var(--ink);padding:8px 14px;border-radius:99px;text-decoration:none;font-weight:800;white-space:nowrap}.ribbon button{border:0;background:transparent;color:inherit;font-size:20px;line-height:1;padding:0 8px;opacity:.7}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .pebbles{grid-template-columns:repeat(2,1fr)}
+  .prices{grid-template-columns:repeat(2,1fr)}
+  .studio .grid2{grid-template-columns:1fr}.scene{margin-inline:auto}
+  .people{grid-template-columns:1fr}.values{grid-template-columns:1fr}
+  .fd-res{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .nav-in{height:64px}.logo-word{font-size:21px}.nav .btn-sm{display:none}
+  .hero-stage{min-height:620px}.hero-copy{padding-top:56px;gap:18px}
+  .hero-title{font-size:clamp(58px,19vw,92px)}
+  .hero-copy .lead{font-size:15.5px;max-width:30ch}
+  .cta-row .btn-line{display:none}.cta-row .btn{padding:14px 24px}
+  .next-chip{font-size:13px;padding:9px 14px 9px 12px;white-space:nowrap}.next-chip .lbl{display:none}
+  .breath{bottom:20px}.fx .hero-pin{height:240svh}
+  .pebbles{grid-template-columns:1fr}.pebble{min-height:240px}.pebble h3{margin-top:30px}
+  .sess{grid-template-columns:78px 1fr;gap:10px 14px;padding:16px 18px 16px 22px}.sess .time{font-size:34px}.sess .dots-col{grid-column:1/2;grid-row:2}.sess .btn-col{grid-column:2;grid-row:2;justify-self:end}
+  .facts{gap:10px}.prices{grid-template-columns:1fr}.person{grid-template-columns:96px 1fr;padding:18px;gap:16px}.avatar{width:96px;font-size:38px}.person h3{font-size:28px}
+  .fd-box{border-radius:32px}.fd-a button{padding:13px 20px;font-size:15px}
+  .mbar{display:flex}
+.ribbon{left:14px;right:14px;max-width:none;bottom:14px;font-size:12.5px}.mbar.show+.ribbon{bottom:84px}
+}
+@media (hover:none){.glow{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}[data-reveal]{opacity:1;transform:none}.intro{display:none}.fx .flower{opacity:1;transform:none}}
+html.motion-reduce *,html.motion-reduce *::before,html.motion-reduce *::after{animation:none!important;transition:none!important}html.motion-reduce [data-reveal]{opacity:1;transform:none}html.motion-reduce .intro{display:none}
+/* ---------- booking sheet (shared). Theme it with --sh-* variables on :root ---------- */
+.scrim{position:fixed;inset:0;background:var(--sh-scrim,rgba(40,25,30,.42));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .5s;z-index:90}
+.scrim.open{opacity:1;pointer-events:auto}
+.sheet{position:fixed;z-index:100;right:0;top:0;bottom:0;width:min(440px,100vw);background:var(--sh-bg,#fff);color:var(--sh-ink,#222);display:flex;flex-direction:column;
+  clip-path:circle(0px at var(--ox,50%) var(--oy,50%));visibility:hidden;transition:clip-path .85s cubic-bezier(.2,.8,.2,1),visibility 0s .85s;box-shadow:-30px 0 80px rgba(0,0,0,.18)}
+.sheet.open{clip-path:circle(var(--rad,160%) at var(--ox,50%) var(--oy,50%));visibility:visible;transition:clip-path .85s cubic-bezier(.2,.8,.2,1),visibility 0s}
+@media (max-width:640px){.sheet{top:auto;width:100%;max-height:94svh;border-radius:26px 26px 0 0;box-shadow:0 -20px 60px rgba(0,0,0,.2)}}
+.sh-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 8px}
+.sh-head b{font-family:var(--sh-display,inherit);font-weight:500;font-size:24px;letter-spacing:-.01em}
+.sh-head .x{width:40px;height:40px;border-radius:50%;border:1px solid var(--sh-line,#ddd);background:transparent;font-size:22px;line-height:1;cursor:pointer;color:inherit;transition:transform .3s,background .3s}
+.sh-head .x:hover{background:var(--sh-soft,#f5f5f5);transform:rotate(90deg)}
+.sh-body{flex:1;overflow:auto;padding:8px 24px 18px;-webkit-overflow-scrolling:touch}
+.sheet.open .sh-body>*,.sheet.open .sh-foot>*{animation:shIn .7s cubic-bezier(.2,.8,.2,1) both}
+.sheet.open .sh-body>*:nth-child(2){animation-delay:.08s}.sheet.open .sh-body>*:nth-child(3){animation-delay:.16s}.sheet.open .sh-body>*:nth-child(4){animation-delay:.24s}
+.sheet.open .sh-foot>*{animation-delay:.3s}
+@keyframes shIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.sh-foot{padding:14px 24px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--sh-line,#eee);display:flex;flex-direction:column;gap:10px}
+.sh-foot small{color:var(--sh-muted,#777);text-align:center;font-size:13px}
+.sum{background:var(--sh-soft,#f7f7f7);border-radius:var(--sh-r,18px);padding:18px 20px;margin:6px 0 16px;position:relative;overflow:hidden}
+.sum::after{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:radial-gradient(closest-side,var(--sh-glow,rgba(255,220,170,.55)),transparent);pointer-events:none}
+.sum .big{font-family:var(--sh-display,inherit);font-size:44px;line-height:1;font-weight:500;display:flex;align-items:baseline;gap:12px}
+.sum .big small{font-family:inherit;font-size:14px;color:var(--sh-muted,#777);font-weight:500}
+.sum h3{margin:8px 0 2px;font-size:19px;font-weight:600}.sum p{margin:0;color:var(--sh-muted,#777);font-size:14.5px}
+.sum .sp{color:var(--sh-accent,#b55);font-weight:600;margin-top:6px}.sum .sp.low{color:var(--sh-bad,#b33)}
+.fld{margin-bottom:14px}.fld label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--sh-muted,#666)}
+.fld input{width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--sh-line,#ddd);background:var(--sh-field,#fff);font-size:16px;outline:0;transition:border-color .25s,box-shadow .25s}
+.fld input:focus{border-color:var(--sh-accent,#b55);box-shadow:0 0 0 4px var(--sh-ring,rgba(200,120,120,.18))}
+.fld .err{display:none;color:var(--sh-bad,#b33);font-size:13px;margin-top:5px}.fld.bad .err{display:block}.fld.bad input{border-color:var(--sh-bad,#b33)}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:4px 0 14px;cursor:pointer}.chk input{margin-top:3px;accent-color:var(--sh-accent,#b55);width:18px;height:18px}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.wait-info,.form-err{padding:12px 14px;border-radius:14px;font-size:14px;margin:0 0 14px}
+.wait-info{background:var(--sh-soft,#f7f7f7)}.form-err{background:var(--sh-errbg,#fbe1dd);color:var(--sh-bad,#a33)}
+.sheet .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:15px 22px;font:600 16px/1 var(--sh-font,inherit);cursor:pointer;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s}
+.sheet .btn:active{transform:scale(.97)}.sheet .btn[disabled]{opacity:.55;pointer-events:none}
+.sheet .btn-main{background:var(--sh-accent,#b55);color:var(--sh-accent-ink,#fff);box-shadow:0 10px 28px var(--sh-ring,rgba(200,120,120,.3))}.sheet .btn-main:hover{background:var(--sh-accent-d,#a44)}
+.sheet .btn-wait{background:var(--sh-ink,#222);color:var(--sh-bg,#fff)}
+.sheet .btn-ghost{background:transparent;border:1.5px solid var(--sh-line,#ddd);color:inherit;padding:12px 18px;font-size:14.5px}.sheet .btn-ghost:hover{background:var(--sh-soft,#f5f5f5)}
+.sheet .btn-danger{background:var(--sh-bad,#b33);color:#fff}
+.done{text-align:center;padding:14px 0 4px}.done .ok{width:68px;height:68px;border-radius:50%;margin:6px auto 14px;display:grid;place-items:center;background:var(--sh-accent,#b55);position:relative}
+.done .ok svg{width:30px;height:30px;stroke:var(--sh-accent-ink,#fff);stroke-dasharray:30;stroke-dashoffset:30;animation:tick .7s .35s cubic-bezier(.2,.8,.2,1) forwards}
+.done .ok::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--sh-accent,#b55);opacity:0;animation:ring 1.2s .2s ease-out}
+@keyframes tick{to{stroke-dashoffset:0}}@keyframes ring{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.5);opacity:0}}
+.done h3{font-family:var(--sh-display,inherit);font-weight:500;font-size:28px;margin:0 0 6px}.done p{margin:0 0 10px;color:var(--sh-muted,#777)}
+.done .links{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+.trial-ok{color:var(--sh-accent,#b55);font-weight:600}
+.mail{background:var(--sh-soft,#f7f7f7);border-radius:14px;padding:12px 14px;font-size:13.5px;text-align:left;margin-top:8px;color:var(--sh-muted,#666)}.mail b{color:var(--sh-ink,#222);display:block;margin-bottom:2px}
+.demo-flag{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:.04em;padding:4px 11px;border-radius:99px;background:var(--sh-soft,#f1f1f1);color:var(--sh-muted,#666)}
+.hello{font-size:15px;color:var(--sh-muted,#666);margin:2px 0 6px}
+.skel i{display:block;height:84px;border-radius:18px;background:linear-gradient(90deg,var(--sh-soft,#f2f2f2),var(--sh-line,#e8e8e8),var(--sh-soft,#f2f2f2));background-size:200% 100%;animation:sk 1.2s linear infinite;margin-bottom:12px}@keyframes sk{to{background-position:-200% 0}}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--sh-ink,#222);color:var(--sh-bg,#fff);padding:12px 20px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:.4s;z-index:120}.toast.show{opacity:1;transform:translate(-50%,0)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+html.sheet-open{overflow:hidden}
+@media (prefers-reduced-motion:reduce){.sheet,.sheet.open{transition:opacity .2s,visibility 0s;clip-path:none;opacity:0}.sheet.open{opacity:1}.sheet.open .sh-body>*,.sheet.open .sh-foot>*{animation:none}}
+html.motion-reduce .sheet,html.motion-reduce .sheet.open{transition:opacity .2s,visibility 0s;clip-path:none;opacity:0}html.motion-reduce .sheet.open{opacity:1}
+</style>
+</head>
+<body id="top">
+
+<div class="intro" id="intro" aria-hidden="true">
+  <svg viewBox="0 0 400 400"><g id="introFlower"></g></svg>
+  <span class="intro-name" data-studio-name>MALVA</span>
+</div>
+<div class="glow" id="glow"></div>
+
+<nav class="nav" id="nav"><div class="wrap nav-in">
+  <a class="logo" id="logo" href="#top" data-scroll aria-label="MALVA"><svg class="mk" viewBox="0 0 400 400" aria-hidden="true"><g id="logoFlower"></g></svg><span class="logo-word" data-studio-name>MALVA</span></a>
+  <div class="nav-r">
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="es">ES</button><button type="button" data-lang="ca">CA</button><button type="button" data-lang="en">EN</button></div>
+    <a class="btn btn-main btn-sm" href="#horario" data-scroll data-i18n="nav.book">Reservar</a>
+  </div>
+</div></nav>
+
+<header class="hero-pin"><div class="hero-stage" id="heroStage">
+  <i class="blob b1"></i><i class="blob b2"></i>
+  <canvas id="petalsHero" aria-hidden="true"></canvas>
+  <div class="flower-wrap" id="flowerWrap" aria-hidden="true">
+    <svg class="flower" viewBox="0 0 400 400" id="heroFlower">
+      <defs>
+        <radialGradient id="coreG" cx="40%" cy="38%" r="70%"><stop offset="0" stop-color="var(--champ-2)"/><stop offset=".55" stop-color="var(--peach)"/><stop offset="1" stop-color="var(--blush-2)"/></radialGradient>
+        <linearGradient id="petA" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="var(--blush-2)"/><stop offset="1" stop-color="var(--blush)"/></linearGradient>
+        <linearGradient id="petB" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="var(--pink)"/><stop offset="1" stop-color="color-mix(in srgb,var(--pink) 40%,var(--white))"/></linearGradient>
+        <linearGradient id="petC" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="var(--peach)"/><stop offset="1" stop-color="var(--champ-2)"/></linearGradient>
+      </defs>
+      <g id="petals"></g>
+      <circle class="core-glow" cx="200" cy="200" r="104" fill="var(--peach)" opacity=".55"/>
+      <circle class="core" cx="200" cy="200" r="98" fill="url(#coreG)"/>
+    </svg>
+  </div>
+  <div class="hero-copy" id="heroCopy">
+    <p class="eyebrow" data-i18n="hero.eyebrow">Estudio de pilates · Barcelona</p>
+    <h1 class="hero-title" data-i18n-html="hero.title"><span class="ln"><span>Respira.</span></span><span class="ln"><span>Muévete.</span></span><span class="ln"><span><em>Florece.</em></span></span></h1>
+    <p class="lead" data-i18n="hero.lead"></p>
+    <div class="cta-row"><a class="btn btn-main" href="#horario" data-scroll data-i18n="hero.cta">Ver horario y reservar</a><a class="btn btn-line js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></div>
+    <button class="next-chip" id="nextChip" type="button" hidden></button>
+  </div>
+  <div class="breath" aria-hidden="true"><i class="dot"></i><span class="lbl"><span data-i18n="br.in">Inhala</span><span data-i18n="br.out">Exhala</span></span></div>
+</div></header>
+
+<div class="marq" aria-hidden="true"><div class="marq-track" id="marq"></div></div>
+
+<section class="finder" id="encuentra"><div class="wrap">
+  <div data-reveal><p class="eyebrow" data-i18n="fd.eyebrow"></p><h2 class="sec-title" data-i18n-html="fd.title"></h2></div>
+  <div class="fd-box" data-reveal id="finder"></div>
+</div></section>
+
+<section class="space" id="clases" style="padding-top:0"><div class="wrap">
+  <div data-reveal><p class="eyebrow" data-i18n="cl.eyebrow"></p><h2 class="sec-title" data-i18n-html="cl.title"></h2></div>
+  <ol class="pebbles" id="classList"></ol>
+</div></section>
+
+<section class="tt space" id="horario"><div class="wrap">
+  <div class="tt-top" data-reveal>
+    <div><p class="eyebrow" data-i18n="tt.eyebrow"></p><h2 class="sec-title" data-i18n-html="tt.title"></h2></div>
+    <p class="lead" data-i18n="tt.lead"></p>
+  </div>
+  <div class="days" id="days" role="group"></div>
+  <div class="chips" id="chips"></div>
+  <div class="sessions" id="sessions" aria-live="polite"></div>
+  <p class="tt-note" data-i18n="tt.cancel"></p>
+</div></section>
+
+<section class="studio space" id="estudio"><div class="wrap grid2">
+  <div class="scene" data-reveal aria-hidden="true"><i class="s sun"></i><i class="s arch1"></i><i class="s arch2"></i><i class="s floor"></i><i class="s leaf l1"></i><i class="s leaf l2"></i><i class="s leaf l3"></i></div>
+  <div data-reveal>
+    <p class="eyebrow" data-i18n="sp.eyebrow"></p>
+    <h2 class="sec-title" data-i18n-html="sp.title"></h2>
+    <p class="lead" style="margin-top:22px" data-i18n="sp.lead"></p>
+    <ul class="facts">
+      <li><b data-count="8">8</b><span data-i18n="sp.f1"></span></li>
+      <li><b data-count="55">55</b><span data-i18n="sp.f2"></span></li>
+      <li><b data-count="12">12</b><span data-i18n="sp.f3"></span></li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="space" id="equipo" style="padding-top:0"><div class="wrap">
+  <div data-reveal><p class="eyebrow" data-i18n="team.eyebrow"></p><h2 class="sec-title" data-i18n-html="team.title"></h2></div>
+  <div class="people">
+    <article class="person" data-reveal><div class="avatar" aria-hidden="true">L</div><div><h3>Lía Roca</h3><p class="role" data-i18n="team.r1"></p><p class="b" data-i18n="team.b1"></p></div></article>
+    <article class="person" data-reveal><div class="avatar" aria-hidden="true">M</div><div><h3>Mar Vidal</h3><p class="role" data-i18n="team.r2"></p><p class="b" data-i18n="team.b2"></p></div></article>
+  </div>
+  <div class="values">
+    <div class="value" data-reveal><h3 data-i18n="v.1t"></h3><p data-i18n="v.1d"></p></div>
+    <div class="value" data-reveal><h3 data-i18n="v.2t"></h3><p data-i18n="v.2d"></p></div>
+    <div class="value" data-reveal><h3 data-i18n="v.3t"></h3><p data-i18n="v.3d"></p></div>
+  </div>
+</div></section>
+
+<section class="space" id="tarifas" style="padding-top:0"><div class="wrap">
+  <div data-reveal><p class="eyebrow" data-i18n="p.eyebrow"></p><h2 class="sec-title" data-i18n-html="p.title"></h2></div>
+  <div class="prices" id="prices"></div>
+</div></section>
+
+<section class="faq space" id="faq"><div class="wrap" style="max-width:900px">
+  <div data-reveal><p class="eyebrow" data-i18n="faq.eyebrow"></p><h2 class="sec-title" data-i18n-html="faq.title"></h2></div>
+  <div id="faqList" style="margin-top:34px"></div>
+</div></section>
+
+<section class="final" id="reserva">
+  <canvas id="petalsFinal" aria-hidden="true"></canvas>
+  <div class="final-flower" aria-hidden="true"><svg viewBox="0 0 400 400" id="finalFlowerSvg"><g id="finalFlower"></g></svg></div>
+  <div class="wrap final-in" data-reveal>
+    <h2 data-i18n-html="fin.title"></h2>
+    <p class="lead" data-i18n="fin.lead"></p>
+    <div class="cta-row"><a class="btn btn-main" href="#horario" data-scroll data-i18n="fin.cta"></a><a class="btn btn-line js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="f-grid">
+    <div><span class="logo-word" data-studio-name>MALVA</span><p>Carrer del Torrent de l’Olla 88<br>08012 Gràcia, Barcelona</p></div>
+    <div><p style="margin-top:0"><a href="https://www.google.com/maps/search/?api=1&query=Carrer+del+Torrent+de+l'Olla+88+Barcelona" target="_blank" rel="noopener" data-i18n="ft.map"></a></p><p><a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></p><p><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p></div>
+  </div>
+  <p class="f-small">© <span id="yr"></span> <span data-studio-name>MALVA Pilates</span></p>
+</div></footer>
+
+<div class="mbar" id="mbar"><a class="btn btn-main" href="#horario" data-scroll data-i18n="nav.book">Reservar</a><a class="btn btn-line js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a></div>
+<div class="ribbon" id="ribbon" hidden></div>
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" aria-hidden="true">
+  <div class="sh-head"><b id="shTitle"></b><button class="x" type="button" id="shClose" aria-label="×">×</button></div>
+  <div class="sh-body" id="shBody"></div>
+  <div class="sh-foot" id="shFoot"></div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+"use strict";
+/* ============ CONFIG ============ */
+var CONFIG = {
+  whatsapp: "34610691874",
+  address: "Carrer del Torrent de l’Olla 88, 08012 Barcelona",
+  timezone: "Europe/Madrid",
+  supabaseUrl: "",
+  supabaseAnonKey: "",
+  siteUrl: "",
+  panelUrl: "panel/",
+  personalize: true,
+  moods: [{"name":{"es":"Lavanda","ca":"Lavanda","en":"Lavender"},"colors":{"pearl":"#F6F2FD","pearl-2":"#ECE5FA","blush":"#DCD0F5","blush-2":"#C6B5EE","rose":"#A68BE0","rose-d":"#7F63C4","champ":"#F9C9AE","champ-2":"#FFE8B8","ink":"#35294D","ink-2":"#6F6489","line":"#E4DCF3","white":"#FFFDFF","peach":"#F9C9AE","butter":"#FFE8B8","pink":"#F2A9BE"}},{"name":{"es":"Rosa","ca":"Rosa","en":"Rose"},"colors":{"pearl":"#FFF4F7","pearl-2":"#FDE6EC","blush":"#F9D2DD","blush-2":"#F2B4C6","rose":"#E48AA6","rose-d":"#C0557B","champ":"#FBD0B0","champ-2":"#FFEBC2","ink":"#4A2A38","ink-2":"#84626F","line":"#F3DDE4","white":"#FFFCFD","peach":"#FBD0B0","butter":"#FFEBC2","pink":"#F2A9BE"}},{"name":{"es":"Melocotón","ca":"Préssec","en":"Peach"},"colors":{"pearl":"#FFF8EE","pearl-2":"#FFEFD6","blush":"#FFDFB8","blush-2":"#FBC795","rose":"#EDA46C","rose-d":"#B9632E","champ":"#F7C6D3","champ-2":"#FFE3EA","ink":"#43302A","ink-2":"#86695F","line":"#F2E2CE","white":"#FFFDF9","peach":"#FBC795","butter":"#FFE9B5","pink":"#F7C6D3"}}]
+};
+
+/* Shared UI strings for the booking sheet, timetable and errors (ES/CA/EN).
+   %STUDIO% is replaced at runtime by the studio name. */
+var UI = {
+ "es": {
+  "tt.cancel": "Cancelación gratuita hasta 12 h antes",
+  "tt.book": "Reservar",
+  "tt.wait": "Lista de espera",
+  "tt.done": "Finalizada",
+  "tt.mine": "Reservada ✓",
+  "tt.left": "Quedan {n} de {c}",
+  "tt.lastOne": "¡Última plaza!",
+  "tt.full": "Completa · {w} en espera",
+  "tt.fullNoWait": "Completa",
+  "tt.empty": "No hay clases de este tipo este día.",
+  "tt.with": "con",
+  "tt.min": "min",
+  "tt.today": "Hoy",
+  "tt.tomorrow": "Mañana",
+  "lvl.all": "Todos los niveles",
+  "lvl.beg": "Iniciación",
+  "lvl.int": "Intermedio",
+  "bk.title": "Tu reserva",
+  "bk.waitTitle": "Lista de espera",
+  "bk.name": "Nombre y apellido",
+  "bk.email": "Email",
+  "bk.phone": "Teléfono",
+  "bk.first": "Es mi primera clase en %STUDIO%",
+  "bk.terms": "Acepto la política de cancelación (gratis hasta 12 h antes).",
+  "bk.submit": "Confirmar reserva",
+  "bk.submitWait": "Apuntarme a la lista",
+  "bk.payNote": "No pagas nada ahora. Pagas en el estudio.",
+  "bk.errName": "Escribe tu nombre.",
+  "bk.errEmail": "Revisa el email.",
+  "bk.errPhone": "Revisa el teléfono (9 dígitos).",
+  "bk.errTerms": "Necesitamos que aceptes la política.",
+  "bk.waitInfo": "La clase está completa. Si alguien cancela, la plaza es para la primera persona de la lista: te llegará un email para confirmarla.",
+  "bk.pos": "Serías la persona nº {n} en la lista.",
+  "bk.okTitle": "¡Nos vemos en clase!",
+  "bk.okText": "Hemos guardado tu plaza para {cls}, {day} a las {time}.",
+  "bk.okWaitTitle": "Estás en la lista",
+  "bk.okWaitText": "Eres el nº {n} para {cls}, {day} a las {time}. Te escribiremos si se libera una plaza.",
+  "bk.mailTo": "Email de confirmación enviado a",
+  "bk.mailRem": "Recordatorio: el día antes a las 18:00.",
+  "bk.close": "Hecho",
+  "bk.another": "Reservar otra clase",
+  "bk.demo": "Demo: tu reserva se guarda solo en este navegador",
+  "bk.spots": "Quedan {n} plazas",
+  "bk.toast": "Reserva confirmada ✓",
+  "tt.closed": "Reservas cerradas",
+  "tt.cancelled": "Cancelada",
+  "tt.onList": "En lista ✓",
+  "bk.sending": "Enviando…",
+  "bk.trialOk": "Precio de clase de prueba aplicado",
+  "bk.cal": "Añadir al calendario",
+  "bk.copyLink": "Copiar enlace para cancelar",
+  "bk.copied": "Enlace copiado",
+  "bk.keepLink": "Guarda tu enlace. ",
+  "bk.keepLinkTxt": "Con él puedes cancelar tu plaza cuando quieras. También lo tienes en el botón «Reservada ✓» del horario.",
+  "mg.title": "Tu reserva",
+  "mg.hello": "Hola, {name}",
+  "mg.stBooked": "Plaza confirmada",
+  "mg.stWait": "En lista de espera · nº {n}",
+  "mg.stCancelled": "Esta reserva está cancelada",
+  "mg.stPast": "Esta clase ya ha pasado",
+  "mg.cancel": "Cancelar mi plaza",
+  "mg.leaveList": "Salir de la lista de espera",
+  "mg.keep": "Si no quieres cancelar, simplemente cierra esta ventana.",
+  "mg.lateWarn": "Faltan menos de 12 horas: puedes cancelar, pero la clase se cobrará o descontará del bono.",
+  "mg.cancelledTitle": "Reserva cancelada",
+  "mg.cancelledText": "Tu plaza queda libre para otra persona. ¡Gracias por avisar!",
+  "mg.cancelledLate": "Cancelada fuera de plazo: la clase se descontará o cobrará según la política.",
+  "mg.notFound": "No encontramos esta reserva",
+  "err.load": "No hemos podido cargar el horario.",
+  "err.retry": "Reintentar",
+  "err.generic": "Algo ha fallado. Inténtalo de nuevo o escríbenos por WhatsApp.",
+  "err.NETWORK": "Sin conexión. Revisa tu internet e inténtalo de nuevo.",
+  "err.ALREADY_BOOKED": "Ya tienes una plaza (o estás en lista) en esta clase.",
+  "err.TOO_MANY_ACTIVE_BOOKINGS": "Has llegado al máximo de reservas activas. Cancela alguna o espera a hacer tus clases.",
+  "err.BOOKING_CLOSED": "Las reservas para esta clase ya están cerradas.",
+  "err.SESSION_CANCELLED": "Esta clase se ha cancelado.",
+  "err.TOO_FAR_AHEAD": "Todavía no se puede reservar tan adelante.",
+  "err.INVALID_NAME": "Revisa tu nombre.",
+  "err.INVALID_EMAIL": "Revisa tu email.",
+  "err.INVALID_PHONE": "Revisa tu teléfono.",
+  "err.BOOKING_NOT_FOUND": "El enlace no es válido o ha caducado.",
+  "err.ALREADY_CANCELLED": "Esta reserva ya estaba cancelada.",
+  "err.CLASS_STARTED": "La clase ya ha empezado, no se puede cancelar.",
+  "err.SESSION_NOT_FOUND": "Esta clase ya no existe.",
+  "err.BUSINESS_NOT_CONFIGURED": "El estudio aún no ha configurado las reservas.",
+  "err.TOO_MANY_REQUESTS": "Demasiadas reservas seguidas. Espera un poco o escríbenos por WhatsApp.",
+  "bk.emailed": "Te hemos enviado la confirmación a {email}. Si no la ves, mira en spam.",
+  "bk.seePanel": "Mira lo que ve la dueña del estudio"
+ },
+ "ca": {
+  "tt.cancel": "Cancel·lació gratuïta fins a 12 h abans",
+  "tt.book": "Reservar",
+  "tt.wait": "Llista d'espera",
+  "tt.done": "Finalitzada",
+  "tt.mine": "Reservada ✓",
+  "tt.left": "En queden {n} de {c}",
+  "tt.lastOne": "Última plaça!",
+  "tt.full": "Plena · {w} en espera",
+  "tt.fullNoWait": "Plena",
+  "tt.empty": "No hi ha classes d'aquest tipus aquest dia.",
+  "tt.with": "amb",
+  "tt.min": "min",
+  "tt.today": "Avui",
+  "tt.tomorrow": "Demà",
+  "lvl.all": "Tots els nivells",
+  "lvl.beg": "Iniciació",
+  "lvl.int": "Intermedi",
+  "bk.title": "La teva reserva",
+  "bk.waitTitle": "Llista d'espera",
+  "bk.name": "Nom i cognom",
+  "bk.email": "Correu",
+  "bk.phone": "Telèfon",
+  "bk.first": "És la meva primera classe a %STUDIO%",
+  "bk.terms": "Accepto la política de cancel·lació (gratis fins a 12 h abans).",
+  "bk.submit": "Confirmar reserva",
+  "bk.submitWait": "Apuntar-me a la llista",
+  "bk.payNote": "Ara no pagues res. Pagues a l'estudi.",
+  "bk.errName": "Escriu el teu nom.",
+  "bk.errEmail": "Revisa el correu.",
+  "bk.errPhone": "Revisa el telèfon (9 dígits).",
+  "bk.errTerms": "Cal que acceptis la política.",
+  "bk.waitInfo": "La classe és plena. Si algú cancel·la, la plaça és per a la primera persona de la llista: rebràs un correu per confirmar-la.",
+  "bk.pos": "Series la persona núm. {n} de la llista.",
+  "bk.okTitle": "Ens veiem a classe!",
+  "bk.okText": "Hem guardat la teva plaça per a {cls}, {day} a les {time}.",
+  "bk.okWaitTitle": "Ets a la llista",
+  "bk.okWaitText": "Ets el núm. {n} per a {cls}, {day} a les {time}. T'escriurem si s'allibera una plaça.",
+  "bk.mailTo": "Correu de confirmació enviat a",
+  "bk.mailRem": "Recordatori: el dia abans a les 18:00.",
+  "bk.close": "Fet",
+  "bk.another": "Reservar una altra classe",
+  "bk.demo": "Demo: la teva reserva es guarda només en aquest navegador",
+  "bk.spots": "Queden {n} places",
+  "bk.toast": "Reserva confirmada ✓",
+  "tt.closed": "Reserves tancades",
+  "tt.cancelled": "Cancel·lada",
+  "tt.onList": "En llista ✓",
+  "bk.sending": "Enviant…",
+  "bk.trialOk": "Preu de classe de prova aplicat",
+  "bk.cal": "Afegir al calendari",
+  "bk.copyLink": "Copiar enllaç per cancel·lar",
+  "bk.copied": "Enllaç copiat",
+  "bk.keepLink": "Guarda el teu enllaç. ",
+  "bk.keepLinkTxt": "Amb ell pots cancel·lar la plaça quan vulguis. També el tens al botó «Reservada ✓» de l'horari.",
+  "mg.title": "La teva reserva",
+  "mg.hello": "Hola, {name}",
+  "mg.stBooked": "Plaça confirmada",
+  "mg.stWait": "En llista d'espera · núm. {n}",
+  "mg.stCancelled": "Aquesta reserva està cancel·lada",
+  "mg.stPast": "Aquesta classe ja ha passat",
+  "mg.cancel": "Cancel·lar la meva plaça",
+  "mg.leaveList": "Sortir de la llista d'espera",
+  "mg.keep": "Si no vols cancel·lar, simplement tanca aquesta finestra.",
+  "mg.lateWarn": "Falten menys de 12 hores: pots cancel·lar, però la classe es cobrarà o descomptarà del bo.",
+  "mg.cancelledTitle": "Reserva cancel·lada",
+  "mg.cancelledText": "La teva plaça queda lliure per a una altra persona. Gràcies per avisar!",
+  "mg.cancelledLate": "Cancel·lada fora de termini: la classe es descomptarà o cobrarà segons la política.",
+  "mg.notFound": "No trobem aquesta reserva",
+  "err.load": "No hem pogut carregar l'horari.",
+  "err.retry": "Tornar-ho a provar",
+  "err.generic": "Alguna cosa ha fallat. Torna-ho a provar o escriu-nos per WhatsApp.",
+  "err.NETWORK": "Sense connexió. Revisa internet i torna-ho a provar.",
+  "err.ALREADY_BOOKED": "Ja tens una plaça (o ets a la llista) en aquesta classe.",
+  "err.TOO_MANY_ACTIVE_BOOKINGS": "Has arribat al màxim de reserves actives. Cancel·la'n alguna o espera a fer les classes.",
+  "err.BOOKING_CLOSED": "Les reserves d'aquesta classe ja estan tancades.",
+  "err.SESSION_CANCELLED": "Aquesta classe s'ha cancel·lat.",
+  "err.TOO_FAR_AHEAD": "Encara no es pot reservar tan endavant.",
+  "err.INVALID_NAME": "Revisa el teu nom.",
+  "err.INVALID_EMAIL": "Revisa el correu.",
+  "err.INVALID_PHONE": "Revisa el telèfon.",
+  "err.BOOKING_NOT_FOUND": "L'enllaç no és vàlid o ha caducat.",
+  "err.ALREADY_CANCELLED": "Aquesta reserva ja estava cancel·lada.",
+  "err.CLASS_STARTED": "La classe ja ha començat, no es pot cancel·lar.",
+  "err.SESSION_NOT_FOUND": "Aquesta classe ja no existeix.",
+  "err.BUSINESS_NOT_CONFIGURED": "L'estudi encara no ha configurat les reserves.",
+  "err.TOO_MANY_REQUESTS": "Massa reserves seguides. Espera una mica o escriu-nos per WhatsApp.",
+  "bk.emailed": "T'hem enviat la confirmació a {email}. Si no la veus, mira a l'spam.",
+  "bk.seePanel": "Mira què veu la propietària de l’estudi"
+ },
+ "en": {
+  "tt.cancel": "Free cancellation up to 12 h before",
+  "tt.book": "Book",
+  "tt.wait": "Join waitlist",
+  "tt.done": "Finished",
+  "tt.mine": "Booked ✓",
+  "tt.left": "{n} of {c} left",
+  "tt.lastOne": "Last spot!",
+  "tt.full": "Full · {w} waiting",
+  "tt.fullNoWait": "Full",
+  "tt.empty": "No classes of this type on this day.",
+  "tt.with": "with",
+  "tt.min": "min",
+  "tt.today": "Today",
+  "tt.tomorrow": "Tomorrow",
+  "lvl.all": "All levels",
+  "lvl.beg": "Beginner",
+  "lvl.int": "Intermediate",
+  "bk.title": "Your booking",
+  "bk.waitTitle": "Waitlist",
+  "bk.name": "Full name",
+  "bk.email": "Email",
+  "bk.phone": "Phone",
+  "bk.first": "It's my first class at %STUDIO%",
+  "bk.terms": "I accept the cancellation policy (free up to 12 h before).",
+  "bk.submit": "Confirm booking",
+  "bk.submitWait": "Join the waitlist",
+  "bk.payNote": "You don't pay anything now. Pay at the studio.",
+  "bk.errName": "Please enter your name.",
+  "bk.errEmail": "Please check your email.",
+  "bk.errPhone": "Please check your phone number.",
+  "bk.errTerms": "Please accept the policy.",
+  "bk.waitInfo": "This class is full. If someone cancels, the spot goes to the first person on the list — you'll get an email to confirm it.",
+  "bk.pos": "You'd be number {n} on the list.",
+  "bk.okTitle": "See you in class!",
+  "bk.okText": "Your spot is saved for {cls}, {day} at {time}.",
+  "bk.okWaitTitle": "You're on the list",
+  "bk.okWaitText": "You're number {n} for {cls}, {day} at {time}. We'll email you if a spot opens up.",
+  "bk.mailTo": "Confirmation email sent to",
+  "bk.mailRem": "Reminder: the day before at 18:00.",
+  "bk.close": "Done",
+  "bk.another": "Book another class",
+  "bk.demo": "Demo: your booking is saved only in this browser",
+  "bk.spots": "{n} spots left",
+  "bk.toast": "Booking confirmed ✓",
+  "tt.closed": "Booking closed",
+  "tt.cancelled": "Cancelled",
+  "tt.onList": "On waitlist ✓",
+  "bk.sending": "Sending…",
+  "bk.trialOk": "Trial class price applied",
+  "bk.cal": "Add to calendar",
+  "bk.copyLink": "Copy cancel link",
+  "bk.copied": "Link copied",
+  "bk.keepLink": "Keep your link. ",
+  "bk.keepLinkTxt": "You can use it to cancel your spot any time. It's also behind the “Booked ✓” button in the schedule.",
+  "mg.title": "Your booking",
+  "mg.hello": "Hi, {name}",
+  "mg.stBooked": "Spot confirmed",
+  "mg.stWait": "On the waitlist · #{n}",
+  "mg.stCancelled": "This booking is cancelled",
+  "mg.stPast": "This class has already taken place",
+  "mg.cancel": "Cancel my spot",
+  "mg.leaveList": "Leave the waitlist",
+  "mg.keep": "If you don't want to cancel, just close this window.",
+  "mg.lateWarn": "Less than 12 hours to go: you can cancel, but the class will be charged or taken from your pack.",
+  "mg.cancelledTitle": "Booking cancelled",
+  "mg.cancelledText": "Your spot is now free for someone else. Thanks for letting us know!",
+  "mg.cancelledLate": "Late cancellation: the class will be charged or taken from your pack, as per the policy.",
+  "mg.notFound": "We couldn't find this booking",
+  "err.load": "We couldn't load the schedule.",
+  "err.retry": "Try again",
+  "err.generic": "Something went wrong. Please try again or message us on WhatsApp.",
+  "err.NETWORK": "No connection. Check your internet and try again.",
+  "err.ALREADY_BOOKED": "You already have a spot (or a waitlist place) in this class.",
+  "err.TOO_MANY_ACTIVE_BOOKINGS": "You've reached the maximum of upcoming bookings. Cancel one or wait until you've done your classes.",
+  "err.BOOKING_CLOSED": "Booking for this class has closed.",
+  "err.SESSION_CANCELLED": "This class has been cancelled.",
+  "err.TOO_FAR_AHEAD": "You can't book that far ahead yet.",
+  "err.INVALID_NAME": "Please check your name.",
+  "err.INVALID_EMAIL": "Please check your email.",
+  "err.INVALID_PHONE": "Please check your phone number.",
+  "err.BOOKING_NOT_FOUND": "This link isn't valid or has expired.",
+  "err.ALREADY_CANCELLED": "This booking was already cancelled.",
+  "err.CLASS_STARTED": "The class has already started and can't be cancelled.",
+  "err.SESSION_NOT_FOUND": "This class no longer exists.",
+  "err.BUSINESS_NOT_CONFIGURED": "The studio hasn't set up booking yet.",
+  "err.TOO_MANY_REQUESTS": "Too many bookings in a row. Please wait a little or message us on WhatsApp.",
+  "bk.emailed": "We've emailed your confirmation to {email}. If you can't see it, check spam.",
+  "bk.seePanel": "See what the studio owner sees"
+ }
+};
+
+/* ============ COPY (ES / CA / EN) ============ */
+var T = {
+es: Object.assign({}, UI.es, {
+ "nav.book":"Reservar","tt.all":"Todas",
+ "hero.eyebrow":"Estudio de pilates · Gràcia, Barcelona",
+ "hero.title":'<span class="ln"><span>Respira.</span></span><span class="ln"><span>Muévete.</span></span><span class="ln"><span><em>Florece.</em></span></span>',
+ "hero.lead":"Clases pequeñas, luz suave y un ritmo que se adapta a ti. Reserva tu clase en 20 segundos.",
+ "hero.cta":"Ver horario y reservar","hero.next":"Próxima clase","hero.nextTxt":"{cls} · {day} {time}","hero.left":"quedan {n}","hero.last":"última plaza","hero.full":"lista de espera",
+ "br.in":"Inhala","br.out":"Exhala","marq":"Respira,Muévete,Florece,Pilates,Calma,Fuerza,Equilibrio",
+ "fd.eyebrow":"Encuentra tu clase","fd.title":"Tres preguntas, <em>una clase para ti</em>.",
+ "fd.q1":"¿Cuál es tu experiencia?","fd.a1a":"Es mi primera vez","fd.a1b":"Ya practico",
+ "fd.q2":"¿Qué buscas hoy?","fd.a2a":"Fuerza","fd.a2b":"Calma","fd.a2c":"Flexibilidad","fd.a2d":"Embarazo",
+ "fd.q3":"¿Cuándo te va mejor?","fd.a3a":"Por la mañana","fd.a3b":"Por la tarde",
+ "fd.res":"Tu clase ideal","fd.next":"Próxima sesión","fd.none":"Ahora mismo no hay sesiones abiertas","fd.book":"Reservar esta","fd.restart":"Empezar de nuevo","fd.see":"Ver todo el horario",
+ "cl.eyebrow":"Las clases","cl.title":"Cuatro formas <em>de florecer</em>.","cl.meta":"{dur} min · máx. {cap}",
+ "tt.eyebrow":"Horario en directo","tt.title":"Elige tu <em>hora</em>.","tt.lead":"Plazas al instante. Si una clase está llena, entras en lista de espera y te avisamos por email.",
+ "sp.eyebrow":"El espacio","sp.title":"Un lugar <em>para volver a ti</em>.","sp.lead":"Paredes lilas, luz de mañana y suelo de madera clara. Un estudio acogedor en Gràcia donde sentirte bien desde que entras.",
+ "sp.f1":"personas como máximo por clase","sp.f2":"minutos de clase, sin prisas","sp.f3":"horas para cancelar gratis",
+ "team.eyebrow":"Quienes te acompañan","team.title":"Manos <em>que cuidan</em>.","team.r1":"Mat · Restore","team.b1":"Instructora certificada en Barcelona. Cree en un pilates amable, que se adapta a cada cuerpo y a cada día.",
+ "team.r2":"Reformer · Prenatal","team.b2":"Especialista en embarazo y posparto. Fuerza suave y mucha calma, para sentirte tú misma.",
+ "v.1t":"Grupos pequeños","v.1d":"Máximo ocho personas. Te vemos, te corregimos y te cuidamos.",
+ "v.2t":"Sin comparaciones","v.2d":"Cada cuerpo, su ritmo. Aquí nadie compite: solo respiras y te mueves.",
+ "v.3t":"Para todas","v.3d":"Primera vez, embarazo, vuelta de una lesión: adaptamos cada clase.",
+ "p.eyebrow":"Tarifas","p.title":"Claro y <em>sin permanencia</em>.","p.popular":"El favorito","p.choose":"Elegir",
+ "faq.eyebrow":"Preguntas","faq.title":"Antes de <em>venir</em>.",
+ "fin.title":'Tu primera clase<br><em>te está esperando.</em>',"fin.lead":"Reserva en 20 segundos. Paga en el estudio, cancela gratis hasta 12 h antes.","fin.cta":"Reservar mi clase","ft.map":"Cómo llegar"
+}),
+ca: Object.assign({}, UI.ca, {
+ "nav.book":"Reservar","tt.all":"Totes",
+ "hero.eyebrow":"Estudi de pilates · Gràcia, Barcelona",
+ "hero.title":'<span class="ln"><span>Respira.</span></span><span class="ln"><span>Mou-te.</span></span><span class="ln"><span><em>Floreix.</em></span></span>',
+ "hero.lead":"Classes petites, llum suau i un ritme que s’adapta a tu. Reserva la teva classe en 20 segons.",
+ "hero.cta":"Veure horari i reservar","hero.next":"Propera classe","hero.nextTxt":"{cls} · {day} {time}","hero.left":"queden {n}","hero.last":"última plaça","hero.full":"llista d’espera",
+ "br.in":"Inspira","br.out":"Expira","marq":"Respira,Mou-te,Floreix,Pilates,Calma,Força,Equilibri",
+ "fd.eyebrow":"Troba la teva classe","fd.title":"Tres preguntes, <em>una classe per a tu</em>.",
+ "fd.q1":"Quina és la teva experiència?","fd.a1a":"És la meva primera vegada","fd.a1b":"Ja practico",
+ "fd.q2":"Què busques avui?","fd.a2a":"Força","fd.a2b":"Calma","fd.a2c":"Flexibilitat","fd.a2d":"Embaràs",
+ "fd.q3":"Quan et va millor?","fd.a3a":"Pel matí","fd.a3b":"Per la tarda",
+ "fd.res":"La teva classe ideal","fd.next":"Propera sessió","fd.none":"Ara mateix no hi ha sessions obertes","fd.book":"Reservar aquesta","fd.restart":"Tornar a començar","fd.see":"Veure tot l’horari",
+ "cl.eyebrow":"Les classes","cl.title":"Quatre maneres <em>de florir</em>.","cl.meta":"{dur} min · màx. {cap}",
+ "tt.eyebrow":"Horari en directe","tt.title":"Tria la teva <em>hora</em>.","tt.lead":"Places a l’instant. Si una classe és plena, entres a la llista d’espera i t’avisem per correu.",
+ "sp.eyebrow":"L’espai","sp.title":"Un lloc <em>per tornar a tu</em>.","sp.lead":"Parets liles, llum de matí i terra de fusta clara. Un estudi acollidor a Gràcia on sentir-te bé des que entres.",
+ "sp.f1":"persones com a màxim per classe","sp.f2":"minuts de classe, sense pressa","sp.f3":"hores per cancel·lar gratis",
+ "team.eyebrow":"Qui t’acompanya","team.title":"Mans <em>que cuiden</em>.","team.r1":"Mat · Restore","team.b1":"Instructora certificada a Barcelona. Creu en un pilates amable, que s’adapta a cada cos i a cada dia.",
+ "team.r2":"Reformer · Prenatal","team.b2":"Especialista en embaràs i postpart. Força suau i molta calma, per sentir-te tu mateixa.",
+ "v.1t":"Grups petits","v.1d":"Màxim vuit persones. Et veiem, et corregim i et cuidem.",
+ "v.2t":"Sense comparacions","v.2d":"Cada cos, el seu ritme. Aquí ningú competeix: només respires i et mous.",
+ "v.3t":"Per a totes","v.3d":"Primera vegada, embaràs, tornada d’una lesió: adaptem cada classe.",
+ "p.eyebrow":"Tarifes","p.title":"Clar i <em>sense permanència</em>.","p.popular":"El preferit","p.choose":"Triar",
+ "faq.eyebrow":"Preguntes","faq.title":"Abans de <em>venir</em>.",
+ "fin.title":'La teva primera classe<br><em>t’està esperant.</em>',"fin.lead":"Reserva en 20 segons. Paga a l’estudi, cancel·la gratis fins a 12 h abans.","fin.cta":"Reservar la meva classe","ft.map":"Com arribar"
+}),
+en: Object.assign({}, UI.en, {
+ "nav.book":"Book","tt.all":"All",
+ "hero.eyebrow":"Pilates studio · Gràcia, Barcelona",
+ "hero.title":'<span class="ln"><span>Breathe.</span></span><span class="ln"><span>Move.</span></span><span class="ln"><span><em>Bloom.</em></span></span>',
+ "hero.lead":"Small classes, soft light and a rhythm that adapts to you. Book your class in 20 seconds.",
+ "hero.cta":"See schedule & book","hero.next":"Next class","hero.nextTxt":"{cls} · {day} {time}","hero.left":"{n} left","hero.last":"last spot","hero.full":"waitlist",
+ "br.in":"Inhale","br.out":"Exhale","marq":"Breathe,Move,Bloom,Pilates,Calm,Strength,Balance",
+ "fd.eyebrow":"Find your class","fd.title":"Three questions, <em>one class for you</em>.",
+ "fd.q1":"What's your experience?","fd.a1a":"It's my first time","fd.a1b":"I already practise",
+ "fd.q2":"What are you looking for today?","fd.a2a":"Strength","fd.a2b":"Calm","fd.a2c":"Flexibility","fd.a2d":"Pregnancy",
+ "fd.q3":"When suits you best?","fd.a3a":"In the morning","fd.a3b":"In the evening",
+ "fd.res":"Your ideal class","fd.next":"Next session","fd.none":"No open sessions right now","fd.book":"Book this one","fd.restart":"Start again","fd.see":"See the full schedule",
+ "cl.eyebrow":"The classes","cl.title":"Four ways <em>to bloom</em>.","cl.meta":"{dur} min · max {cap}",
+ "tt.eyebrow":"Live schedule","tt.title":"Pick your <em>time</em>.","tt.lead":"Spots update instantly. If a class is full you join the waitlist and we email you.",
+ "sp.eyebrow":"The space","sp.title":"A place <em>to come back to yourself</em>.","sp.lead":"Lilac walls, morning light and pale wooden floors. A cosy studio in Gràcia where you feel good from the moment you walk in.",
+ "sp.f1":"people at most per class","sp.f2":"minutes of class, no rush","sp.f3":"hours to cancel for free",
+ "team.eyebrow":"Who's with you","team.title":"Hands <em>that care</em>.","team.r1":"Mat · Restore","team.b1":"Certified instructor in Barcelona. Believes in a kind pilates that adapts to every body and every day.",
+ "team.r2":"Reformer · Prenatal","team.b2":"Pregnancy and postnatal specialist. Gentle strength and lots of calm, to feel like yourself.",
+ "v.1t":"Small groups","v.1d":"Eight people at most. We see you, we correct you, we look after you.",
+ "v.2t":"No comparison","v.2d":"Every body, its own rhythm. Nobody competes here: you just breathe and move.",
+ "v.3t":"For everyone","v.3d":"First time, pregnancy, coming back from an injury: we adapt every class.",
+ "p.eyebrow":"Pricing","p.title":"Clear and <em>no lock-in</em>.","p.popular":"Favourite","p.choose":"Choose",
+ "faq.eyebrow":"Questions","faq.title":"Before <em>you come</em>.",
+ "fin.title":'Your first class<br><em>is waiting for you.</em>',"fin.lead":"Book in 20 seconds. Pay at the studio, cancel free up to 12 h before.","fin.cta":"Book my class","ft.map":"Get directions"
+})
+};
+var FAQ = {
+ es:[["Nunca he hecho pilates. ¿Puedo venir?","Claro. Reserva la clase de prueba o una marcada como «Iniciación»: te explicamos todo desde cero."],["¿Qué llevo a clase?","Ropa cómoda y calcetines antideslizantes (los tenemos a la venta). Lo demás lo ponemos nosotras."],["¿Cómo cancelo?","Con el enlace del email o desde «Reservada ✓» en el horario. Gratis hasta 12 h antes."],["¿Cómo se paga?","En el estudio: tarjeta, Bizum o efectivo. No pagas nada al reservar."]],
+ ca:[["Mai he fet pilates. Puc venir?","És clar. Reserva la classe de prova o una marcada com «Iniciació»: t’ho expliquem tot des de zero."],["Què porto a classe?","Roba còmoda i mitjons antilliscants (els tenim a la venda). La resta ho posem nosaltres."],["Com cancel·lo?","Amb l’enllaç del correu o des de «Reservada ✓» a l’horari. Gratis fins a 12 h abans."],["Com es paga?","A l’estudi: targeta, Bizum o efectiu. No pagues res en reservar."]],
+ en:[["I've never done pilates. Can I come?","Of course. Book the trial class or one marked “Beginner”: we explain everything from scratch."],["What should I bring?","Comfortable clothes and non-slip socks (on sale at the studio). We provide the rest."],["How do I cancel?","With the link in your email or from “Booked ✓” in the schedule. Free up to 12 h before."],["How do I pay?","At the studio: card, Bizum or cash. You pay nothing when booking."]]
+};
+var CLASSES = {}, TEACH = {}, WEEK = {}, PRICES = [];
+
+/* ============ STUDIO CONTENT OVERRIDES (build-time) ============ */
+var STUDIO_CONTENT = {"CLASSES":{"mat":{"price":16,"dur":55,"cap":8,"name":{"es":"Mat Flow","ca":"Mat Flow","en":"Mat Flow"},"desc":{"es":"Fluidez, fuerza y respiración sobre la esterilla. Perfecta para empezar.","ca":"Fluïdesa, força i respiració sobre l’estora. Perfecta per començar.","en":"Flow, strength and breath on the mat. Perfect to start with."}},"reformer":{"price":20,"dur":50,"cap":6,"name":{"es":"Reformer","ca":"Reformer","en":"Reformer"},"desc":{"es":"Tono y control con la ayuda del reformer, en grupos pequeños.","ca":"To i control amb l’ajuda del reformer, en grups petits.","en":"Tone and control with the reformer, in small groups."}},"prenatal":{"price":18,"dur":50,"cap":6,"name":{"es":"Prenatal","ca":"Prenatal","en":"Prenatal"},"desc":{"es":"Movimiento suave para cada trimestre. Calma, fuerza y suelo pélvico.","ca":"Moviment suau per a cada trimestre. Calma, força i sòl pelvià.","en":"Gentle movement for every trimester. Calm, strength and pelvic floor."}},"restore":{"price":16,"dur":50,"cap":10,"name":{"es":"Restore","ca":"Restore","en":"Restore"},"desc":{"es":"Estiramientos lentos y respiración profunda. Para soltar el día.","ca":"Estiraments lents i respiració profunda. Per deixar anar el dia.","en":"Slow stretching and deep breathing. To let the day go."}}},"TEACH":{"L":"Lía","M":"Mar"},"WEEK":{"1":[["08:00","mat","L","all"],["10:00","reformer","M","beg"],["12:30","prenatal","M","all"],["18:00","reformer","L","all"],["19:15","restore","M","all"]],"2":[["07:45","reformer","L","all"],["09:30","mat","M","all"],["17:30","mat","L","beg"],["18:45","reformer","M","int"],["20:00","restore","L","all"]],"3":[["08:00","mat","M","all"],["10:00","reformer","L","beg"],["11:30","prenatal","M","all"],["18:00","reformer","M","all"],["19:15","mat","L","all"]],"4":[["07:45","reformer","M","all"],["09:30","restore","L","all"],["17:30","reformer","L","beg"],["18:45","mat","M","int"],["20:00","restore","M","all"]],"5":[["08:00","mat","L","all"],["10:00","reformer","M","all"],["12:30","prenatal","L","all"],["17:30","mat","M","all"],["18:45","restore","L","all"]],"6":[["09:30","mat","L","all"],["10:45","reformer","M","beg"],["12:00","restore","M","all"]]},"PRICES":[{"k":"trial","amt":"10","unit":"","name":{"es":"Clase de prueba","ca":"Classe de prova","en":"Trial class"},"sub":{"es":"Solo la primera vez","ca":"Només la primera vegada","en":"First time only"},"feats":{"es":["Mat o reformer","Te lo explicamos todo","Sin compromiso"],"ca":["Mat o reformer","T’ho expliquem tot","Sense compromís"],"en":["Mat or reformer","Everything explained","No commitment"]}},{"k":"single","amt":"18","unit":"","name":{"es":"Clase suelta","ca":"Classe solta","en":"Drop-in"},"sub":{"es":"Mat y restore 16 €","ca":"Mat i restore 16 €","en":"Mat & restore €16"},"feats":{"es":["Válida 1 mes","Cualquier horario","Cancelación gratis 12 h"],"ca":["Vàlida 1 mes","Qualsevol horari","Cancel·lació gratuïta 12 h"],"en":["Valid 1 month","Any time slot","Free cancellation 12 h"]}},{"k":"pack","amt":"150","unit":"","hot":true,"name":{"es":"Bono 10 clases","ca":"Bo 10 classes","en":"10-class pack"},"sub":{"es":"15 € por clase","ca":"15 € per classe","en":"€15 per class"},"feats":{"es":["Válido 4 meses","Todas las clases","Compártelo con alguien"],"ca":["Vàlid 4 mesos","Totes les classes","Comparteix-lo amb algú"],"en":["Valid 4 months","All classes","Share it with someone"]}},{"k":"unl","amt":"119","unit":"/mes","name":{"es":"Ilimitada","ca":"Il·limitada","en":"Unlimited"},"sub":{"es":"Sin permanencia","ca":"Sense permanència","en":"No lock-in"},"feats":{"es":["Todas las clases","Reserva prioritaria","Pausa cuando quieras"],"ca":["Totes les classes","Reserva prioritària","Pausa quan vulguis"],"en":["All classes","Priority booking","Pause anytime"]}}]};
+(function(){
+  if(STUDIO_CONTENT.T){ for(var l in STUDIO_CONTENT.T){ if(T[l]) for(var k in STUDIO_CONTENT.T[l]) T[l][k]=STUDIO_CONTENT.T[l][k]; } }
+  if(STUDIO_CONTENT.CLASSES) CLASSES = STUDIO_CONTENT.CLASSES;
+  if(STUDIO_CONTENT.TEACH) TEACH = STUDIO_CONTENT.TEACH;
+  if(STUDIO_CONTENT.WEEK) WEEK = STUDIO_CONTENT.WEEK;
+  if(STUDIO_CONTENT.PRICES) PRICES = STUDIO_CONTENT.PRICES;
+  if(STUDIO_CONTENT.QUOTES) QUOTES = STUDIO_CONTENT.QUOTES;
+  if(STUDIO_CONTENT.FAQ) FAQ = STUDIO_CONTENT.FAQ;
+  if(STUDIO_CONTENT.ALTS){ for(var l2 in STUDIO_CONTENT.ALTS){ if(ALTS[l2]) for(var k2 in STUDIO_CONTENT.ALTS[l2]) ALTS[l2][k2]=STUDIO_CONTENT.ALTS[l2][k2]; } }
+  if(STUDIO_CONTENT.DOW) DOW = STUDIO_CONTENT.DOW;
+  if(STUDIO_CONTENT.DOWL) DOWL = STUDIO_CONTENT.DOWL;
+})();
+
+/* ---- base state shared by the animated layouts (before the engine) ---- */
+var STUDIO = { name: "MALVA", mood: 0, personal: false };
+var store = { get:function(k,d){try{var v=localStorage.getItem("malva:"+k);return v?JSON.parse(v):d}catch(e){return d}}, set:function(k,v){try{localStorage.setItem("malva:"+k,JSON.stringify(v))}catch(e){}} };
+var lang = (function(){ var q=(location.search.match(/[?&]lang=(es|ca|en)/)||[])[1]; return q || store.get("lang", (navigator.language||"es").slice(0,2)); })();
+if(!T[lang]) lang="es";
+var LIVE = !!(CONFIG.supabaseUrl && CONFIG.supabaseAnonKey);
+var mine = store.get(LIVE?"mine-live":"mine-demo", {});   /* sessionId -> {status, token} */
+var state = { day:0, filter:"all", sheet:null, loading:true, error:null };
+var DATA = { days:[], byDay:{}, byId:{} };
+var HOOKS = {};   /* layout fills: onTimetable, onSheetOpen, onSheetClose, onBooked */
+
+function saveMine(){ store.set(LIVE?"mine-live":"mine-demo", mine); }
+function t(k,vars){ var s=(T[lang][k]!=null?T[lang][k]:T.es[k]); if(s==null) s=k; if(vars) for(var v in vars) s=s.split("{"+v+"}").join(vars[v]); return s.split("%STUDIO%").join(STUDIO.name); }
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]}); }
+function hash(str){ var h=2166136261; for(var i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)} return h>>>0; }
+function uuid(){ return (crypto.randomUUID ? crypto.randomUUID() : "d-"+Date.now().toString(36)+Math.random().toString(36).slice(2)); }
+var DOW = { es:["dom","lun","mar","mié","jue","vie","sáb"], ca:["dg","dl","dt","dc","dj","dv","ds"], en:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"] };
+var DOWL = { es:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"], ca:["diumenge","dilluns","dimarts","dimecres","dijous","divendres","dissabte"], en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] };
+var MONS = { es:["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"], ca:["gen","feb","mar","abr","mai","jun","jul","ago","set","oct","nov","des"], en:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] };
+/* ============ PERSONA (sales demos only) ============
+   A prospect can open the demo as "her" studio: ?studio=Lua%20Pilates&mood=1
+   - the name replaces the studio name everywhere (always as plain text, never HTML), max 32 characters
+   - the mood swaps the colour palette (moods come from studio.json)
+   - the choice is kept in localStorage, so the owner panel (same origin) shows the same name and colours.
+   Real client sites have "personalize": false and none of this runs. */
+function cleanName(s){
+  if(s==null) return "";
+  s=String(s);
+  try{ s=s.replace(/[^\p{L}\p{N} .,'’&·\-]/gu,""); }catch(e){ s=s.replace(/[^A-Za-z0-9À-ɏ .,'’&·\-]/g,""); }
+  return s.replace(/\s+/g," ").trim().slice(0,32);
+}
+var PERSONA = null, DESIGN_NAME = STUDIO.name;
+(function(){
+  if(!CONFIG.personalize) return;
+  var q; try{ q=new URLSearchParams(location.search); }catch(e){ q={ get:function(){ return null; } }; }
+  var qn=cleanName(q.get("studio")), qm=parseInt(q.get("mood"),10), n=CONFIG.moods.length;
+  var okMood=(qm>=0 && qm<n), hasName=!!(q.has && q.has("studio")), saved=store.get("persona",null);
+  if(hasName||okMood){ saved={ name: hasName?qn:((saved&&saved.name)||""), mood: okMood?qm:((saved&&saved.mood)|0) }; store.set("persona",saved); store.set("ribbonOff",false); }
+  if(!saved||(!saved.name&&!saved.mood)) return;
+  PERSONA={ name:cleanName(saved.name), mood:((saved.mood|0)>=0&&(saved.mood|0)<n)?(saved.mood|0):0 };
+  if(PERSONA.name){ STUDIO.name=PERSONA.name; STUDIO.personal=true; }
+  var m=CONFIG.moods[PERSONA.mood];
+  if(m){ for(var k in m.colors) document.documentElement.style.setProperty("--"+k,m.colors[k]);
+    var tc=document.querySelector('meta[name="theme-color"]'); if(tc&&m.colors.pearl) tc.setAttribute("content",m.colors.pearl); }
+})();
+var RB={
+ es:{ txt:"Vista previa para {name}", cta:"¿La quieres?", msg:"Hola Khaireddine, me gusta la web {design} para {name}. ¿Me das precio?" },
+ ca:{ txt:"Vista prèvia per a {name}", cta:"La vols?", msg:"Hola Khaireddine, m’agrada la web {design} per a {name}. Em dius el preu?" },
+ en:{ txt:"Preview for {name}", cta:"Want it?", msg:"Hi Khaireddine, I like the {design} website for {name}. Can you tell me the price?" }
+};
+function renderRibbon(){
+  var el=document.getElementById("ribbon"); if(!el) return;
+  if(!PERSONA||!PERSONA.name||store.get("ribbonOff",false)){ el.hidden=true; return; }
+  var s=RB[lang]||RB.es;
+  el.textContent="";
+  var span=document.createElement("span"); span.textContent=s.txt.split("{name}").join(PERSONA.name);
+  var a=document.createElement("a"); a.textContent=s.cta; a.target="_blank"; a.rel="noopener";
+  a.href="https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(s.msg.split("{design}").join(DESIGN_NAME).split("{name}").join(PERSONA.name));
+  var x=document.createElement("button"); x.type="button"; x.setAttribute("aria-label","×"); x.textContent="×";
+  x.addEventListener("click",function(){ store.set("ribbonOff",true); el.hidden=true; });
+  el.appendChild(span); el.appendChild(a); el.appendChild(x); el.hidden=false;
+}
+/* ---- dates, always in the studio's time zone ---- */
+var TZ = CONFIG.timezone || "Europe/Madrid";
+var fmtKey = new Intl.DateTimeFormat("en-CA",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"});
+var fmtTime = new Intl.DateTimeFormat("en-GB",{timeZone:TZ,hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
+function keyOf(date){ return fmtKey.format(date); }
+function timeOf(date){ return fmtTime.format(date); }
+function keyToUTC(k){ var p=k.split("-"); return Date.UTC(+p[0],+p[1]-1,+p[2]); }
+function dayInfo(k){ var d=new Date(keyToUTC(k)); return { key:k, dow:d.getUTCDay(), dom:d.getUTCDate() }; }
+function diffKey(k){ return Math.round((keyToUTC(k)-keyToUTC(keyOf(new Date())))/864e5); }
+function addDaysKey(k,n){ var d=new Date(keyToUTC(k)+n*864e5); return d.toISOString().slice(0,10); }
+/* local wall-clock time in TZ -> real Date (demo backend only) */
+function zonedDate(k,hm){ var guess=new Date(k+"T"+hm+":00Z"); var off=new Date(guess.toLocaleString("en-US",{timeZone:TZ}))-new Date(guess.toLocaleString("en-US",{timeZone:"UTC"})); return new Date(guess-off); }
+
+/* ============ BACKENDS ============
+   Same interface for both:
+     timetable()          -> [{id, starts, key(class), names{es,ca,en}, dur, price, teacher, level, cap, booked, wait, bookable}]
+     book(sessionId, f)   -> {status, token, position, isTrial}
+     getBooking(token)    -> {status, position, starts, names, teacher, firstName, canCancel, isLate}
+     cancel(token)        -> {late}
+   LIVE = Supabase (step 2). Demo = generated data kept in this browser.        */
+var Live = {
+  rpc: function(fn, args){
+    return fetch(CONFIG.supabaseUrl.replace(/\/$/,"")+"/rest/v1/rpc/"+fn, {
+      method:"POST",
+      headers:(function(){ var h={ "apikey":CONFIG.supabaseAnonKey, "Content-Type":"application/json" }; if(/^eyJ/.test(CONFIG.supabaseAnonKey)) h.Authorization="Bearer "+CONFIG.supabaseAnonKey; return h; })(),
+      body: JSON.stringify(args||{})
+    }).then(function(r){
+      return r.text().then(function(txt){
+        var body=null; try{ body=txt?JSON.parse(txt):null }catch(e){}
+        if(!r.ok){ var err=new Error((body&&body.message)||("HTTP_"+r.status)); err.code=(body&&body.message)||"NETWORK"; throw err; }
+        return body;
+      });
+    }, function(){ var err=new Error("NETWORK"); err.code="NETWORK"; throw err; });
+  },
+  timetable: function(){
+    return Live.rpc("get_timetable",{}).then(function(rows){
+      return (rows||[]).map(function(r){ return { id:r.session_id, starts:new Date(r.starts_at), key:r.class_key, names:{es:r.name_es,ca:r.name_ca,en:r.name_en}, dur:r.duration_min, price:r.price_cents/100, teacher:r.instructor||"", level:r.level, cap:r.capacity, booked:r.booked, wait:r.waitlist, bookable:r.bookable && r.status==="scheduled", cancelled:r.status==="cancelled" }; });
+    });
+  },
+  book: function(id,f){
+    return Live.rpc("book_session",{ p_session_id:id, p_full_name:f.name, p_email:f.email, p_phone:f.phone, p_is_trial:!!f.first, p_lang:lang })
+      .then(function(r){ return { status:r.status, token:r.cancel_token, position:r.waitlist_position, isTrial:r.is_trial }; });
+  },
+  getBooking: function(token){
+    return Live.rpc("get_booking",{ p_token:token }).then(function(r){
+      return { status:r.status, position:r.waitlist_position, starts:new Date(r.starts_at), names:{es:r.name_es,ca:r.name_ca,en:r.name_en}, teacher:r.instructor||"", firstName:r.first_name, canCancel:r.can_cancel, isLate:r.is_late };
+    });
+  },
+  cancel: function(token){ return Live.rpc("cancel_booking",{ p_token:token }).then(function(r){ return { late:!!r.late }; }); }
+};
+
+var Demo = {
+  db: store.get("demo-db", {}),   /* token -> {sessionId, status, name, created} */
+  save: function(){ store.set("demo-db", Demo.db); },
+  list: function(){
+    var out=[], today=keyOf(new Date()), now=new Date();
+    for(var i=0, made=0; made<7 && i<14; i++){
+      var k=addDaysKey(today,i), info=dayInfo(k), dow=info.dow===0?7:info.dow, tpl=WEEK[dow]||[];
+      if(!tpl.length) continue; made++;
+      tpl.forEach(function(r){
+        var c=CLASSES[r[1]], id=k+"_"+r[0]+"_"+r[1], h=hash(id), starts=zonedDate(k,r[0]);
+        var fill = 0.22 + 0.09*Math.max(0,4-i) + (+r[0].slice(0,2)>=18?0.12:0) + (h%100)/400;
+        var booked=Math.min(c.cap, Math.round(c.cap*fill)); if(h%9===0 && i<2) booked=c.cap;
+        var wait = booked>=c.cap ? (h%4)+1 : 0;
+        out.push({ id:id, starts:starts, key:r[1], names:c.name, dur:c.dur, price:c.price, teacher:TEACH[r[2]], level:r[3], cap:c.cap, booked:booked, wait:wait, bookable: starts-now > 60*60000 });
+      });
+    }
+    /* add this browser's own bookings on top */
+    Object.keys(Demo.db).forEach(function(tok){ var b=Demo.db[tok]; var s=out.filter(function(x){return x.id===b.sessionId})[0]; if(!s) return;
+      if(b.status==="booked") s.booked=Math.min(s.cap,s.booked+1); if(b.status==="waitlist") s.wait+=1; });
+    return out;
+  },
+  timetable: function(){ return new Promise(function(res){ setTimeout(function(){ res(Demo.list()); },250); }); },
+  book: function(id,f){ return new Promise(function(res,rej){ setTimeout(function(){
+    var s=Demo.list().filter(function(x){return x.id===id})[0];
+    if(!s||!s.bookable){ var e=new Error("BOOKING_CLOSED"); e.code="BOOKING_CLOSED"; return rej(e); }
+    for(var tk in Demo.db){ var b=Demo.db[tk]; if(b.sessionId===id && (b.status==="booked"||b.status==="waitlist")){ var e2=new Error("ALREADY_BOOKED"); e2.code="ALREADY_BOOKED"; return rej(e2);} }
+    var full=s.booked>=s.cap, tok=uuid();
+    Demo.db[tok]={ sessionId:id, status: full?"waitlist":"booked", name:f.name, created:Date.now() }; Demo.save();
+    res({ status:full?"waitlist":"booked", token:tok, position: full?s.wait+1:null, isTrial:!!f.first });
+  },600); }); },
+  getBooking: function(tok){ return new Promise(function(res,rej){ setTimeout(function(){
+    var b=Demo.db[tok], s=b&&Demo.list().filter(function(x){return x.id===b.sessionId})[0];
+    if(!b||!s){ var e=new Error("BOOKING_NOT_FOUND"); e.code="BOOKING_NOT_FOUND"; return rej(e); }
+    res({ status:b.status, position:b.status==="waitlist"?s.wait:null, starts:s.starts, names:s.names, teacher:s.teacher, firstName:b.name.split(" ")[0], canCancel:(b.status==="booked"||b.status==="waitlist") && s.starts>new Date(), isLate: b.status==="booked" && (s.starts-new Date()) < 12*3600000 });
+  },300); }); },
+  cancel: function(tok){ return new Promise(function(res,rej){ setTimeout(function(){
+    var b=Demo.db[tok]; if(!b||b.status==="cancelled"){ var e=new Error("ALREADY_CANCELLED"); e.code="ALREADY_CANCELLED"; return rej(e); }
+    var s=Demo.list().filter(function(x){return x.id===b.sessionId})[0]; var late = b.status==="booked" && s && (s.starts-new Date()) < 12*3600000;
+    b.status="cancelled"; Demo.save(); res({late:late});
+  },500); }); }
+};
+var API = LIVE ? Live : Demo;
+/* ============ BOOKING (shared by the animated layouts) ============
+   Needs from the layout: CONFIG, T/UI, state, DATA, mine, API, t, esc, date helpers.
+   Layout hooks (optional): onTimetable(), onSheetOpen(originEl), onSheetClose(), onBooked(result, session).   */
+var lastFocus=null;
+function hook(name){ return typeof HOOKS[name]==="function" ? HOOKS[name] : null; }
+function niceDate(d){ var k=keyOf(d), n=diffKey(k), info=dayInfo(k); if(n===0) return t("tt.today").toLowerCase(); if(n===1) return t("tt.tomorrow").toLowerCase(); return DOWL[lang][info.dow]+" "+info.dom; }
+function cancelUrl(token){ var base=(CONFIG.siteUrl||location.href.split("#")[0].split("?")[0]); return base+"#cancel="+token; }
+function calUrl(names,starts,dur){
+  function z(d){ return d.toISOString().replace(/[-:]/g,"").replace(/\.\d+Z$/,"Z"); }
+  var end=new Date(starts.getTime()+dur*60000);
+  return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(names[lang]+" · "+STUDIO.name)+"&dates="+z(starts)+"/"+z(end)+"&location="+encodeURIComponent(CONFIG.address||"");
+}
+
+/* ---- timetable ---- */
+function loadTimetable(silent){
+  if(!silent){ state.loading=true; state.error=null; if(hook("onTimetable")) hook("onTimetable")(); }
+  return API.timetable().then(function(list){
+    var byDay={}, byId={}, now=new Date();
+    list.forEach(function(s){
+      s.dateKey=keyOf(s.starts); s.time=timeOf(s.starts); s.past = s.starts<=now; s.closed = !s.bookable && !s.past;
+      (byDay[s.dateKey]=byDay[s.dateKey]||[]).push(s); byId[s.id]=s;
+    });
+    var days=Object.keys(byDay).sort().map(dayInfo);
+    DATA={ days:days, byDay:byDay, byId:byId };
+    state.loading=false; state.error=null;
+    if(state.day>=days.length) state.day=0;
+    if(hook("onTimetable")) hook("onTimetable")();
+  }, function(err){
+    state.loading=false; state.error=err.code||"NETWORK";
+    if(hook("onTimetable")) hook("onTimetable")();
+  });
+}
+function sessionsOfDay(i){ var d=DATA.days[i]; return d ? DATA.byDay[d.key] : []; }
+/* first session that can still be booked, optionally of one class key */
+function nextBookable(key){
+  var all=[]; DATA.days.forEach(function(d){ DATA.byDay[d.key].forEach(function(s){ all.push(s); }); });
+  all.sort(function(a,b){return a.starts-b.starts});
+  for(var i=0;i<all.length;i++){ var s=all[i]; if(s.bookable && !s.past && (!key||s.key===key)) return s; }
+  return null;
+}
+
+/* ---- sheet ---- */
+function setOrigin(el){
+  var sh=document.getElementById("sheet"), r=sh.getBoundingClientRect(), w=r.width||innerWidth, h=r.height||innerHeight;
+  var cx=innerWidth/2, cy=innerHeight/2;
+  if(el&&el.getBoundingClientRect){ var b=el.getBoundingClientRect(); cx=b.left+b.width/2; cy=b.top+b.height/2; }
+  var ox=cx-r.left, oy=cy-r.top;
+  var rad=Math.ceil(Math.hypot(Math.max(ox,w-ox), Math.max(oy,h-oy)))+4;
+  sh.style.setProperty("--ox",ox+"px"); sh.style.setProperty("--oy",oy+"px"); sh.style.setProperty("--rad",rad+"px");
+}
+function openSheet(sheet, originEl){
+  lastFocus=document.activeElement; state.sheet=sheet; renderSheet();
+  var sh=document.getElementById("sheet"); setOrigin(originEl||lastFocus);
+  sh.classList.add("open"); sh.setAttribute("aria-hidden","false");
+  document.getElementById("scrim").classList.add("open"); document.documentElement.classList.add("sheet-open");
+  if(hook("onSheetOpen")) hook("onSheetOpen")(originEl);
+  setTimeout(function(){ var f=document.querySelector("#shBody input, #shFoot button"); if(f) f.focus({preventScroll:true}); },420);
+}
+function openBook(id, originEl){ var s=DATA.byId[id]; if(!s||!s.bookable) return; openSheet({ mode:"form", id:id, data:store.get("contact",{name:"",email:"",phone:""}) }, originEl); }
+function openManage(token){
+  openSheet({ mode:"manage", token:token, phase:"load" });
+  API.getBooking(token).then(function(b){
+    for(var id in mine){ if(mine[id].token===token){ if(b.status==="booked"||b.status==="waitlist") mine[id].status=b.status; else delete mine[id]; saveMine(); if(hook("onTimetable")) hook("onTimetable")(); } }
+    if(!state.sheet||state.sheet.token!==token) return; state.sheet.b=b; state.sheet.phase="view"; renderSheet(); },
+  function(err){ if(!state.sheet) return; state.sheet.phase="error"; state.sheet.err=err.code; renderSheet(); });
+}
+function closeSheet(){
+  state.sheet=null;
+  var sh=document.getElementById("sheet"); sh.classList.remove("open"); sh.setAttribute("aria-hidden","true");
+  document.getElementById("scrim").classList.remove("open"); document.documentElement.classList.remove("sheet-open");
+  if(location.hash.indexOf("#cancel=")===0) history.replaceState(null,"",location.pathname+location.search);
+  if(hook("onSheetClose")) hook("onSheetClose")();
+  if(lastFocus&&lastFocus.focus) lastFocus.focus({preventScroll:true});
+}
+function summaryHtml(names,starts,teacher,dur,level,extra){
+  return '<div class="sum"><div class="big">'+timeOf(starts)+'<small>'+esc(niceDate(starts))+'</small></div><h3>'+esc(names[lang])+'</h3><p>'+(teacher?t("tt.with")+' '+esc(teacher):'')+(dur?' · '+dur+' '+t("tt.min"):'')+(level?' · '+esc(t("lvl."+level)):'')+'</p>'+(extra||'')+'</div>';
+}
+function errText(code){ var k="err."+code; return T[lang][k]!=null||T.es[k]!=null ? t(k) : t("err.generic"); }
+function renderSheet(){
+  var st=state.sheet, body=document.getElementById("shBody"), foot=document.getElementById("shFoot"), title=document.getElementById("shTitle");
+  if(st.mode==="form"||st.mode==="done"){
+    var s=DATA.byId[st.id]; if(!s){ closeSheet(); return; }
+    var full = st.mode==="form" ? s.booked>=s.cap : st.result.status==="waitlist";
+    title.textContent = full ? t("bk.waitTitle") : t("bk.title");
+    var left=s.cap-s.booked;
+    var sum=summaryHtml(s.names,s.starts,s.teacher,s.dur,s.level, (st.mode==="form"&&!full)?'<p class="sp'+(left<=2?" low":"")+'">'+esc(left===1?t("tt.lastOne"):t("bk.spots",{n:left}))+'</p>':'');
+    if(st.mode==="form"){
+      var d=st.data;
+      body.innerHTML=sum+(full?'<div class="wait-info">'+esc(t("bk.waitInfo"))+' <b>'+esc(t("bk.pos",{n:s.wait+1}))+'</b></div>':'')+
+       (st.err?'<div class="form-err" role="alert">'+esc(errText(st.err))+'</div>':'')+
+       '<form class="bk" id="bkForm" novalidate>'+
+        '<div class="fld" data-f="name"><label for="f-name">'+esc(t("bk.name"))+'</label><input id="f-name" name="name" autocomplete="name" maxlength="120" value="'+esc(d.name)+'"><div class="err">'+esc(t("bk.errName"))+'</div></div>'+
+        '<div class="fld" data-f="email"><label for="f-email">'+esc(t("bk.email"))+'</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" value="'+esc(d.email)+'"><div class="err">'+esc(t("bk.errEmail"))+'</div></div>'+
+        '<div class="fld" data-f="phone"><label for="f-phone">'+esc(t("bk.phone"))+'</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="612 345 678" maxlength="20" value="'+esc(d.phone)+'"><div class="err">'+esc(t("bk.errPhone"))+'</div></div>'+
+        (full?'':'<label class="chk"><input type="checkbox" name="first"'+(d.first?" checked":"")+'> <span>'+esc(t("bk.first"))+'</span></label>')+
+        '<div class="fld" data-f="terms"><label class="chk" style="font-weight:400"><input type="checkbox" name="terms"> <span>'+esc(t("bk.terms"))+'</span></label><div class="err">'+esc(t("bk.errTerms"))+'</div></div>'+
+        '<div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>'+
+        '<button type="submit" class="sr">submit</button></form>';
+      if(!st.openedAt) st.openedAt=Date.now();
+      foot.innerHTML='<button class="btn '+(full?"btn-wait":"btn-main")+'" type="button" id="bkGo"'+(st.busy?" disabled":"")+'>'+esc(st.busy?t("bk.sending"):(full?t("bk.submitWait"):t("bk.submit")))+'</button><small>'+esc(t("bk.payNote"))+'</small>';
+      document.getElementById("bkForm").addEventListener("submit",function(e){e.preventDefault();submitBooking();});
+      document.getElementById("bkGo").addEventListener("click",submitBooking);
+    } else {
+      var r=st.result, wait=r.status==="waitlist", vars={cls:s.names[lang],day:niceDate(s.starts),time:s.time,n:r.position};
+      body.innerHTML='<div class="done"><div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><h3>'+esc(wait?t("bk.okWaitTitle"):t("bk.okTitle"))+'</h3><p>'+esc(wait?t("bk.okWaitText",vars):t("bk.okText",vars))+'</p>'+
+        (r.isTrial?'<p class="trial-ok">'+esc(t("bk.trialOk"))+'</p>':'')+
+        '<div class="links">'+(wait?'':'<a class="btn btn-ghost" target="_blank" rel="noopener" href="'+esc(calUrl(s.names,s.starts,s.dur))+'">'+esc(t("bk.cal"))+'</a>')+
+        '<button class="btn btn-ghost" type="button" data-copy="'+esc(cancelUrl(r.token))+'">'+esc(t("bk.copyLink"))+'</button></div>'+
+        (LIVE&&st.data&&st.data.email?'<p class="trial-ok" style="font-weight:500">'+esc(t("bk.emailed",{email:st.data.email}))+'</p>':'')+
+        '<div class="mail"><b>'+esc(t("bk.keepLink"))+'</b>'+esc(t("bk.keepLinkTxt"))+'</div>'+
+        (LIVE?'':'<span class="demo-flag">'+esc(t("bk.demo"))+'</span>')+'</div>';
+      foot.innerHTML=(!LIVE&&CONFIG.panelUrl?'<a class="btn btn-main" id="bkPanel" href="'+esc(CONFIG.panelUrl)+'?from=booking">'+esc(t("bk.seePanel"))+' →</a>':'')+'<button class="btn btn-ghost" type="button" id="bkDone">'+esc(t("bk.close"))+'</button>';
+      document.getElementById("bkDone").addEventListener("click",closeSheet);
+    }
+    return;
+  }
+  /* manage / cancel */
+  title.textContent=t("mg.title");
+  if(st.phase==="load"){ body.innerHTML='<div class="skel"><i></i><i></i></div>'; foot.innerHTML=''; return; }
+  if(st.phase==="error"){
+    body.innerHTML='<div class="done"><h3>'+esc(t("mg.notFound"))+'</h3><p>'+esc(errText(st.err))+'</p></div>';
+    foot.innerHTML='<a class="btn btn-main" href="https://wa.me/'+CONFIG.whatsapp+'" target="_blank" rel="noopener">WhatsApp</a>'; return;
+  }
+  var b=st.b;
+  if(st.phase==="cancelled"){
+    body.innerHTML='<div class="done"><div class="ok" style="background:var(--sh-muted)"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></div><h3>'+esc(t("mg.cancelledTitle"))+'</h3><p>'+esc(st.late?t("mg.cancelledLate"):t("mg.cancelledText"))+'</p></div>';
+    foot.innerHTML='<button class="btn btn-main" type="button" id="mgBack">'+esc(t("bk.another"))+'</button>';
+    document.getElementById("mgBack").addEventListener("click",closeSheet); return;
+  }
+  var statusTxt = b.status==="booked"?t("mg.stBooked"):b.status==="waitlist"?t("mg.stWait",{n:b.position}):b.status==="cancelled"?t("mg.stCancelled"):t("mg.stPast");
+  body.innerHTML='<p class="hello">'+esc(t("mg.hello",{name:b.firstName||""}))+'</p>'+summaryHtml(b.names,b.starts,b.teacher,null,null,'<p class="sp">'+esc(statusTxt)+'</p>')+
+    (b.canCancel&&b.isLate?'<div class="wait-info">'+esc(t("mg.lateWarn"))+'</div>':'')+
+    (st.err?'<div class="form-err" role="alert">'+esc(errText(st.err))+'</div>':'');
+  if(b.canCancel){
+    foot.innerHTML='<button class="btn btn-danger" type="button" id="mgCancel"'+(st.busy?" disabled":"")+'>'+esc(st.busy?t("bk.sending"):(b.status==="waitlist"?t("mg.leaveList"):t("mg.cancel")))+'</button><small>'+esc(t("mg.keep"))+'</small>';
+    document.getElementById("mgCancel").addEventListener("click",doCancel);
+  } else { foot.innerHTML='<button class="btn btn-main" type="button" id="mgOk">'+esc(t("bk.close"))+'</button>'; document.getElementById("mgOk").addEventListener("click",closeSheet); }
+}
+function submitBooking(){
+  var st=state.sheet; if(st.busy) return;
+  var f=document.getElementById("bkForm"), s=DATA.byId[st.id];
+  var name=f.name.value.trim(), email=f.email.value.trim(), phone=f.phone.value.trim(), digits=phone.replace(/\D/g,"");
+  var ok={ name:name.length>=2, email:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email), phone:digits.length>=9&&digits.length<=15, terms:f.terms.checked };
+  var first=null;
+  Object.keys(ok).forEach(function(k){ var fld=f.querySelector('[data-f="'+k+'"]'); fld.classList.toggle("bad",!ok[k]); if(!ok[k]&&!first) first=fld.querySelector("input"); });
+  if(first){ first.focus(); return; }
+  st.data={ name:name, email:email, phone:phone, first: f.first?f.first.checked:false };
+  store.set("contact",{name:name,email:email,phone:phone});
+  st.busy=true; st.err=null; renderSheet();
+  /* anti-spam: a hidden field only bots fill in, and nobody types a booking in under 2.5 s */
+  if((f.website&&f.website.value) || Date.now()-(st.openedAt||0) < 2500){
+    setTimeout(function(){ st.busy=false; st.mode="done"; st.result={ status:"booked", token:"", position:null, isTrial:false, fake:true }; renderSheet(); },900);
+    return;
+  }
+  API.book(st.id, st.data).then(function(r){
+    mine[st.id]={ status:r.status, token:r.token }; saveMine();
+    if(state.sheet!==st) return;
+    st.busy=false; st.mode="done"; st.result=r; renderSheet();
+    if(r.status==="booked") toast(t("bk.toast"));
+    if(hook("onBooked")) hook("onBooked")(r, s);
+    loadTimetable(true);
+  }, function(err){
+    st.busy=false; st.err=err.code||"generic";
+    if(state.sheet===st) renderSheet();
+    if(err.code==="BOOKING_CLOSED"||err.code==="SESSION_CANCELLED") loadTimetable(true);
+  });
+}
+function doCancel(){
+  var st=state.sheet; if(st.busy) return; st.busy=true; st.err=null; renderSheet();
+  API.cancel(st.token).then(function(r){
+    for(var id in mine){ if(mine[id].token===st.token) delete mine[id]; } saveMine();
+    st.busy=false; st.phase="cancelled"; st.late=r.late; renderSheet(); loadTimetable(true);
+  }, function(err){ st.busy=false; st.err=err.code||"generic"; renderSheet(); });
+}
+function toast(msg){ var el=document.getElementById("toast"); el.textContent=msg; el.classList.add("show"); setTimeout(function(){el.classList.remove("show")},2600); }
+
+/* ---- sheet events ---- */
+document.addEventListener("click",function(e){
+  var b;
+  if((b=e.target.closest("[data-copy]"))){ var url=b.dataset.copy; (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(function(){ toast(t("bk.copied")); },function(){ window.prompt(t("bk.copyLink"),url); }); return; }
+  if((b=e.target.closest("[data-manage]"))){ openManage(b.dataset.manage); return; }
+  if((b=e.target.closest("[data-retry]"))){ loadTimetable(); return; }
+  if((b=e.target.closest("[data-book]"))){ openBook(b.dataset.book, b); return; }
+});
+document.getElementById("scrim").addEventListener("click",closeSheet);
+document.getElementById("shClose").addEventListener("click",closeSheet);
+document.addEventListener("keydown",function(e){
+  if(!state.sheet) return;
+  if(e.key==="Escape") closeSheet();
+  if(e.key==="Tab"){ var f=[].slice.call(document.querySelectorAll("#sheet button:not([disabled]), #sheet input, #sheet a[href]")); if(!f.length) return; var a=f[0], z=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===a){z.focus();e.preventDefault()} else if(!e.shiftKey&&document.activeElement===z){a.focus();e.preventDefault()} }
+});
+function checkHash(){ var m=location.hash.match(/^#cancel=([0-9a-zA-Z-]{8,})$/); if(m) openManage(m[1]); }
+window.addEventListener("hashchange",checkHash);
+/* ============ FX (shared motion helpers) ============
+   Everything is progressive: without GSAP / with reduced motion the page is a plain, fully readable layout. */
+var REDUCED = (function(){ try{ if(/[?&]motion=reduce/.test(location.search)) return true; return window.matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){ return false; } })();
+var FINE = (function(){ try{ return window.matchMedia("(hover:hover) and (pointer:fine)").matches; }catch(e){ return false; } })();
+var HAS_GSAP = !!(window.gsap && window.ScrollTrigger);
+var ROOT_EL = document.documentElement;
+if(REDUCED) ROOT_EL.classList.add("motion-reduce");
+if(HAS_GSAP && !REDUCED){ gsap.registerPlugin(ScrollTrigger); ROOT_EL.classList.add("fx"); }
+var FX = HAS_GSAP && !REDUCED;
+var lenis = null;
+function isPhone(){ return window.innerWidth < 760; }
+
+/* smooth scroll (desktop and touch, never when reduced) */
+if(FX && window.Lenis){
+  try{
+    lenis = new Lenis({ lerp:.085, wheelMultiplier:.95 });
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(function(time){ lenis.raf(time*1000); });
+    gsap.ticker.lagSmoothing(0);
+  }catch(e){ lenis=null; }
+}
+function scrollToEl(el){
+  if(!el) return;
+  if(lenis) lenis.scrollTo(el,{ offset:-12, duration:1.4, easing:function(x){return 1-Math.pow(1-x,4)} });
+  else el.scrollIntoView({ behavior: REDUCED?"auto":"smooth", block:"start" });
+}
+document.addEventListener("click",function(e){
+  var a=e.target.closest("a[data-scroll]"); if(!a) return;
+  var id=a.getAttribute("href"); if(!id||id.charAt(0)!=="#") return;
+  var el=document.querySelector(id); if(!el) return; e.preventDefault(); scrollToEl(el);
+});
+
+/* reveal on view (CSS does the animation, JS only adds .in) */
+var revealIO = "IntersectionObserver" in window ? new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); revealIO.unobserve(en.target); } }); },{ rootMargin:"0px 0px -8% 0px" }) : null;
+function observeReveal(root){ (root||document).querySelectorAll("[data-reveal]:not(.in)").forEach(function(el){ if(revealIO) revealIO.observe(el); else el.classList.add("in"); }); }
+
+/* wrap words so each can be animated; keeps the text intact for screen readers */
+function splitWords(el){
+  if(!el || el.getAttribute("data-split")==="1") return el.querySelectorAll(".w>span");
+  var txt=el.textContent; el.setAttribute("aria-label",txt); el.setAttribute("data-split","1");
+  el.innerHTML=txt.split(/\s+/).filter(Boolean).map(function(w){ return '<span class="w" aria-hidden="true"><span>'+esc(w)+'</span></span>'; }).join(" ");
+  return el.querySelectorAll(".w>span");
+}
+
+/* magnetic buttons (desktop only) */
+function magnetic(sel,strength){
+  if(!FX||!FINE) return; strength=strength||.28;
+  document.querySelectorAll(sel).forEach(function(el){
+    var qx=gsap.quickTo(el,"x",{duration:.5,ease:"power3.out"}), qy=gsap.quickTo(el,"y",{duration:.5,ease:"power3.out"});
+    el.addEventListener("pointermove",function(e){ var r=el.getBoundingClientRect(); qx((e.clientX-(r.left+r.width/2))*strength); qy((e.clientY-(r.top+r.height/2))*strength); });
+    el.addEventListener("pointerleave",function(){ qx(0); qy(0); });
+  });
+}
+
+/* soft light that follows the pointer (desktop only) */
+function cursorGlow(id){
+  if(!FX||!FINE) return; var el=document.getElementById(id); if(!el) return;
+  var qx=gsap.quickTo(el,"x",{duration:.9,ease:"power3.out"}), qy=gsap.quickTo(el,"y",{duration:.9,ease:"power3.out"});
+  window.addEventListener("pointermove",function(e){ qx(e.clientX); qy(e.clientY); el.style.opacity=1; },{passive:true});
+  document.addEventListener("pointerleave",function(){ el.style.opacity=0; });
+}
+
+/* lazy play: videos play only near the viewport and fall back to the poster */
+function lazyVideos(){
+  var vs=[].slice.call(document.querySelectorAll("video[data-lazy]"));
+  if(!vs.length) return;
+  if(REDUCED){ vs.forEach(function(v){ v.removeAttribute("autoplay"); v.pause&&v.pause(); }); return; }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(en){
+    var v=en.target;
+    if(en.isIntersecting){ if(!v.getAttribute("data-ready")){ var wide=innerWidth>=900; [].slice.call(v.querySelectorAll("source[data-src]")).forEach(function(s){ s.src=(wide&&s.getAttribute("data-src-lg"))||s.getAttribute("data-src"); s.removeAttribute("data-src"); }); v.load(); v.setAttribute("data-ready","1"); }
+      var p=v.play(); if(p&&p.catch) p.catch(function(){ v.classList.add("blocked"); }); }
+    else v.pause();
+  }); },{ rootMargin:"200px" });
+  vs.forEach(function(v){ io.observe(v); });
+  /* some phones refuse autoplay until the first touch or scroll: try once more then */
+  function retry(){ vs.forEach(function(v){ if(v.classList.contains("blocked")){ v.classList.remove("blocked"); var p=v.play(); if(p&&p.catch) p.catch(function(){ v.classList.add("blocked"); }); } }); }
+  ["pointerdown","touchstart","scroll","keydown"].forEach(function(ev){ window.addEventListener(ev,retry,{ once:true, passive:true }); });
+}
+
+/* ============ LAYOUT ============ */
+function $(s,r){ return (r||document).querySelector(s); }
+function $$(s,r){ return [].slice.call((r||document).querySelectorAll(s)); }
+var NS="http://www.w3.org/2000/svg";
+
+/* ---- the flower: 5 petals around a core (also the logo, intro and final) ---- */
+var PET="M0 0C-50 -50 -52 -140 0 -186C52 -140 50 -50 0 0Z";   /* a petal growing up from the origin; each is placed with translate+rotate */
+var PFILL=["url(#petA)","url(#petB)","url(#petC)","url(#petA)","url(#petB)"];
+function buildFlower(g,opts){
+  opts=opts||{}; var out=[];
+  for(var i=0;i<5;i++){
+    var o=document.createElementNS(NS,"g"); o.setAttribute("transform","translate(200 200) rotate("+(i*72)+")");
+    var p=document.createElementNS(NS,"path"); p.setAttribute("d",PET); p.setAttribute("class",opts.cls||"pt"); p.setAttribute("fill",opts.fills?opts.fills[i%opts.fills.length]:PFILL[i]);
+    if(opts.stroke){ p.setAttribute("stroke",opts.stroke); p.setAttribute("stroke-width","3"); }
+    o.appendChild(p); g.appendChild(o); out.push(p);
+  }
+  return out;
+}
+var heroPetals=buildFlower($("#petals"));
+/* logo + final use plain colours (gradients live in the hero svg) */
+var SOLID=["var(--blush-2)","var(--pink)","var(--peach)","var(--blush-2)","var(--pink)"];
+buildFlower($("#logoFlower"),{cls:"",fills:SOLID}); (function(){ var c=document.createElementNS(NS,"circle"); c.setAttribute("cx","200");c.setAttribute("cy","200");c.setAttribute("r","90");c.setAttribute("fill","var(--peach)"); $("#logoFlower").appendChild(c); })();
+buildFlower($("#finalFlower"),{cls:"",fills:SOLID}); (function(){ var c=document.createElementNS(NS,"circle"); c.setAttribute("cx","200");c.setAttribute("cy","200");c.setAttribute("r","98");c.setAttribute("fill","var(--peach)"); $("#finalFlower").appendChild(c); })();
+buildFlower($("#introFlower"),{cls:"ip",fills:SOLID}); (function(){ var c=document.createElementNS(NS,"circle"); c.setAttribute("class","ic"); c.setAttribute("cx","200");c.setAttribute("cy","200");c.setAttribute("r","70"); $("#introFlower").appendChild(c); })();
+/* hero petals start closed (buds behind the core); with no motion they simply stay open */
+if(FX) gsap.set(heroPetals,{ scale:.12, rotation:-38, transformOrigin:"0 0" });
+
+/* ---- petals drifting on a canvas ---- */
+function petalField(canvas,count){
+  if(!canvas||REDUCED) return;
+  var ctx=canvas.getContext("2d"), W=0,H=0, ps=[], on=false, raf=0;
+  function cols(){ var cs=getComputedStyle(document.documentElement); return ["--blush-2","--pink","--peach","--rose"].map(function(v){ return cs.getPropertyValue(v).trim()||"#c6b5ee"; }); }
+  var C=cols();
+  function size(){ var r=canvas.getBoundingClientRect(), d=Math.min(window.devicePixelRatio||1,2); W=r.width; H=r.height; canvas.width=W*d; canvas.height=H*d; ctx.setTransform(d,0,0,d,0,0); }
+  function mk(){ return { x:Math.random()*W, y:Math.random()*H, s:6+Math.random()*10, vy:.25+Math.random()*.55, vx:-.15+Math.random()*.3, r:Math.random()*6.28, vr:(Math.random()-.5)*.025, c:Math.floor(Math.random()*4), sw:Math.random()*6.28 }; }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<ps.length;i++){ var p=ps[i]; p.y+=p.vy; p.sw+=.013; p.x+=p.vx+Math.sin(p.sw)*.45; p.r+=p.vr;
+      if(p.y>H+20){ p.y=-20; p.x=Math.random()*W; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.globalAlpha=.6; ctx.fillStyle=C[p.c];
+      ctx.beginPath(); ctx.moveTo(0,-p.s); ctx.bezierCurveTo(p.s*.9,-p.s*.4,p.s*.7,p.s*.7,0,p.s); ctx.bezierCurveTo(-p.s*.7,p.s*.7,-p.s*.9,-p.s*.4,0,-p.s); ctx.fill(); ctx.restore(); }
+    raf=on&&!document.hidden?requestAnimationFrame(draw):0;
+  }
+  function start(){ if(on) return; on=true; size(); if(!ps.length) for(var i=0;i<count;i++) ps.push(mk()); C=cols(); raf=requestAnimationFrame(draw); }
+  function stop(){ on=false; cancelAnimationFrame(raf); }
+  if("IntersectionObserver" in window) new IntersectionObserver(function(es){ es[0].isIntersecting?start():stop(); },{threshold:0}).observe(canvas);
+  window.addEventListener("resize",function(){ if(on) size(); });
+  document.addEventListener("visibilitychange",function(){ if(on&&!document.hidden&&!raf) raf=requestAnimationFrame(draw); });
+}
+petalField($("#petalsHero"), isPhone()?9:18); petalField($("#petalsFinal"), isPhone()?8:16);
+
+/* ---- icons for the class pebbles ---- */
+var ICON={
+ mat:'<svg viewBox="0 0 40 40"><path d="M20 30c-6-3-9-8-8-14 5 1 8 4 8 9 0-5 3-8 8-9 1 6-2 11-8 14z"/><path d="M20 34v-9"/></svg>',
+ reformer:'<svg viewBox="0 0 40 40"><rect x="5" y="22" width="30" height="8" rx="4"/><path d="M9 22v-6M31 22v-6M9 16h22"/></svg>',
+ prenatal:'<svg viewBox="0 0 40 40"><circle cx="20" cy="11" r="4"/><path d="M20 15c-6 3-6 12-1 16M20 15c6 2 7 8 3 12"/></svg>',
+ restore:'<svg viewBox="0 0 40 40"><path d="M27 12a11 11 0 1 0 1 16 9 9 0 0 1-1-16z"/></svg>'
+};
+var ICON_FALL='<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="9"/></svg>';
+
+/* ---- render: marquee, pebbles, days, chips, sessions, prices, faq, next ---- */
+function renderMarq(){ var w=t("marq").split(","), html=w.map(function(x){ return "<span>"+esc(x)+"</span>"; }).join(""); $("#marq").innerHTML=html+html+html+html; }
+function renderClasses(){
+  $("#classList").innerHTML=Object.keys(CLASSES).map(function(k){ var c=CLASSES[k];
+    return '<li data-reveal><button type="button" class="pebble" data-goclass="'+esc(k)+'"><span class="ico">'+(ICON[k]||ICON_FALL)+'</span><h3>'+esc(c.name[lang])+'</h3><p>'+esc(c.desc[lang])+'</p><span class="meta">'+esc(t("cl.meta",{dur:c.dur,cap:c.cap}))+'</span></button></li>'; }).join("");
+  observeReveal($("#classList"));
+}
+function dayLabel(d){ var n=diffKey(d.key); if(n===0) return t("tt.today"); if(n===1) return t("tt.tomorrow"); return DOW[lang][d.dow]; }
+function renderDays(){ $("#days").innerHTML=DATA.days.map(function(d,i){ return '<button type="button" class="day" data-day="'+i+'" aria-pressed="'+(state.day===i)+'"><small>'+esc(dayLabel(d))+'</small><b>'+d.dom+'</b></button>'; }).join(""); }
+function renderChips(){
+  var keys=["all"].concat(Object.keys(CLASSES));
+  $("#chips").innerHTML=keys.map(function(k){ return '<button type="button" class="chip" aria-pressed="'+(state.filter===k)+'" data-filter="'+esc(k)+'">'+esc(k==="all"?t("tt.all"):CLASSES[k].name[lang])+'</button>'; }).join("");
+}
+function dotsHtml(s){ var h=""; for(var i=0;i<s.cap;i++) h+='<i class="'+(i<s.booked?"":"free")+'"></i>'; return h; }
+function renderSessions(){
+  var el=$("#sessions");
+  if(state.loading && !DATA.days.length){ el.innerHTML='<div class="skel"><i></i><i></i><i></i></div>'; return; }
+  if(state.error && !DATA.days.length){ el.innerHTML='<div class="empty"><p>'+esc(t("err.load"))+'</p><p style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px"><button class="btn btn-line btn-sm" type="button" data-retry>'+esc(t("err.retry"))+'</button><a class="btn btn-main btn-sm" href="https://wa.me/'+CONFIG.whatsapp+'" target="_blank" rel="noopener">WhatsApp</a></p></div>'; return; }
+  var list=(sessionsOfDay(state.day)||[]).filter(function(s){return state.filter==="all"||s.key===state.filter});
+  if(!list.length){ el.innerHTML='<p class="empty">'+esc(t("tt.empty"))+'</p>'; return; }
+  el.innerHTML=list.map(function(s,i){
+    var full=s.booked>=s.cap, m=mine[s.id], btn, left=s.cap-s.booked;
+    if(m && (m.status==="booked"||m.status==="waitlist") && !s.past) btn='<button class="btn '+(m.status==="booked"?"btn-mine":"btn-wait")+'" type="button" data-manage="'+esc(m.token)+'">'+esc(m.status==="booked"?t("tt.mine"):t("tt.onList"))+'</button>';
+    else if(s.past) btn='<button class="btn btn-ghost" type="button" disabled>'+esc(t("tt.done"))+'</button>';
+    else if(s.cancelled) btn='<button class="btn btn-ghost" type="button" disabled>'+esc(t("tt.cancelled"))+'</button>';
+    else if(s.closed) btn='<button class="btn btn-ghost" type="button" disabled>'+esc(t("tt.closed"))+'</button>';
+    else if(full) btn='<button class="btn btn-wait" type="button" data-book="'+s.id+'">'+esc(t("tt.wait"))+'</button>';
+    else btn='<button class="btn btn-main" type="button" data-book="'+s.id+'">'+esc(t("tt.book"))+'</button>';
+    var txt = full ? t("tt.full",{w:s.wait}) : left===1 ? t("tt.lastOne") : t("tt.left",{n:left,c:s.cap});
+    return '<div class="sess'+(s.past||s.closed||s.cancelled?" past":"")+'" data-k="'+esc(s.key)+'" style="animation-delay:'+(i*55)+'ms"><div class="time">'+s.time+'<small>'+s.dur+' '+esc(t("tt.min"))+'</small></div>'+
+      '<div><div class="cls">'+esc(s.names[lang])+'</div><div class="meta">'+(s.teacher?'<span>'+esc(t("tt.with"))+' '+esc(s.teacher)+'</span>':'')+'<span class="tag">'+esc(t("lvl."+s.level))+'</span></div></div>'+
+      '<div class="dots-col"><div class="dots" aria-hidden="true">'+dotsHtml(s)+'</div><div class="sp-txt'+(left<=1||full?" low":"")+'">'+esc(txt)+'</div></div><div class="btn-col">'+btn+'</div></div>';
+  }).join("");
+}
+function renderPrices(){
+  $("#prices").innerHTML=PRICES.map(function(p){
+    var unit = p.unit ? (lang==="en"?"/mo":"/mes") : "";
+    var amt = lang==="en" ? "€"+p.amt+'<small>'+unit+'</small>' : p.amt+' €<small>'+unit+'</small>';
+    return '<div class="price'+(p.hot?" hot":"")+'" data-reveal>'+(p.hot?'<span class="badge">'+esc(t("p.popular"))+'</span>':'')+'<h3>'+esc(p.name[lang])+'</h3><div class="amt">'+amt+'</div><div class="sub">'+esc(p.sub[lang])+'</div><ul>'+p.feats[lang].map(function(f){return "<li>"+esc(f)+"</li>"}).join("")+'</ul><a class="btn '+(p.hot?"btn-main":"btn-line")+'" href="#horario" data-scroll>'+esc(t("p.choose"))+'</a></div>';
+  }).join("");
+  observeReveal($("#prices"));
+}
+function renderFaq(){ $("#faqList").innerHTML=FAQ[lang].map(function(q,i){ return '<details'+(i===0?" open":"")+'><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>'; }).join(""); }
+function renderNext(){
+  var chip=$("#nextChip"), s=nextBookable(); if(!s){ chip.hidden=true; return; }
+  var left=s.cap-s.booked, tail = left<=0 ? t("hero.full") : left===1 ? t("hero.last") : t("hero.left",{n:left});
+  chip.innerHTML='<i></i><span><span class="lbl">'+esc(t("hero.next"))+': </span><b>'+esc(t("hero.nextTxt",{cls:s.names[lang],day:niceDate(s.starts),time:s.time}))+'</b> · '+esc(tail)+'</span>';
+  chip.dataset.book=s.id; chip.hidden=false;
+}
+
+/* ---- class finder: 3 questions -> a class, with the next real session ---- */
+var fd={ lvl:null, goal:null, when:null };
+function pickClass(){
+  var keys=Object.keys(CLASSES), has=function(k){ return keys.indexOf(k)>=0; };
+  var k = fd.goal==="baby" ? "prenatal" : fd.goal==="calm" ? "restore" : fd.goal==="flex" ? (fd.lvl==="first"?"mat":"restore") : (fd.lvl==="first"?"mat":"reformer");
+  return has(k)?k:keys[0];
+}
+function nextFor(key){
+  var all=[]; DATA.days.forEach(function(d){ DATA.byDay[d.key].forEach(function(s){ if(s.key===key&&s.bookable&&!s.past) all.push(s); }); });
+  all.sort(function(a,b){return a.starts-b.starts});
+  var pref=all.filter(function(s){ var h=+s.time.slice(0,2); return fd.when==="am" ? h<14 : h>=15; });
+  return pref[0]||all[0]||null;
+}
+function renderFinder(){
+  var box=$("#finder"), step=!fd.lvl?1:!fd.goal?2:!fd.when?3:4;
+  var prog='<div class="fd-prog" aria-hidden="true">'+[1,2,3].map(function(n){ return '<i class="'+(step>n?"on":"")+'"></i>'; }).join("")+'</div>';
+  function ans(q,list){ return '<div class="fd-step"><h3 class="fd-q">'+esc(t("fd.q"+q))+'</h3><div class="fd-a">'+list.map(function(a){ return '<button type="button" data-fd="'+a[0]+':'+a[1]+'">'+esc(t(a[2]))+'</button>'; }).join("")+'</div></div>'; }
+  if(step===1) box.innerHTML=prog+ans(1,[["lvl","first","fd.a1a"],["lvl","some","fd.a1b"]]);
+  else if(step===2) box.innerHTML=prog+ans(2,[["goal","strength","fd.a2a"],["goal","calm","fd.a2b"],["goal","flex","fd.a2c"],["goal","baby","fd.a2d"]]);
+  else if(step===3) box.innerHTML=prog+ans(3,[["when","am","fd.a3a"],["when","pm","fd.a3b"]]);
+  else {
+    var k=pickClass(), c=CLASSES[k], s=nextFor(k);
+    box.innerHTML='<div class="fd-res"><div class="fd-card"><span class="lbl">'+esc(t("fd.res"))+'</span><h3>'+esc(c.name[lang])+'</h3><p>'+esc(c.desc[lang])+'</p></div><div class="fd-next">'+
+      (s?'<span>'+esc(t("fd.next"))+'</span><b>'+esc(niceDate(s.starts))+' · '+s.time+'</b><span class="muted">'+(s.teacher?esc(t("tt.with"))+' '+esc(s.teacher)+' · ':'')+s.dur+' '+esc(t("tt.min"))+'</span><div class="cta-row"><button class="btn btn-main" type="button" data-book="'+s.id+'">'+esc(t("fd.book"))+'</button><a class="btn btn-line" href="#horario" data-scroll>'+esc(t("fd.see"))+'</a></div>'
+        :'<span>'+esc(t("fd.none"))+'</span><div class="cta-row"><a class="btn btn-main" href="#horario" data-scroll>'+esc(t("fd.see"))+'</a></div>')+
+      '<button type="button" class="fd-restart" data-fdreset>'+esc(t("fd.restart"))+'</button></div></div>';
+  }
+}
+
+/* ---- i18n ---- */
+function applyI18n(){
+  document.documentElement.lang=lang;
+  $$("[data-i18n]").forEach(function(el){ el.textContent=t(el.getAttribute("data-i18n")); });
+  $$("[data-i18n-html]").forEach(function(el){ el.innerHTML=t(el.getAttribute("data-i18n-html")); });
+  $$("[data-studio-name]").forEach(function(el){ el.textContent=STUDIO.name; });
+  $$(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.lang===lang); });
+  renderMarq(); renderClasses(); renderDays(); renderChips(); renderSessions(); renderPrices(); renderFaq(); renderNext(); renderFinder();
+  document.title=STUDIO.name+" · "+({es:"Estudio de Pilates",ca:"Estudi de Pilates",en:"Pilates Studio"})[lang]+" · Barcelona";
+  if(state.sheet) renderSheet();
+  renderRibbon();
+  if(FX) ScrollTrigger.refresh();
+}
+
+/* ---- events ---- */
+document.addEventListener("click",function(e){
+  var b;
+  if((b=e.target.closest("[data-lang]"))){ lang=b.dataset.lang; store.set("lang",lang); applyI18n(); return; }
+  if((b=e.target.closest("[data-day]"))){ state.day=+b.dataset.day; renderDays(); renderSessions(); return; }
+  if((b=e.target.closest("[data-filter]"))){ state.filter=b.dataset.filter; renderChips(); renderSessions(); return; }
+  if((b=e.target.closest("[data-goclass]"))){ state.filter=b.dataset.goclass; renderChips(); renderSessions(); scrollToEl($("#horario")); return; }
+  if((b=e.target.closest("[data-fd]"))){ var p=b.dataset.fd.split(":"); fd[p[0]]=p[1]; renderFinder(); return; }
+  if(e.target.closest("[data-fdreset]")){ fd={lvl:null,goal:null,when:null}; renderFinder(); return; }
+});
+$("#days").addEventListener("keydown",function(e){
+  if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft"||!DATA.days.length) return;
+  state.day=(state.day+(e.key==="ArrowRight"?1:-1)+DATA.days.length)%DATA.days.length; renderDays(); renderSessions();
+  var f=$('[data-day="'+state.day+'"]'); if(f) f.focus();
+});
+$$(".js-wa").forEach(function(a){ a.href="https://wa.me/"+CONFIG.whatsapp; });
+$("#yr").textContent=new Date().getFullYear();
+HOOKS.onTimetable=function(){ renderDays(); renderChips(); renderSessions(); renderNext(); if(fd.when) renderFinder(); };
+HOOKS.onSheetOpen=function(){ if(lenis) lenis.stop(); };
+HOOKS.onSheetClose=function(){ if(lenis) lenis.start(); };
+HOOKS.onBooked=function(){
+  var sh=$("#sheet"); sh.classList.add("shimmer"); setTimeout(function(){ sh.classList.remove("shimmer"); },2200);
+  var ok=$(".done .ok"); if(!FX||!ok) return;
+  for(var i=0;i<14;i++){ var sp=document.createElement("i"); sp.className="spark"; ok.appendChild(sp); var a=Math.PI*2*i/14+Math.random()*.4, d=70+Math.random()*60;
+    gsap.fromTo(sp,{x:0,y:0,scale:0,opacity:1,rotate:0},{x:Math.cos(a)*d,y:Math.sin(a)*d,scale:.6+Math.random()*1,opacity:0,rotate:160,duration:1.2+Math.random()*.5,ease:"power2.out",delay:.25,onComplete:(function(n){return function(){n.remove()}})(sp)}); }
+};
+
+/* ---- scroll choreography (GSAP) ---- */
+function initScroll(){
+  if(!FX) return;
+  var nav=$("#nav"), mbar=$("#mbar"), logo=$("#logo");
+  ScrollTrigger.create({ start:10, end:"max", onUpdate:function(self){ nav.classList.toggle("scrolled", self.scroll()>10); mbar.classList.toggle("show", self.scroll()>innerHeight*.9); } });
+  /* hero: the circle blooms into a flower, then flies into the logo */
+  var wrap=$("#flowerWrap");
+  function target(){ var r=$("#logo svg").getBoundingClientRect(); return { x:r.left+r.width/2-innerWidth/2, y:r.top+r.height/2-innerHeight/2, s:r.width/wrap.offsetWidth }; }
+  var tl=gsap.timeline({ defaults:{ease:"none"}, scrollTrigger:{ trigger:".hero-pin", start:"top top", end:"bottom bottom", scrub:.8, invalidateOnRefresh:true,
+    onUpdate:function(self){ logo.classList.toggle("on", self.progress>.88); } } });
+  tl.to(heroPetals,{ scale:1, rotation:0, duration:.42, ease:"back.out(1.6)", stagger:.045 },0)
+    .to("#heroCopy",{ y:-90, opacity:0, duration:.26, ease:"power1.in" },.1)
+    .to(".breath",{ opacity:0, duration:.1 },0)
+    .to(wrap,{ x:function(){ return target().x; }, y:function(){ return target().y; }, scale:function(){ return target().s*1.2; }, duration:.42, ease:"power3.inOut" },.52)
+    .to(wrap,{ opacity:0, duration:.08 },.94)
+    .to({},{ duration:.02 },1);
+  gsap.to(".b1",{ yPercent:-40, ease:"none", scrollTrigger:{ trigger:".hero-pin", start:"top top", end:"bottom top", scrub:true } });
+  $$("[data-count]").forEach(function(el){ var to=+el.getAttribute("data-count"), o={v:0};
+    ScrollTrigger.create({ trigger:el, start:"top 90%", once:true, onEnter:function(){ gsap.to(o,{v:to,duration:1.6,ease:"power2.out",onUpdate:function(){ el.textContent=Math.round(o.v); }}); } }); });
+  /* pebbles lean toward the pointer */
+  if(FINE) $$(".pebble").forEach(function(el){
+    el.addEventListener("pointermove",function(e){ var r=el.getBoundingClientRect(); gsap.to(el,{ rotationY:((e.clientX-r.left)/r.width-.5)*10, rotationX:-((e.clientY-r.top)/r.height-.5)*8, transformPerspective:900, duration:.5, ease:"power3.out" }); });
+    el.addEventListener("pointerleave",function(){ gsap.to(el,{ rotationY:0, rotationX:0, duration:.8, ease:"power3.out" }); });
+  });
+  /* final flower turns slowly while you read */
+  gsap.fromTo(".final-flower",{ rotation:-25, scale:.8 },{ rotation:25, scale:1.05, ease:"none", scrollTrigger:{ trigger:".final", start:"top bottom", end:"bottom top", scrub:true } });
+  magnetic(".btn-main:not(.btn-sm)"); cursorGlow("glow");
+}
+
+/* ---- intro ---- */
+(function intro(){
+  var el=$("#intro"); if(!el) return;
+  var seen=false; try{ seen = sessionStorage.getItem("malva:intro")==="1"; }catch(e){}
+  if(REDUCED||!FX||seen||/#cancel=/.test(location.hash)){ el.remove(); ROOT_EL.classList.add("go"); return; }
+  try{ sessionStorage.setItem("malva:intro","1"); }catch(e){}
+  el.classList.add("play");
+  setTimeout(function(){ el.classList.add("out"); ROOT_EL.classList.add("go"); setTimeout(function(){ el.remove(); },900); },1900);
+})();
+
+/* ---- boot ---- */
+if(!FX){ ROOT_EL.classList.add("go"); var nv=$("#nav"); window.addEventListener("scroll",function(){ nv.classList.toggle("scrolled",scrollY>10); $("#mbar").classList.toggle("show",scrollY>innerHeight*.9); },{passive:true}); $("#logo").classList.add("on"); }
+applyI18n(); observeReveal();
+initScroll();
+if(document.fonts&&document.fonts.ready&&FX) document.fonts.ready.then(function(){ ScrollTrigger.refresh(); });
+loadTimetable().then(checkHash);
+setInterval(function(){ if(!state.sheet&&!document.hidden) loadTimetable(true); }, LIVE?30000:60000);
+document.addEventListener("visibilitychange",function(){ if(document.hidden) $$("[data-reveal]").forEach(function(el){el.classList.add("in")}); else if(!state.sheet) loadTimetable(true); });
+})();
+</script>
+</body>
+</html>

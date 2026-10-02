@@ -10,11 +10,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#3A4129">
-<title>ONA · Panel</title>
+<meta name="theme-color" content="#3B2A2A">
+<title>NÁCAR · Panel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,50..100;1,9..144,300..600,50..100&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --lime:#F3EADB; --sand:#E8D8C0; --sand-2:#DCC7A8; --paper:#FFFBF4;
@@ -311,6 +311,28 @@ textarea.inp{min-height:84px;resize:vertical}
 @media (max-width:640px){.fresh{grid-template-columns:1fr;gap:10px}.fresh .f-actions{flex-direction:row}.fresh .f-spark{display:none}}
 @media (prefers-reduced-motion:reduce){.fresh,.fresh::after,.chip.new{animation:none}}
 
+/* ---------- studio theme (animated layouts) ---------- */
+:root{
+  --pearl:#FBF6F1;
+  --pearl-2:#F6ECE5;
+  --blush:#F3D3CF;
+  --blush-2:#EBB9B3;
+  --rose:#C98A86;
+  --rose-d:#A96B68;
+  --champ:#E8C48F;
+  --champ-2:#F6E3C2;
+  --ink:#3B2A2A;
+  --ink-2:#7C6563;
+  --line:#EBDAD1;
+  --white:#FFFDFB;
+  --lime:var(--pearl); --sand:var(--pearl-2); --sand-2:var(--blush); --paper:var(--white);
+  --clay:var(--rose-d); --clay-d:color-mix(in srgb,var(--rose-d) 82%,#000); --clay-soft:var(--blush);
+  --olive:var(--rose); --olive-d:var(--ink); --olive-soft:var(--pearl-2);
+  --ink-3:color-mix(in srgb,var(--ink-2) 65%,var(--pearl)); --sun:var(--champ); --sun-soft:var(--champ-2);
+}
+body,button,input,select,textarea{font-family:"Jost",system-ui,sans-serif}
+.serif,h1,h2,.kpi .v{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500}
+
 </style>
 </head>
 <body>
@@ -386,7 +408,7 @@ en:{
  "toast.passUsed":"Paid with their pass", "toast.paid":"Marked paid · {m}", "toast.unpaid":"Marked unpaid", "toast.classCancelled":"Class cancelled · {n} bookings", "toast.allIn":"{n} checked in",
  "toast.passSold":"Pass sold", "toast.passSoldApplied":"Pass sold · covers {n} earlier classes", "toast.tplSaved":"Saved for the coming weeks", "toast.tplDeleted":"Weekly class deleted",
  "confirm.cancelBooking":"Cancel the booking of {name}?", "confirm.cancelClass":"Cancel this class? {n} bookings will be cancelled.", "confirm.deleteTpl":"Delete this weekly class?", "confirm.void":"Void this pass? Credits already used are given back to those classes as unpaid.",
- "wa.hello":"Hi {name}! About your {cls} class ({when}) at ONA: ", "wa.generic":"Hi {name}! ", "wa.reminder":"Hi {name}! Just a reminder that the {cls} class on {when} ({amt}) is still pending payment. You can pay by Bizum or at the studio. Thanks!",
+ "wa.hello":"Hi {name}! About your {cls} class ({when}) at NÁCAR: ", "wa.generic":"Hi {name}! ", "wa.reminder":"Hi {name}! Just a reminder that the {cls} class on {when} ({amt}) is still pending payment. You can pay by Bizum or at the studio. Thanks!",
  "err.NETWORK":"No connection. Check the internet and try again.", "err.BAD_LOGIN":"Wrong email or password.", "err.SESSION_EXPIRED":"Your session ended. Please log in again.", "err.NOT_ADMIN":"This account isn't allowed in the panel. Ask the owner to add you.",
  "err.SERVER":"Something went wrong", "err.ALREADY_BOOKED":"This person is already in the class.", "err.BOOKING_NOT_FOUND":"Booking not found — refresh the page.", "err.BAD_STATUS":"That change isn't possible for this booking.",
  "err.NO_USABLE_PASS":"This client has no pass valid for that date.", "err.BAD_METHOD":"Unknown payment method.", "err.ALREADY_CANCELLED":"Already cancelled.", "err.SESSION_NOT_FOUND":"Class not found — refresh the page.",
@@ -447,7 +469,7 @@ es:{
  "toast.passUsed":"Pagada con su bono", "toast.paid":"Marcada pagada · {m}", "toast.unpaid":"Marcada sin pagar", "toast.classCancelled":"Clase cancelada · {n} reservas", "toast.allIn":"{n} marcadas como venidas",
  "toast.passSold":"Bono vendido", "toast.passSoldApplied":"Bono vendido · cubre {n} clases anteriores", "toast.tplSaved":"Guardado para las próximas semanas", "toast.tplDeleted":"Clase semanal eliminada",
  "confirm.cancelBooking":"¿Cancelar la reserva de {name}?", "confirm.cancelClass":"¿Cancelar esta clase? Se cancelarán {n} reservas.", "confirm.deleteTpl":"¿Eliminar esta clase semanal?", "confirm.void":"¿Anular este bono? Las clases que lo usaron vuelven a quedar sin pagar.",
- "wa.hello":"¡Hola {name}! Sobre tu clase de {cls} ({when}) en ONA: ", "wa.generic":"¡Hola {name}! ", "wa.reminder":"¡Hola {name}! Te recordamos que la clase de {cls} del {when} ({amt}) está pendiente de pago. Puedes pagar por Bizum o en el estudio. ¡Gracias!",
+ "wa.hello":"¡Hola {name}! Sobre tu clase de {cls} ({when}) en NÁCAR: ", "wa.generic":"¡Hola {name}! ", "wa.reminder":"¡Hola {name}! Te recordamos que la clase de {cls} del {when} ({amt}) está pendiente de pago. Puedes pagar por Bizum o en el estudio. ¡Gracias!",
  "err.NETWORK":"Sin conexión. Revisa internet e inténtalo de nuevo.", "err.BAD_LOGIN":"Email o contraseña incorrectos.", "err.SESSION_EXPIRED":"Tu sesión ha terminado. Vuelve a entrar.", "err.NOT_ADMIN":"Esta cuenta no tiene acceso al panel. Pide a la propietaria que te añada.",
  "err.SERVER":"Algo ha fallado", "err.ALREADY_BOOKED":"Esta persona ya está en la clase.", "err.BOOKING_NOT_FOUND":"Reserva no encontrada — recarga la página.", "err.BAD_STATUS":"Ese cambio no es posible para esta reserva.",
  "err.NO_USABLE_PASS":"Esta clienta no tiene un bono válido para esa fecha.", "err.BAD_METHOD":"Método de pago desconocido.", "err.ALREADY_CANCELLED":"Ya estaba cancelada.", "err.SESSION_NOT_FOUND":"Clase no encontrada — recarga la página.",
@@ -508,7 +530,7 @@ ca:{
  "toast.passUsed":"Pagada amb el seu bo", "toast.paid":"Marcada pagada · {m}", "toast.unpaid":"Marcada sense pagar", "toast.classCancelled":"Classe cancel·lada · {n} reserves", "toast.allIn":"{n} marcades com a vingudes",
  "toast.passSold":"Bo venut", "toast.passSoldApplied":"Bo venut · cobreix {n} classes anteriors", "toast.tplSaved":"Desat per a les properes setmanes", "toast.tplDeleted":"Classe setmanal eliminada",
  "confirm.cancelBooking":"Cancel·lar la reserva de {name}?", "confirm.cancelClass":"Cancel·lar aquesta classe? Es cancel·laran {n} reserves.", "confirm.deleteTpl":"Eliminar aquesta classe setmanal?", "confirm.void":"Anul·lar aquest bo? Les classes que el van fer servir tornen a quedar sense pagar.",
- "wa.hello":"Hola {name}! Sobre la teva classe de {cls} ({when}) a ONA: ", "wa.generic":"Hola {name}! ", "wa.reminder":"Hola {name}! Et recordem que la classe de {cls} del {when} ({amt}) està pendent de pagament. Pots pagar per Bizum o a l'estudi. Gràcies!",
+ "wa.hello":"Hola {name}! Sobre la teva classe de {cls} ({when}) a NÁCAR: ", "wa.generic":"Hola {name}! ", "wa.reminder":"Hola {name}! Et recordem que la classe de {cls} del {when} ({amt}) està pendent de pagament. Pots pagar per Bizum o a l'estudi. Gràcies!",
  "err.NETWORK":"Sense connexió. Revisa internet i torna-ho a provar.", "err.BAD_LOGIN":"Correu o contrasenya incorrectes.", "err.SESSION_EXPIRED":"La sessió ha acabat. Torna a entrar.", "err.NOT_ADMIN":"Aquest compte no té accés al panell. Demana a la propietària que t'afegeixi.",
  "err.SERVER":"Alguna cosa ha fallat", "err.ALREADY_BOOKED":"Aquesta persona ja és a la classe.", "err.BOOKING_NOT_FOUND":"Reserva no trobada — recarrega la pàgina.", "err.BAD_STATUS":"Aquest canvi no és possible per a aquesta reserva.",
  "err.NO_USABLE_PASS":"Aquesta clienta no té cap bo vàlid per a aquesta data.", "err.BAD_METHOD":"Mètode de pagament desconegut.", "err.ALREADY_CANCELLED":"Ja estava cancel·lada.", "err.SESSION_NOT_FOUND":"Classe no trobada — recarrega la pàgina.",
@@ -526,11 +548,11 @@ ca:{
    is clicked. Generated data: ~50 clients, 6 weeks of history.
    ===================================================================== */
 var Demo = (function(){
-  var KEY = "ona2-panel:demo-db:v2";
+  var KEY = "nacar-panel:demo-db:v2";
   var TZ = "Europe/Madrid";
   var db = null;
-  var DEMO_STUDIO = null;          /* null = the built-in sample studio; an object = this studio's own classes, team, timetable and passes */
-  var SITE_PREFIX = "ona2:";   /* the website's localStorage prefix: same origin, so bookings made there show up here */
+  var DEMO_STUDIO = {"classes":[["reformer","Reformer","Reformer","Reformer",50,6,2200,1],["mat","Mat","Mat","Mat",55,10,1600,2],["sculpt","Reformer Sculpt","Reformer Sculpt","Reformer Sculpt",45,6,2200,3],["prenatal","Prenatal","Prenatal","Prenatal",50,5,2000,4]],"instructors":["Vera","Noa"],"week":[[1,"07:30","reformer","Vera","all"],[1,"09:30","mat","Noa","all"],[1,"12:00","prenatal","Noa","all"],[1,"18:00","reformer","Vera","beg"],[1,"19:15","sculpt","Noa","int"],[2,"08:00","reformer","Noa","all"],[2,"10:00","reformer","Vera","beg"],[2,"13:30","mat","Noa","all"],[2,"18:30","sculpt","Vera","int"],[2,"19:45","reformer","Noa","all"],[3,"07:30","reformer","Vera","all"],[3,"09:30","mat","Noa","all"],[3,"11:00","prenatal","Noa","all"],[3,"18:00","reformer","Noa","beg"],[3,"19:15","reformer","Vera","all"],[4,"08:00","sculpt","Noa","int"],[4,"10:00","reformer","Vera","all"],[4,"13:30","mat","Noa","all"],[4,"18:30","reformer","Vera","beg"],[4,"19:45","sculpt","Noa","int"],[5,"07:30","reformer","Vera","all"],[5,"09:30","mat","Noa","all"],[5,"12:00","prenatal","Noa","all"],[5,"17:30","reformer","Noa","all"],[5,"18:45","mat","Noa","all"],[6,"09:30","reformer","Vera","all"],[6,"10:45","reformer","Noa","beg"],[6,"12:00","mat","Vera","all"]],"packs":[["Bono 5 clases","pack",5,60,9900,1],["Bono 10 clases","pack",10,120,19000,2],["Ilimitada mes","unlimited",null,30,14900,3]],"trial_cents":1400};          /* null = the built-in sample studio; an object = this studio's own classes, team, timetable and passes */
+  var SITE_PREFIX = "nacar:";   /* the website's localStorage prefix: same origin, so bookings made there show up here */
 
   /* ---------- tiny helpers ---------- */
   function uid(){ return (crypto.randomUUID ? crypto.randomUUID() : "x"+Math.random().toString(16).slice(2)+Date.now().toString(16)); }
@@ -556,8 +578,8 @@ var Demo = (function(){
   /* ---------- seed ---------- */
   function build(){
     seed = 20260916;
-    db = { outbox:[], settings:{ studio_name:"ONA", timezone:TZ, default_country_code:"34", whatsapp:"34610691874", contact_email:"autoaix0@gmail.com",
-             address:"Carrer de Verdi 48, 08012 Barcelona", site_url:"https://autoaix0-sketch.github.io/pilates-demos/demos/ona/", emails_enabled:true, reminder_hours:24, daily_digest:true, digest_hour:7, notify_cancellations:true, max_daily_bookings:8,
+    db = { outbox:[], settings:{ studio_name:"NÁCAR", timezone:TZ, default_country_code:"34", whatsapp:"34610691874", contact_email:"autoaix0@gmail.com",
+             address:"Carrer de Pere IV 112, 08018 Barcelona", site_url:"https://autoaix0-sketch.github.io/pilates-demos/demos/nacar/", emails_enabled:true, reminder_hours:24, daily_digest:true, digest_hour:7, notify_cancellations:true, max_daily_bookings:8,
              booking_close_minutes:60, max_days_ahead:14, max_active_bookings:6, free_cancel_hours:12, trial_price_cents:(DEMO_STUDIO&&DEMO_STUDIO.trial_cents)||1200, currency:"EUR", no_show_uses_credit:true },
            class_types:[], instructors:[], pass_products:[], templates:[], sessions:[], clients:[], bookings:[], passes:[] };
     var CT=(DEMO_STUDIO&&DEMO_STUDIO.classes)||[["reformer","Reformer","Reformer","Reformer",50,8,2000,1],["mat","Mat","Mat","Mat",55,12,1500,2],["prenatal","Prenatal","Prenatal","Prenatal",50,6,1800,3],["reformer-strength","Reformer Fuerza","Reformer Força","Reformer Strength",45,8,1800,4]];
@@ -993,17 +1015,17 @@ var Demo = (function(){
 "use strict";
 
 /* ---------- storage + i18n ---------- */
-var LS = { get:function(k,d){ try{ var v=localStorage.getItem("ona2-panel:"+k); return v==null?d:JSON.parse(v); }catch(e){ return d; } },
-           set:function(k,v){ try{ localStorage.setItem("ona2-panel:"+k, JSON.stringify(v)); }catch(e){} },
-           del:function(k){ try{ localStorage.removeItem("ona2-panel:"+k); }catch(e){} } };
-var SITE_PREFIX = "ona2:", MOODS = [];   /* the website's storage prefix: its visitor choices (studio name, colour mood) apply here too */
+var LS = { get:function(k,d){ try{ var v=localStorage.getItem("nacar-panel:"+k); return v==null?d:JSON.parse(v); }catch(e){ return d; } },
+           set:function(k,v){ try{ localStorage.setItem("nacar-panel:"+k, JSON.stringify(v)); }catch(e){} },
+           del:function(k){ try{ localStorage.removeItem("nacar-panel:"+k); }catch(e){} } };
+var SITE_PREFIX = "nacar:", MOODS = [{"name":{"es":"Perla rosa","ca":"Perla rosa","en":"Pearl rose"},"colors":{"pearl":"#FBF6F1","pearl-2":"#F6ECE5","blush":"#F3D3CF","blush-2":"#EBB9B3","rose":"#C98A86","rose-d":"#A96B68","champ":"#E8C48F","champ-2":"#F6E3C2","ink":"#3B2A2A","ink-2":"#7C6563","line":"#EBDAD1","white":"#FFFDFB"}},{"name":{"es":"Lavanda","ca":"Lavanda","en":"Lavender"},"colors":{"pearl":"#F7F3FC","pearl-2":"#EDE6F7","blush":"#DDD1F1","blush-2":"#C7B6E8","rose":"#9C87CB","rose-d":"#7C67AF","champ":"#E8CD9E","champ-2":"#F5E8CD","ink":"#34293F","ink-2":"#706581","line":"#E3DBEF","white":"#FEFDFF"}},{"name":{"es":"Melocotón","ca":"Préssec","en":"Peach"},"colors":{"pearl":"#FFF7F0","pearl-2":"#FDEADB","blush":"#FBD5BE","blush-2":"#F5B999","rose":"#E0906F","rose-d":"#C07250","champ":"#EFCB8C","champ-2":"#FAE7BE","ink":"#43302A","ink-2":"#86695F","line":"#F2DED0","white":"#FFFCF9"}}];   /* the website's storage prefix: its visitor choices (studio name, colour mood) apply here too */
 function siteGet(k){ try{ return JSON.parse(localStorage.getItem(SITE_PREFIX+k)); }catch(e){ return null; } }
 (function(){   /* ?studio=&mood= on the panel link: same rules as the website (plain text, max 32 chars) */
   try{ var q=new URLSearchParams(location.search), nm=q.get("studio"), md=parseInt(q.get("mood"),10);
     if(MOODS.length&&(nm!==null||md>=0)){ var s=String(nm||"").replace(/[^\p{L}\p{N} .,'’&·\-]/gu,"").replace(/\s+/g," ").trim().slice(0,32), old=siteGet("persona")||{};
       localStorage.setItem(SITE_PREFIX+"persona",JSON.stringify({ name:nm!==null?s:(old.name||""), mood:(md>=0&&md<MOODS.length)?md:((old.mood|0)||0) })); } }catch(e){}
 })();
-var PERSONA = siteGet("persona"), STUDIO_NAME = (PERSONA&&typeof PERSONA.name==="string"&&PERSONA.name)?PERSONA.name.slice(0,32):"ONA";
+var PERSONA = siteGet("persona"), STUDIO_NAME = (PERSONA&&typeof PERSONA.name==="string"&&PERSONA.name)?PERSONA.name.slice(0,32):"NÁCAR";
 (function(){ if(PERSONA){ var m=MOODS[PERSONA.mood|0]; if(m) for(var k in m.colors) document.documentElement.style.setProperty("--"+k,m.colors[k]); if(PERSONA.name) document.title=STUDIO_NAME+" · Panel"; } })();
 var lang = LS.get("lang", (navigator.language||"es").slice(0,2)); if(!I18N[lang]) lang="es";
 function t(k,vars){ var s=I18N[lang][k]; if(s==null) s=I18N.en[k]; if(s==null) s=k; if(vars) for(var v in vars) s=s.split("{"+v+"}").join(vars[v]); return s; }
@@ -1057,7 +1079,7 @@ var I = {
   empty:'<svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
   logout:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 8l-4 4 4 4M6 12h10"/></svg>'
 };
-var LOGO = '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 38V20a15 15 0 0 1 30 0v18" fill="none" stroke="#B5532F" stroke-width="2.6"/><circle cx="20" cy="22" r="6.5" fill="#E9A94B"/><path d="M9 32c4-3 7.5-3 11 0s7 3 11 0" fill="none" stroke="#8FA06A" stroke-width="2.2" stroke-linecap="round"/></svg>';
+var LOGO = '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 38V20a15 15 0 0 1 30 0v18" fill="none" stroke="#C98A86" stroke-width="2.6"/><circle cx="20" cy="22" r="6.5" fill="#E8C48F"/><path d="M9 32c4-3 7.5-3 11 0s7 3 11 0" fill="none" stroke="#A96B68" stroke-width="2.2" stroke-linecap="round"/></svg>';
 
 /* =====================================================================
    API — live Supabase (auth + RPC) or the in-browser demo

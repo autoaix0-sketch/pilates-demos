@@ -10,7 +10,120 @@
     "site": "demos/ona/",
     "panel": "demos/ona/panel/",
     "shot": "img/ona.webp",
-    "note": null
+    "note": null,
+    "featured": true
+  },
+  {
+    "id": "nacar",
+    "name": "NÁCAR Pilates",
+    "city": "Barcelona",
+    "summary": {
+      "es": "Espejos de luz cálida que respiran. Web animada con reservas, lista de espera y panel.",
+      "en": "Mirrors of warm light that breathe. Animated website with booking, waitlist and panel."
+    },
+    "site": "demos/nacar/",
+    "panel": "demos/nacar/panel/",
+    "shot": "img/nacar.webp",
+    "note": null,
+    "badge": {
+      "es": "Nuevo",
+      "en": "New"
+    },
+    "personalize": true,
+    "moods": [
+      {
+        "name": {
+          "es": "Perla rosa",
+          "ca": "Perla rosa",
+          "en": "Pearl rose"
+        },
+        "dots": [
+          "#A96B68",
+          "#EBB9B3",
+          "#E8C48F"
+        ]
+      },
+      {
+        "name": {
+          "es": "Lavanda",
+          "ca": "Lavanda",
+          "en": "Lavender"
+        },
+        "dots": [
+          "#7C67AF",
+          "#C7B6E8",
+          "#E8CD9E"
+        ]
+      },
+      {
+        "name": {
+          "es": "Melocotón",
+          "ca": "Préssec",
+          "en": "Peach"
+        },
+        "dots": [
+          "#C07250",
+          "#F5B999",
+          "#EFCB8C"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "malva",
+    "name": "MALVA Pilates",
+    "city": "Barcelona",
+    "summary": {
+      "es": "Una flor que se abre al bajar, buscador de clase y pétalos. Delicada, con reservas y panel.",
+      "en": "A flower that opens as you scroll, a class finder and petals. Delicate, with booking and panel."
+    },
+    "site": "demos/malva/",
+    "panel": "demos/malva/panel/",
+    "shot": "img/malva.webp",
+    "note": null,
+    "badge": {
+      "es": "Nuevo",
+      "en": "New"
+    },
+    "personalize": true,
+    "moods": [
+      {
+        "name": {
+          "es": "Lavanda",
+          "ca": "Lavanda",
+          "en": "Lavender"
+        },
+        "dots": [
+          "#7F63C4",
+          "#C6B5EE",
+          "#F9C9AE"
+        ]
+      },
+      {
+        "name": {
+          "es": "Rosa",
+          "ca": "Rosa",
+          "en": "Rose"
+        },
+        "dots": [
+          "#C0557B",
+          "#F2B4C6",
+          "#FBD0B0"
+        ]
+      },
+      {
+        "name": {
+          "es": "Melocotón",
+          "ca": "Préssec",
+          "en": "Peach"
+        },
+        "dots": [
+          "#B9632E",
+          "#FBC795",
+          "#F7C6D3"
+        ]
+      }
+    ]
   },
   {
     "id": "volt",

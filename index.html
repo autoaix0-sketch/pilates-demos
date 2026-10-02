@@ -40,6 +40,22 @@ h2{font-size:26px;margin:0 0 16px}
 .card .actions{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
 .card .actions a{flex:1;text-align:center;justify-content:center;padding:10px 12px;font-size:14px}
 .card .actions .site{background:var(--clay);color:#fff}
+.card.featured{grid-column:1/-1;flex-direction:row}
+.card.featured .shot{flex:0 0 38%;aspect-ratio:auto;min-height:360px;border-bottom:0;border-right:1px solid var(--line)}
+.card.featured .body{padding:22px 24px 24px;justify-content:center}
+.card.featured h3{font-size:30px}
+.card.featured .meta{font-size:15px}
+.tag.new{background:var(--clay);color:#fff}
+.pbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 16px;padding:14px 16px;border-radius:16px;background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--clay)}
+.pbar[hidden]{display:none}
+.pbar label{font-weight:700}
+.pbar input{flex:1 1 200px;min-width:0;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:11px 16px;font:500 16px Onest,sans-serif}
+.pbar input:focus{outline:2px solid var(--clay);outline-offset:2px}
+.moods{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2)}
+.moods button{width:30px;height:30px;border-radius:50%;border:2px solid var(--paper);cursor:pointer;padding:0;box-shadow:0 0 0 1.5px var(--line);transition:transform .2s}
+.moods button[aria-pressed=true]{box-shadow:0 0 0 2.5px var(--clay);transform:scale(1.12)}
+.moods button:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+@media (max-width:720px){.card.featured{flex-direction:column}.card.featured .shot{flex:none;aspect-ratio:9/12;min-height:0;border-right:0;border-bottom:1px solid var(--line)}}
 #demos-error{color:var(--ink-2)}
 .list{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;padding:0;margin:0;list-style:none}
 .list li{background:var(--paper);border-radius:14px;padding:14px 16px;box-shadow:inset 0 0 0 1px var(--line)}
@@ -69,6 +85,7 @@ footer{padding:36px 0 48px;color:var(--ink-2);font-size:14px}
   <section>
     <h2 class="serif" data-i18n="demos.title">Demos</h2>
     <p class="meta" data-i18n="demos.sub">Ábrelas en tu móvil. Son estudios ficticios: tu web llevaría tus clases, tus fotos y tus precios.</p>
+    <div class="pbar" id="pbar" hidden><label for="studioName" data-i18n="pb.label">Pruébalas con el nombre de tu estudio</label><input id="studioName" type="text" maxlength="32" autocomplete="off" data-ph="pb.ph"></div>
     <div id="demos" class="grid"></div>
     <p id="demos-error" hidden data-i18n="demos.error">No se pudieron cargar las demos. Escríbeme por WhatsApp y te mando el enlace.</p>
   </section>
@@ -115,7 +132,7 @@ var I18N = {
     "cta.wa": "Escríbeme por WhatsApp",
     "cta.price": "Pide precio por WhatsApp",
     "demos.title": "Demos",
-    "demos.sub": "Ábrelas en tu móvil. Son estudios ficticios: tu web llevaría tus clases, tus fotos y tus precios.",
+    "demos.sub": "Ábrelas en tu móvil. Son estudios ficticios: tu web llevaría tus clases, tus fotos y tu nombre.",
     "demos.error": "No se pudieron cargar las demos. Escríbeme por WhatsApp y te mando el enlace.",
     "inc.title": "Qué incluye",
     "inc.site": "Tu web", "inc.site.d": "Rápida en el móvil, en español, catalán e inglés.",
@@ -128,7 +145,8 @@ var I18N = {
     "how.3": "La ponemos en marcha", "how.3.d": "Si te gusta, la dejo lista y te ayudo por WhatsApp.",
     "about.title": "Sobre mí",
     "about.text": "Soy Khaireddine, vivo en Barcelona. Hago webs con reservas para estudios pequeños de pilates, para que dediques tu tiempo a las clases y no a los mensajes.",
-    "card.fict": "Demo — estudio ficticio", "card.site": "Ver la web", "card.panel": "Ver el panel",
+    "card.fict": "Demo — estudio ficticio", "card.site": "Ver la web", "card.panel": "Ver el panel", "card.new": "Nuevo", "card.colors": "Colores",
+    "pb.label": "Pruébalas con el nombre de tu estudio", "pb.ph": "Ej. Lua Pilates",
     "lang.btn": "English"
   },
   en: {
@@ -150,22 +168,34 @@ var I18N = {
     "how.3": "We go live", "how.3.d": "If you like it, I set it up and help you on WhatsApp.",
     "about.title": "About me",
     "about.text": "I'm Khaireddine and I live in Barcelona. I build booking websites for small pilates studios, so you spend your time on classes, not on messages.",
-    "card.fict": "Demo — fictional studio", "card.site": "See the website", "card.panel": "See the panel",
+    "card.fict": "Demo — fictional studio", "card.site": "See the website", "card.panel": "See the panel", "card.new": "New", "card.colors": "Colours",
+    "pb.label": "Try them with your studio's name", "pb.ph": "E.g. Lua Pilates",
     "lang.btn": "Español"
   }
 };
-var lang = "es", cards = null;
-try { if (localStorage.getItem("lang") === "en") lang = "en"; } catch (e) {}
+var lang = "es", cards = null, nameVal = "", moodFor = {};
+try { if (localStorage.getItem("lang") === "en") lang = "en"; nameVal = (localStorage.getItem("pname") || "").slice(0, 32); } catch (e) {}
 
 function t(k) { return I18N[lang][k] || I18N.es[k] || k; }
 function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
 
+/* link to a demo; animated demos also get the visitor's studio name and colour mood */
+function demoUrl(c, path) {
+  if (!c.personalize) return path;
+  return path + "?studio=" + encodeURIComponent(nameVal.trim()) + "&mood=" + (moodFor[c.id] || 0);
+}
+function refreshLinks() {
+  document.querySelectorAll("a[data-pers]").forEach(function (a) {
+    var c = cards.filter(function (x) { return x.id === a.getAttribute("data-pers"); })[0];
+    if (c) a.href = demoUrl(c, a.getAttribute("data-path"));
+  });
+}
 function renderCards() {
   var box = document.getElementById("demos");
   box.textContent = "";
   if (!cards) return;
   cards.forEach(function (c) {
-    var card = el("article", "card");
+    var card = el("article", "card" + (c.featured ? " featured" : ""));
     var shot = el("div", "shot");
     shot.style.backgroundImage = "url('" + c.shot + "')";
     shot.setAttribute("role", "img");
@@ -174,13 +204,33 @@ function renderCards() {
     body.appendChild(el("h3", "serif", c.name));
     body.appendChild(el("div", "meta", c.city));
     var tags = el("div");
+    if (c.badge) tags.appendChild(el("span", "tag new", c.badge[lang] || c.badge.es));
     tags.appendChild(el("span", "tag", t("card.fict")));
     if (c.note) tags.appendChild(el("span", "tag", c.note[lang] || c.note.es));
     body.appendChild(tags);
     body.appendChild(el("p", "meta", (c.summary && (c.summary[lang] || c.summary.es)) || ""));
+    if (c.personalize && c.moods && c.moods.length) {
+      var row = el("div", "moods");
+      row.appendChild(el("span", null, t("card.colors")));
+      c.moods.forEach(function (m, i) {
+        var b = el("button");
+        b.type = "button";
+        b.title = m.name[lang] || m.name.es;
+        b.setAttribute("aria-label", b.title);
+        b.setAttribute("aria-pressed", String((moodFor[c.id] || 0) === i));
+        b.style.background = "linear-gradient(135deg," + m.dots[0] + " 50%," + m.dots[1] + " 50%)";
+        b.addEventListener("click", function () { moodFor[c.id] = i; renderCards(); });
+        row.appendChild(b);
+      });
+      body.appendChild(row);
+    }
     var actions = el("div", "actions");
-    var a1 = el("a", "btn site", t("card.site")); a1.href = c.site; actions.appendChild(a1);
-    if (c.panel) { var a2 = el("a", "btn ghost", t("card.panel")); a2.href = c.panel; actions.appendChild(a2); }
+    var a1 = el("a", "btn site", t("card.site")); a1.href = demoUrl(c, c.site);
+    if (c.personalize) { a1.setAttribute("data-pers", c.id); a1.setAttribute("data-path", c.site); }
+    actions.appendChild(a1);
+    if (c.panel) { var a2 = el("a", "btn ghost", t("card.panel")); a2.href = demoUrl(c, c.panel);
+      if (c.personalize) { a2.setAttribute("data-pers", c.id); a2.setAttribute("data-path", c.panel); }
+      actions.appendChild(a2); }
     body.appendChild(actions);
     card.appendChild(shot); card.appendChild(body);
     box.appendChild(card);
@@ -191,6 +241,7 @@ function applyLang() {
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-i18n]").forEach(function (n) { n.textContent = t(n.getAttribute("data-i18n")); });
   document.getElementById("lang").textContent = t("lang.btn");
+  document.querySelectorAll("[data-ph]").forEach(function (n) { n.placeholder = t(n.getAttribute("data-ph")); });
   renderCards();
 }
 
@@ -203,7 +254,18 @@ document.getElementById("lang").addEventListener("click", function () {
 applyLang();
 fetch("demos.json", { cache: "no-cache" })
   .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(function (data) { cards = data; renderCards(); })
+  .then(function (data) {
+    cards = data;
+    var any = data.some(function (c) { return c.personalize; });
+    var bar = document.getElementById("pbar"), inp = document.getElementById("studioName");
+    bar.hidden = !any; inp.value = nameVal;
+    inp.addEventListener("input", function () {
+      nameVal = inp.value.replace(/[^\p{L}\p{N} .,'’&·\-]/gu, "").slice(0, 32);
+      try { localStorage.setItem("pname", nameVal); } catch (e) {}
+      refreshLinks();
+    });
+    renderCards();
+  })
   .catch(function () { document.getElementById("demos-error").hidden = false; });
 </script>
 </body>
